@@ -4,11 +4,12 @@
 \usetikzlibrary{arrows,decorations.markings}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
-\usepackage{stix}
 \usepackage{textcomp}
 %\usepackage{simpsons}
 \usepackage{multicol}
+\usepackage{makecell}
 \usepackage[makeroom]{cancel}
+\usepackage{lscape}
 \usepackage[utf8]{inputenc}
 \usepackage{pdfpages}
 \usepackage{geometry}
@@ -193,7 +194,7 @@ Zustandsgleichungen
 \Large
 \begin{tabular}{llllll}
 	-S  & U  & V&			&U &= U(S,V) \\ 
-	H & $\neovsearrow$   &  F&       &H &= H(S,p) \\
+	H &  &  F&       &H &= H(S,p) \\
 	-p & G & T                &      &F &= F(T,V) \\
 	 &  &                      &     &G &= G(T,p) \\
 \end{tabular}
@@ -386,26 +387,37 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	 n = \text{ Anzahl der Rotator} & \text{ischen Freiheitsgrade} \\
 \end{align*}
 
+\onecolumn
+\begin{landscape}
+	Ideales Gas \\\\
+\begin{tabular}{l|l|l|l|l|l}
+	 & Isothermo  & Isobare  & Isochore  & reversibel Adiabat  & Polytrope \\ \hline
+	konstant:  & T  & p  & v  & $\delta q=0$  & $pv^n$  \\ \hline
+	& -  & -  & -  & $p_1 v_1^{\kappa} = p_2 v_2^{\kappa}$  & $v_1^{n} = p_2 v_2^{n}$  \\ \hline
+& $p_1 p_2 = p_2 v_2$  & $\frac{v_1}{v_2} = \frac{T_1}{T_2}$  & $\frac{p_1}{T_1} = \frac{p_2}{T_2}$  & $T_1 v_1^{\kappa - 1} = T_2 v_2^{\kappa -1}$   & $T_1 v_1^{n - 1} = T_2 v_2^{n -1}$  \\ \hline
+& -  & -  & -  & $\frac{T_1^{\frac{\kappa}{\kappa -1}}}{p_1} = \frac{T_2^{\frac{\kappa}{\kappa -1}}}{p_2}$  & $\frac{T_1^{\frac{n}{n -1}}}{p_1} = \frac{T_2^{\frac{n}{n -1}}}{p_2}$  \\ \hline
+p,v & $p = \frac{p_1 v_1}{v}$  & $p = p_1$  & $v = v_1$  & $p = \frac{p_1 v_1^{\kappa}}{v^{\kappa}}$  &  $p = \frac{p_1 v_1^{n}}{v^{n}}$ \\ \hline
+p,T & $p = \frac{p_1 v_1}{v}$  & $p = p_1$  & $p = \frac{p_1}{T_1}T$  & $p = \frac{p_1}{T_1^{\frac{\kappa}{\kappa -1}}} T^{\frac{\kappa}{\kappa -1}}$  &  $p = \frac{p_1}{T_1^{\frac{n}{n -1}}} T^{\frac{n}{n -1}}$\\ \hline
+v,T  & $T = T_1$  & $v = \frac{v_1}{T_1}T$  & $v = v_1 $ & $T = \frac{T_1 v_1^{\kappa - 1}}{v^{\kappa - 1}}$  & $T = \frac{T_1v_1^{n-1}}{v^{n-1}}  $\\ \hline
+$q_{12}$	& $q_{12}$ = $p_1v_1 \ln \frac{p_1}{p_2}$  & $q_{12} = c_p(T_2 - T_1)$   & $q_{12} = c_v(T_2 - T_1)$  & $q_{12} = 0$   &  $q_{12} = c_v \frac{n-\kappa}{n-1}(T_2-T_1)$ \\ \hline
+	$w_{V,12}$  & $w_{V,12} = -q_{12}$ & $w_{V,12} = -p_1(v_2 - v_1)$  & $w_{V,12} = 0$  & $w_{V,12} = \frac{p_1 v_1}{k - 1}\left(\left(\frac{v_1}{v_1}\right)^{\kappa - 1} - 1\right)$  & $w_{V,12} = \frac{p_1 v_1}{n - 1}\left(\left(\frac{v_1}{v_2}\right)^{n-1} - 1\right)$ \\ \hline
+	$s_2 - s_1$ & $s_2 -s_1 = R \ln \left(\frac{p_1}{p_2}\right)$  & $s_2 - s_1 = c_p \ln \left(\frac{T_2}{T_1}\right)$  & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right)$  & $s_2 - s_1 = 0$  & $s_2 - s_1 = c_v \frac{n - \kappa }{n - 1} \ln \left(\frac{T_2}{T_1}\right)$  \\ \hline
+	 &   &   &   &   &   \\
+\end{tabular}
+\\\\
+Van-Der-Waals-Gas \\\\
+	\begin{tabular}{l|l|l|l|l}
+		& Isotherme & Isobare & Isochore & Isentrop \\ \hline
+		konst. & T & p & v  & $\delta = 0$ \\ \hline
+		& $p_{M1}v_{M1}= p_{M2}v_{M2}$ & $\frac{RT_1}{v_{M1}} - \frac{a}{v_1^2} = \frac{RT_2}{v_M} - \frac{a}{v_2^2}$ & $\frac{p_1 + \frac{a}{v_1^2}}{T_1} = \frac{p_2 + \frac{a}{v_1^2}}{T_2}$  & \thead{$p_{M1} v_{M1}^{K_M} = p_M v_{M2}^{K_M}$ \\ $T_1v_{M1}^{R/c_v} = T_2 v_{M2}^{R/c_v}$}  \\ \hline
+		$p,v$ & $p = p_M \frac{v_u}{v_M} - \frac{a}{v^2}$ & $p = p_1$  & $v = v_1$ & $p = - \frac{a}{v^2} + p_{M1} \left(\frac{v_{M1}}{v_m}\right)^{k_M}$ \\ \hline
+		$ v,T$ & $T=T_1$ & $T = T_1 \frac{v_M}{v_{M1}} + \frac{a}{R}v_M \left(\frac{1}{v^2} - \frac{1}{v_1^2}\right)$ & $v = v_1$  & $T = T_1 \left(\frac{v_{M1}}{v_M}\right)^\frac{R}{v_v}$ \\ \hline
+		$q_{12}$ & $ q_{12} = RT_1 \ln \left(\frac{v_{M2}}{v_{M1}}\right)$ & $q_{12} = \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1) + p_1(v_2 - v_1)$ & $q_{12} = c_v(T_2 - T_1)$  & $q_{12} = 0$  \\ \hline
+		$w_{V,12}$ & $w_{V,12} = -RT_1 \ln \left(\frac{v_{M2}}{v_{M1}}\right) + \frac{a}{v_1} - \frac{a}{v_2}$ & $w_{V,12} = -p_1(v_2-v_1)$ & $w_{V,12} = 0$  & $w_{V,12} = \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1)$ \\ \hline
+		$s_2 - s_1$ & $s_2 - s_1 = R\ln \left(\frac{v_{M2}}{v_{M1}}\right)$ & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right) + R \ln \left(\frac{v_{M2}}{v_{M1}}\right)$ & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right)$ & $s_2 - s_1 = 0$ \\
+	\end{tabular}
 
-\includepdf[pages=210]{/home/jonas/tu/thermo/2016_Book_ThermodynamikKompakt.pdf}
-\includepdf[pages=211]{/home/jonas/tu/thermo/2016_Book_ThermodynamikKompakt.pdf}
-%\includepdf[pages=201-211]{/home/jonas/tu/thermo/2016_Book_ThermodynamikKompakt.pdf}
-%\includepdf[pages=213-216]{/home/jonas/tu/thermo/2016_Book_ThermodynamikKompakt.pdf}
+\end{landscape}
 
 \end{document}
 
-%\begin{tabular}{l|l|l|l|l|l}
-%	 & Isothermo  & Isobare  & Isochore  & reversibel Adiabat  & Polytrope \\ \hline
-%	konstant:  & T  & p  & v  & $\delta q=0$  & $pv^n$  \\ \hline
-%	 & -  & -  & -  & $p_1 v_1^{\kappa} = p_2 v_2^{\kappa}$  & $v_1^{n} = p_2 v_2^{n}$  \\ \hline
-%	 & $p_1 p_2 = p_2 v_2$  & $\frac{v_1}{v_2} = \frac{T_1}{T_2}$  & $\frac{p_1}{T_1} = \frac{p_2}{T_2}$  & $T_1 v_1^{\kappa - 1} = T_2 v_2^{\kappa -1}$   & $T_1 v_1^{n - 1} = T_2 v_2^{n -1}$  \\ \hline
-%	 & -  & -  & -  & $\frac{T_1^{\frac{\kappa}{\kappa -1}}}{p_1} = \frac{T_2^{\frac{\kappa}{\kappa -1}}}{p_2}$  & $\frac{T_1^{\frac{n}{n -1}}}{p_1} = \frac{T_2^{\frac{n}{n -1}}}{p_2}$  \\ \hline
-%	p,v & $p = \frac{p_1 v_1}{v}$  & $p = p_1$  & $v = v_1$  & $p = \frac{p_1 v_1^{\kappa}}{v^{\kappa}}$  &  $p = \frac{p_1 v_1^{n}}{v^{n}}$ \\ \hline
-%	p,T & $p = \frac{p_1 v_1}{v}$  & $p = p_1$  & $p = \frac{p_1}{T_1}T$  & $p = \frac{p_1}{T_1^{\frac{\kappa}{\kappa -1}}} T^{\frac{\kappa}{\kappa -1}}$  &  $p = \frac{p_1}{T_1^{\frac{n}{n -1}}} T^{\frac{n}{n -1}}$\\ \hline
-%	v,T  & $T = T_1$  & $v = \frac{v_1}{T_1}T$  & $v = v_1 $ & $T = \frac{T_1 v_1^{\kappa - 1}}{v^{\kappa - 1}}$  & $T = \frac{T_1v_1^{n-1}}{v^{n-1}}  $\\ \hline
-%	$w_{V,12}$  & $w_{V,12} = -q_{12}$ & $w_{V,12} = -p_1(v_2 - v_1)$  & $w_{V,12} = 0$  & $w_{V,12} = \frac{p_1 v_1}{k - 1}((\frac{v_1}{v_1}^{\kappa - 1} - 1)$  & $w_{V,12} = \frac{p_1 v_1}{n - 1}((\frac{v_1}{v_2}^{n-1} - 1)$ \\ \hline
-%	&   &   &   &   &   \\ \hline
-%	 &   &   &   &   &   \\ \hline
-%	 &   &   &   &   &   \\
-%\end{tabular}
-%\\\\
