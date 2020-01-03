@@ -251,7 +251,7 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
 \section{Van-der-Waals}
 \begin{align*}
 	&\left(p + \frac{a}{v^2}\right)(v-b) = RT \\
-	&\left(\overline{p} + \frac{a}{\overline{v}^2}\right)(\overline{v}^3-b) = 8\overline{T} \\
+	&\left(\overline{p} + \frac{3}{\overline{v}^2}\right)(3\overline{v}-1) = 8\overline{T} \\
 	&\overline{p} = \frac{p}{p_K}, \quad \overline{v} = \frac{v}{v_K}, \quad \overline{T} = \frac{T}{T_K} \\
 	&p_K = \frac{a}{27b^2}, \quad T_K = \frac{8}{27}\frac{a}{b}\frac{1}{R}, \quad \xrightswishingghost{} \\
 	&a=3p_Kv^2_K, \quad b =\frac{v_K}{3}, \quad \frac{p_Kv_K}{RT_K} = \frac{3}{8} \\
@@ -347,7 +347,76 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
 	\text{Adiabet Drosselung (real): } &\delta_h = \left(\frac{\partial T}{\partial p}\right)_{h}  = - \frac{v}{c_p}(1-\beta T) \\
 \end{align*}
 \section{Nassdampf}
+\tiny
+\begin{tikzpicture}
+	 [> = latex,
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+	\draw[<->]  (0,3) node[left] {$T$} |- (6,0) node[below] {$V$} ;
+	\draw (0.1,0.3) -- node[midway, below, rotate=60] {Subl.-Linie} (0.4,0.8);
+	\draw (0.4, 0.8) -- (0.4, 3) node[above left, rotate=90] {Schmelzlinie};
+	\draw (0.8, 0.8) -- (0.8, 3) node[above left, rotate=90] {Erstarrungslinie};
+	\draw (0.4,0.8) -- node[midway, below] {Tripellinie} (3.91,0.8);
+	\draw (0.8,0.8) -- (1.4,1.8);
+	\draw (1.4,1.8) parabola bend (2.2,2.5) (3,1.8);
+	\draw (3,1.8) .. controls (3.6,0.8) .. node[very near end, sloped, above] {Desublimationslinie} (5.5,0.4);
+	\draw (1.5,2.2) node[rotate=53] {Siedelinie};
+	\draw (2.9,2.2) node[rotate=-53] {Taulinie};
+	\draw (2.2,3) node {$\text{CO}_\text{2}$};
+	\draw (2.2,2.5) node[above] {K};
+\end{tikzpicture}
 
+\begin{multicols}{2}
+\small
+\begin{tikzpicture}
+	 [> = latex,
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+	\draw[<->]  (0,3) node[left] {$p$} |- (3.5,0) node[below] {$v$};
+	\draw (1,1.8) parabola bend (1.5,2.4) (2,1.8);
+	\draw (0.4,0.3) -- (1,1.8);
+	\draw (2,1.8) to[bend right=10] (3,0.3);
+	
+\end{tikzpicture}
+\begin{tikzpicture}
+	 [> = latex,
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+	\draw[<->]  (0,3) node[left] {$p$} |- (3.5,0) node[below] {$v$};
+	\draw (1,1.8) parabola bend (1.5,2.4) (2,1.8);
+	\draw (0.4,0.3) -- (1,1.8);
+	\draw (2,1.8) to[bend right=10] (3,0.3);
+	
+\end{tikzpicture}
+\begin{tikzpicture}
+	 [> = latex,
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+	\draw[<->]  (0,3) node[left] {$p$} |- (3.5,0) node[below] {$v$};
+	\draw (1,1.8) parabola bend (1.5,2.4) (2,1.8);
+	\draw (0.4,0.3) -- (1,1.8);
+	\draw (2,1.8) to[bend right=10] (3,0.3);
+	
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	 [> = latex,
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+	\draw[<->]  (0,3) node[left] {$p$} |- (3.5,0) node[below] {$v$};
+	\draw (1,1.8) parabola bend (1.5,2.4) (2,1.8);
+	\draw (0.4,0.3) -- (1,1.8);
+	\draw (2,1.8) to[bend right=10] (3,0.3);
+	
+\end{tikzpicture}
+\end{multicols}
+
+\normalsize
 \begin{multicols}{2}
 
 \begin{align*}
@@ -444,7 +513,7 @@ Van-Der-Waals-Gas  \\
 	\begin{tabular}{l|l|l|l|l}
 		& Isotherme & Isobare & Isochore & Isentrop \\ \hline
 		konst. & T & p & v  & $\delta = 0$ \\ \hline
-		& $p_{M1}v_{M1}= p_{M2}v_{M2}$ & $\frac{RT_1}{v_{M1}} - \frac{a}{v_1^2} = \frac{RT_2}{v_M} - \frac{a}{v_2^2}$ & $\frac{p_1 + \frac{a}{v_1^2}}{T_1} = \frac{p_2 + \frac{a}{v_1^2}}{T_2}$  & \thead{$p_{M1} v_{M1}^{K_M} = p_M v_{M2}^{K_M}$ \\ $T_1v_{M1}^{R/c_v} = T_2 v_{M2}^{R/c_v}$}  \\ \hline
+		& $p_{M1}v_{M1}= p_{M2}v_{M2}$ & $\frac{RT_1}{v_{M1}} - \frac{a}{v_1^2} = \frac{RT_2}{v_M} - \frac{a}{v_2^2}$ & $\frac{p_1 + \frac{a}{v_1^2}}{T_1} = \frac{p_2 + \frac{a}{v_1^2}}{T_2}$  & $p_{M1} v_{M1}^{K_M} = p_M v_{M2}^{K_M}, \quad T_1v_{M1}^{R/c_v} = T_2 v_{M2}^{R/c_v}$  \\ \hline
 		$p,v$ & $p = p_M \frac{v_u}{v_M} - \frac{a}{v^2}$ & $p = p_1$  & $v = v_1$ & $p = - \frac{a}{v^2} + p_{M1} \left(\frac{v_{M1}}{v_m}\right)^{k_M}$ \\ \hline
 		$ v,T$ & $T=T_1$ & $T = T_1 \frac{v_M}{v_{M1}} + \frac{a}{R}v_M \left(\frac{1}{v^2} - \frac{1}{v_1^2}\right)$ & $v = v_1$  & $T = T_1 \left(\frac{v_{M1}}{v_M}\right)^\frac{R}{v_v}$ \\ \hline
 		$q_{12}$ & $ q_{12} = RT_1 \ln \left(\frac{v_{M2}}{v_{M1}}\right)$ & $q_{12} = \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1) + p_1(v_2 - v_1)$ & $q_{12} = c_v(T_2 - T_1)$  & $q_{12} = 0$  \\ \hline
