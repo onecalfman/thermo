@@ -200,13 +200,13 @@ Zustandsgleichungen
 	 &  &                      &     &G &= G(T,p) \\
 \end{tabular}
 \normalsize
-\break
-\begin{align*}
-	U &= U(S,V) \\
-	H &= H(S,p) \\
-	F &= F(T,V) \\
-	G &= G(T,p) \\
-\end{align*}
+%\break
+%\begin{align*}
+%	U &= U(S,V) \\
+%	H &= H(S,p) \\
+%	F &= F(T,V) \\
+%	G &= G(T,p) \\
+%\end{align*}
 %\Bart
 
 
@@ -260,7 +260,7 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
 	&\chi = \frac{(v-b)^2v^2}{RTv^3 - 2a(v-b)^2} \\
 	& du = \frac{a}{v^2}dv + c_v(T)dT \\
 	&u-u_0 = \left( \frac{a}{v_0} - \frac{a}{v} \right) + \int_{T_0}^{T} c_v(\tilde{T})\; d\tilde{T} \\
-	& u - u_0 = \left(\frac{a}{v_0} - \frac{a}{v} \right) + v_v(T-T_0) \leftarrow \text{für $c_v$ = const.} \\
+	& u - u_0 = \left(\frac{a}{v_0} - \frac{a}{v} \right) + c_v(T-T_0) \leftarrow \text{für $c_v$ = const.} \\
 	&c_p - c_v = \frac{Tv\beta^2}{\chi} \\
 	& s- s_0 = c_v \ln \left( \frac{T}{T_0} \right) + R \ln \left(\frac{v-b}{v_0 - b} \right)
 \end{align*}
@@ -363,7 +363,7 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
 	\draw (0.4,0.8) -- node[midway, below] {Tripellinie} (3.91,0.8);
 	\draw (0.8,0.8) -- (1.4,1.8);
 	\draw (1.4,1.8) parabola bend (2.2,2.5) (3,1.8);
-	\draw (3,1.8) .. controls (3.6,0.8) .. node[very near end, sloped, above] {Desublimationslinie} (5.5,0.4);
+	\draw (3,1.8)  .. controls (3.6,0.8) .. node[very near end, sloped, above] {Desublimationslinie} (5.5,0.4);
 	\draw (1.5,2.2) node[rotate=53] {Siedelinie};
 	\draw (2.9,2.2) node[rotate=-53] {Taulinie};
 	\draw (2.2,3) node {$\text{CO}_\text{2}$};
@@ -385,7 +385,7 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
 
 	\draw (0.9,0.8) parabola[bend at end]  (2, 1.8);
 
-	\draw (2,1.8) .. controls (2.4,1.8) and (3.3, 1) .. (3.9,0.8) .. controls (4.7,0.5) and (5.3,0.4) .. (5.5,0.4);
+	\draw (2,1.8) .. controls (2.4,1.8) and (3.3, 1) .. (3.9,0.8) .. controls (4.7,0.5) and (5.3,0.4) .. node[above, sloped]  {$\xrightswishingghost{}$} (5.5,0.4);
 	\draw (2.2,3) node {$\text{CO}_\text{2}$};
 
 	\draw[fill] (2,1.8) circle (0.02) node[above] {K};
@@ -511,15 +511,19 @@ $q_{12}$	& $q_{12}$ = $p_1v_1 \ln \frac{p_1}{p_2}$  & $q_{12} = c_p(T_2 - T_1)$ 
 \\\\
 \pagebreak
 Van-Der-Waals-Gas  \\
+\large
+
+	$p_M = p + \frac{a}{v^2}, \quad v_M = v-b , \quad k_M = (c_v + R)/c_v)$ \\
 	\begin{tabular}{l|l|l|l|l}
 		& Isotherme & Isobare & Isochore & Isentrop \\ \hline
 		konst. & T & p & v  & $\delta = 0$ \\ \hline
-		& $p_{M1}v_{M1}= p_{M2}v_{M2}$ & $\frac{RT_1}{v_{M1}} - \frac{a}{v_1^2} = \frac{RT_2}{v_M} - \frac{a}{v_2^2}$ & $\frac{p_1 + \frac{a}{v_1^2}}{T_1} = \frac{p_2 + \frac{a}{v_1^2}}{T_2}$  & $p_{M1} v_{M1}^{K_M} = p_M v_{M2}^{K_M}, \quad T_1v_{M1}^{R/c_v} = T_2 v_{M2}^{R/c_v}$  \\ \hline
-		$p,v$ & $p = p_M \frac{v_u}{v_M} - \frac{a}{v^2}$ & $p = p_1$  & $v = v_1$ & $p = - \frac{a}{v^2} + p_{M1} \left(\frac{v_{M1}}{v_m}\right)^{k_M}$ \\ \hline
-		$ v,T$ & $T=T_1$ & $T = T_1 \frac{v_M}{v_{M1}} + \frac{a}{R}v_M \left(\frac{1}{v^2} - \frac{1}{v_1^2}\right)$ & $v = v_1$  & $T = T_1 \left(\frac{v_{M1}}{v_M}\right)^\frac{R}{v_v}$ \\ \hline
-		$q_{12}$ & $ q_{12} = RT_1 \ln \left(\frac{v_{M2}}{v_{M1}}\right)$ & $q_{12} = \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1) + p_1(v_2 - v_1)$ & $q_{12} = c_v(T_2 - T_1)$  & $q_{12} = 0$  \\ \hline
-		$w_{V,12}$ & $w_{V,12} = -RT_1 \ln \left(\frac{v_{M2}}{v_{M1}}\right) + \frac{a}{v_1} - \frac{a}{v_2}$ & $w_{V,12} = -p_1(v_2-v_1)$ & $w_{V,12} = 0$  & $w_{V,12} = \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1)$ \\ \hline
-		$s_2 - s_1$ & $s_2 - s_1 = R\ln \left(\frac{v_{M2}}{v_{M1}}\right)$ & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right) + R \ln \left(\frac{v_{M2}}{v_{M1}}\right)$ & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right)$ & $s_2 - s_1 = 0$ \\
+		& $(p_1 + \frac{a}{v^2})(v_1-b)= (p_2 + \frac{a}{v^2})(v_2-b)$ & $\frac{RT_1}{v_1-b} - \frac{a}{v_1^2} = \frac{RT_2}{v-b} - \frac{a}{v_2^2}$ & $\frac{p_1 + \frac{a}{v_1^2}}{T_1} = \frac{p_2 + \frac{a}{v_1^2}}{T_2}$  & \thead{\large $(p_1 + \frac{a}{v^2}) (v_1-b)^{\frac{c_v + R}{c_v}} = (p + \frac{a}{v^2}) (v_2-b)^{\frac{c_v + R}{c_v}},$ \\ \large $ \quad T_1(v_1-b)^{R/c_v} = T_2 (v_2-b)^{R/c_v}$}  \\ \hline
+		$p,v$ & $p = (p + \frac{a}{v^2}) \frac{v_u}{v-b} - \frac{a}{v^2}$ & $p = p_1$  & $v = v_1$ & $p = - \frac{a}{v^2} + (p_1 + \frac{a}{v^2}) \left(\frac{v_1-b}{v_m}\right)^{\frac{v_v + R }{R}}$ \\ \hline
+		$p,T$ & $T=T_1$ & $p=p_1$ &  $p = \frac{T}{T_1} (p_1 + \frac{a}{v^2}) - \frac{a}{v_1^2}$ & $p = - \frac{a}{v^2}+ (p_1 + \frac{a}{v^2}) \left(\frac{T}{T_1}\right)^\frac{c_v+R}{R}$ \\ \hline
+		$v,T$ & $T = T_1$ & $T = T_1 \frac{v-b}{v_1-b} + \frac{a}{R}(v-b) \left(\frac{1}{v^2} - \frac{1}{v_1^2}\right)$ & $v = v_1$  & $T = T_1 \left(\frac{v_1-b}{v-b}\right)^\frac{R}{c_v}$ \\ \hline
+		$q_{12}$ & $ q_{12} = RT_1 \ln \left(\frac{v_2-b}{v_1-b}\right)$ & $q_{12} = \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1) + p_1(v_2 - v_1)$ & $q_{12} = c_v(T_2 - T_1)$  & $q_{12} = 0$  \\ \hline
+		$w_{V,12}$ & $w_{V,12} = -RT_1 \ln \left(\frac{v_2-b}{v_1-b}\right) + \frac{a}{v_1} - \frac{a}{v_2}$ & $w_{V,12} = -p_1(v_2-v_1)$ & $w_{V,12} = 0$  & $w_{V,12} = \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1)$ \\ \hline
+		$s_2 - s_1$ & $s_2 - s_1 = R\ln \left(\frac{v_2-b}{v_1-b}\right)$ & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right) + R \ln \left(\frac{v_2-b}{v_1-b}\right)$ & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right)$ & $s_2 - s_1 = 0$ \\
 	\end{tabular}
 
 \end{landscape}
