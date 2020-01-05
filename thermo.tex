@@ -2,6 +2,7 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.markings}
+\usetikzlibrary{calc}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
 \usepackage{halloweenmath}
@@ -230,22 +231,33 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
 \pagebreak
 \section{Ideales Gas}
 \begin{align*}
-	&pV = mRT \\
-	&pv = RT \\
-	&pV = nR_mT \\
-	&\beta = \frac{1}{T},\quad  \\
-	&\gamma = \frac{1}{T},\quad 
-	\chi = \frac{1}{p}, \quad \beta = p \gamma \chi, \quad  \\
+	&pV = mRT, \quad pv = RT, \quad pV = nR_mT \\
+	&\beta = \frac{1}{T},\quad 
+	\gamma = \frac{1}{T},\quad 
+	\chi = \frac{1}{p}, \quad \beta = p \gamma \chi\\
 	&R_m = 8,3143\left[\frac{kJ}{kmolK}\right], \quad 
-	R = c_p - c_v \quad  \\
+	R = c_p - c_v\\
+	&R = \frac{R_m}{M} \\
 	&U - U_0 = mc_v(T-T_0) \\
 	&H - H_0 = mc_p(T-T_0) \quad \leftarrow \text{Für $c_p$ und $c_v$ const.} \\
 	&s - s_0 = R \ln \left(\frac{ v}{ v_0}\right)_{} + c_v \ln \left(\frac{ T}{ T_0}\right)_{} \\
-	&\qquad \; = c_v \ln \left( \frac{p}{p_0} \right) + c_p \ln \left( \frac{v}{v_0} \right) \\
-	&\qquad \; = c_p \ln \left( \frac{T}{T_0} \right) -R \ln \left( \frac{p}{p_0} \right) \\
-	&\beta = \frac{1}{T} = \; \;\: \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_{p} =  \frac{1}{v}\left(\frac{\partial v}{\partial T}\right)_{p} =  - \frac{1}{\rho}\left(\frac{\partial \rho}{\partial T}\right)_{p}  \\
-	&\gamma = \frac{1}{T} =  \; \;\; \frac{1}{p} \: \left(\frac{\partial p}{\partial T}\right)_{V} \\
-	&\chi = \frac{1}{p} = - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{T}  = - \frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_{T} \\
+	&\qquad \; 
+	= c_v \ln \left( \frac{p}{p_0} \right) + c_p \ln \left( \frac{v}{v_0} \right) \\
+	&\qquad \; 
+	= c_p \ln \left( \frac{T}{T_0} \right) -R \ln \left( \frac{p}{p_0} \right) \\
+	&\beta 
+	= \frac{1}{T} 
+	= \; \;\: \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_{p} 
+	=  \frac{1}{v}\left(\frac{\partial v}{\partial T}\right)_{p} 
+	=  - \frac{1}{\rho}\left(\frac{\partial \rho}{\partial T}\right)_{p}  \\
+	&\gamma 
+	= \frac{1}{T} 
+	=  \; \;\; \frac{1}{p} \: \left(\frac{\partial p}{\partial T}\right)_{V} \\
+	&\chi 
+	= \frac{1}{p} 
+	= - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{T}  
+	= - \frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_{T} \\
+	& u_2 - u_1 = \int_{T_1}^{T_2} c_v(T)\; dT \\
 \end{align*}
 
 \section{Van-der-Waals}
@@ -279,7 +291,7 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
   ]
   \draw[<->] (0,4.3) node[above right] {$p$} |- (4.3,0) node[right] {$V$};
-  \node[dot,label={left:$1$}] (@1) at (0.5,4) {};
+  \node[dot,label={above:$1$}] (@1) at (0.5,4) {};
   \node[dot,label={right:$2$}] (@2) at (2.5,3) {};
   \node[dot,label={right:$3$}] (@3) at (4,1) {};
   \node[dot,label={below left:$4$}] (@4) at (1.3,1.8) {};
@@ -294,7 +306,7 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
   \draw[dashed,thin] (0,4) node[left] {$p_1$} -- (0.5,4);
   \draw[dashed,thin] (0,1) node[left] {$p_3$} -- (4,1);
   \draw[dashed,thin] (0.5,0) node[below] {$V_1$} -- (0.5,4);
-  \draw[dashed,thin] (4,0) node[below] {$V_1$} -- (4,1);
+  \draw[dashed,thin] (4,0) node[below] {$V_3$} -- (4,1);
 
   \draw[->] (2,3.5) to (2,2.5);
   \node[label={right:$Q_{12}$}] at (2,3.5) {};
@@ -308,7 +320,7 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
   ]
   \draw[<->] (0,4.3) node[above right] {$T$} |- (4.3,0) node[right] {$S$};
-  \node[dot,label={left:$1$}] (@1) at (0.5,3) {};
+  \node[dot,label={above:$1$}] (@1) at (0.5,3) {};
   \node[dot,label={right:$2$}] (@2) at (4,3) {};
   \node[dot,label={right:$3$}] (@3) at (4,1) {};
   \node[dot,label={below left:$4$}] (@4) at (0.5,1) {};
@@ -318,7 +330,7 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
   \draw[arrow inside] (@3) to (@4);
   \draw[arrow inside] (@4) to (@1);
   \draw[dashed,thin] (0,3) node[left] {$T_1$} -- (0.5,3);
-  \draw[dashed,thin] (0,1) node[left] {$T_3$} -- (4,1);
+  \draw[dashed,thin] (0,1) node[left] {$T_3$} -- (0.50,1);
   \draw[dashed,thin] (0.5,0) node[below] {$S_1$} -- (0.5,1);
   \draw[dashed,thin] (4,0) node[below] {$S_1$} -- (4,1);
 
@@ -479,20 +491,71 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 \begin{equation}
 	- \dot{W}_{ex} = \left(1 - \frac{T_u}{T_1} \right) \dot{Q}_1 = \eta_{th,C} \dot{Q}_1 \\
 \end{equation}
-
+\pagebreak
 \section{Wärmekapazität}
 
+\begin{tikzpicture}[
+	scale=1.2, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+	\draw[<->] (0,2.5) node[left] {$C_{p,m}$} |- (6,0) node[below] {$T[1000K]$};
+
+	\coordinate (a) at (0,1);
+	\coordinate (b) at (0.9,1);
+	\coordinate (c) at (1.5,1.25);
+	\coordinate (d) at (2.3,1.5);
+	\coordinate (e) at (4,1.8);
+	\coordinate (f) at (5,2);
+	
+	\coordinate (g) at (0.8,0);
+	\coordinate (h) at (1.4,0);
+	\coordinate (i) at (2.0,0);
+	\coordinate (j) at (2.6,0);
+	\coordinate (k) at (3.2,0);
+	\coordinate (l) at (3.8,0);
+	\coordinate (m) at (4.4,0);
+	\coordinate (n) at (4.8,0);
+
+	\draw[dashed] (0,2) node[left] {$\frac{9}{2}R_m$} -- (f);
+	\draw[dashed] (0,1.5) node[left] {$\frac{7}{2}R_m$} -- (d);
+	\draw (a) node[left] {$\frac{5}{2}R_m$};
+
+	\draw[thick] (a) to (b);
+	\draw[thick] (b) to[bend right=20] (c);
+	\draw[thick] (c) to[bend left=16] (d);
+	\draw[thick] (d) to[bend right=14] (e);
+	\draw[thick] (e) to[bend left=14] (f);
+
+	\draw (g) node[below] {0,05} to ($ (g) - (0,0.05) $);
+	\draw (h) node[below] {0,1} to ($ (h) - (0,0.05) $);
+	\draw (i) node[below] {0,25} to ($ (i) - (0,0.05) $);
+	\draw (j) node[below] {0,5} to ($ (j) - (0,0.05) $);
+	\draw (k) node[below] {1} to ($ (k) - (0,0.05) $);
+	\draw (l) node[below] {2.5} to ($ (l) - (0,0.05) $);
+	\draw (m) node[below] {5} to ($ (m) - (0,0.05) $);
+	\draw (n) node[below] {10} to ($ (n) - (0,0.05) $);
+\end{tikzpicture}
 \begin{align*}
-	\text{Translatorisch: }  &C_v = \frac{3}{2} R_m  \\
-	 \text{Rotatorisch: }  &C_v = n \cdot \frac{1}{2} R_m \\
-	 n = \text{ Anzahl der Rotator} & \text{ischen Freiheitsgrade} \\
-\end{align*}
+	&	C_{v,m} = \frac{1}{\kappa - 1} R_m,
+	\quad	C_{p,m} = \frac{\kappa}{\kappa -1}r_m \\
+	&	c_v = \frac{1}{\kappa - 1 }R_j, 
+	\qquad	c_p = \frac{\kappa}{\kappa -1}R_j \\
+	&	\kappa = \frac{c_p}{c_v},
+	\qquad \qquad \; \:   c_p - c_v = R\\
+	\end{align*}
+	\begin{multline*}
+		C_{v,m} = \underbrace{3 + \frac{R_m}{2}}_{\text{Translatorisch}} + \underbrace{\frac{n_{\text{rot}}  R_m}{2}}_{\text{Rotatorisch}}  
+		+ \underbrace{R_M ( 3n_{\text{Atome}} - 3 - n_{rot})}_{\text{Vibratorisch}}  \\
+		+ \underbrace{C_{v,m,Elektronenanregung}}_{\text{Relevant ab: }T \approx 10^4K } 
+	\end{multline*}
 
 \onecolumn
 \begin{landscape}
-	\large
+	\LARGE
 	Ideales Gas \\\\
-	\renewcommand{\arraystretch}{2.5}
+	\renewcommand{\arraystretch}{2}
 \begin{tabular}{l|l|l|l|l|l}
 	 & Isothermo  & Isobare  & Isochore  & Isentrop  & Polytrope \\ \hline
 	konstant:  & T  & p  & v  & $\delta q=0$  & $pv^n$  \\ \hline
@@ -502,18 +565,15 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 p,v & $p = \frac{p_1 v_1}{v}$  & $p = p_1$  & $v = v_1$  & $p = \frac{p_1 v_1^{\kappa}}{v^{\kappa}}$  &  $p = \frac{p_1 v_1^{n}}{v^{n}}$ \\ \hline
 p,T & $p = \frac{p_1 v_1}{v}$  & $p = p_1$  & $p = \frac{p_1}{T_1}T$  & $p = \frac{p_1}{T_1^{\frac{\kappa}{\kappa -1}}} T^{\frac{\kappa}{\kappa -1}}$  &  $p = \frac{p_1}{T_1^{\frac{n}{n -1}}} T^{\frac{n}{n -1}}$\\ \hline
 v,T  & $T = T_1$  & $v = \frac{v_1}{T_1}T$  & $v = v_1 $ & $T = \frac{T_1 v_1^{\kappa - 1}}{v^{\kappa - 1}}$  & $T = \frac{T_1v_1^{n-1}}{v^{n-1}}  $\\ \hline
-$q_{12}$	& $q_{12}$ = $p_1v_1 \ln \frac{p_1}{p_2}$  & $q_{12} = c_p(T_2 - T_1)$   & $q_{12} = c_v(T_2 - T_1)$  & $q_{12} = 0$   &  $q_{12} = c_v \frac{n-\kappa}{n-1}(T_2-T_1)$ \\ \hline
-	$w_{V,12}$  & $w_{V,12} = -q_{12}$ & $w_{V,12} = -p_1(v_2 - v_1)$  & $w_{V,12} = 0$  & $w_{V,12} = \frac{p_1 v_1}{k - 1}\left(\left(\frac{v_1}{v_1}\right)^{\kappa - 1} - 1\right)$  & $w_{V,12} = \frac{p_1 v_1}{n - 1}\left(\left(\frac{v_1}{v_2}\right)^{n-1} - 1\right)$ \\ \hline
-	$s_2 - s_1$ & $s_2 -s_1 = R \ln \left(\frac{p_1}{p_2}\right)$  & $s_2 - s_1 = c_p \ln \left(\frac{T_2}{T_1}\right)$  & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right)$  & $s_2 - s_1 = 0$  & $s_2 - s_1 = c_v \frac{n - \kappa }{n - 1} \ln \left(\frac{T_2}{T_1}\right)$  \\ \hline
-	 &   &   &   &   &   \\
+	$q_{12}$	& $= p_1v_1 \ln \frac{p_1}{p_2}$  & $= c_p(T_2 - T_1)$   & $= c_v(T_2 - T_1)$  & $= 0$   &  $= c_v \frac{n-\kappa}{n-1}(T_2-T_1)$ \\ \hline
+	$w_{V,12}$  & $= -q_{12}$ & $= -p_1(v_2 - v_1)$  & $= 0$  & $= \frac{p_1 v_1}{k - 1}\left[\left(\frac{v_1}{v_1}\right)^{\kappa - 1} - 1\right]$  & $= \frac{p_1 v_1}{n - 1}\left[\left(\frac{v_1}{v_2}\right)^{n-1} - 1\right]$ \\ \hline
+	$s_2 - s_1$ & $s_2 -s_1 = R \ln \left(\frac{p_1}{p_2}\right)$  & $= c_p \ln \left(\frac{T_2}{T_1}\right)$  & $= c_v \ln \left(\frac{T_2}{T_1}\right)$  & $= 0$  & $= c_v \frac{n - \kappa }{n - 1} \ln \left(\frac{T_2}{T_1}\right)$  \\ 
 \end{tabular}
 \bigskip
 \\\\
-\pagebreak
-Van-Der-Waals-Gas  \\
 \large
+Van-Der-Waals-Gas  \\
 
-	$p_M = p + \frac{a}{v^2}, \quad v_M = v-b , \quad k_M = (c_v + R)/c_v)$ \\
 	\begin{tabular}{l|l|l|l|l}
 		& Isotherme & Isobare & Isochore & Isentrop \\ \hline
 		konst. & T & p & v  & $\delta = 0$ \\ \hline
