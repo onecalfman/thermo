@@ -36,7 +36,15 @@
 	-
 	p\frac{dV}{dt}
 \end{equation*}
+
 \normalsize
+
+%    _   __                           __   __      __            
+%   / | / /___  ____ ___  ___  ____  / /__/ /___ _/ /___  _______
+%  /  |/ / __ \/ __ `__ \/ _ \/ __ \/ //_/ / __ `/ __/ / / / ___/
+% / /|  / /_/ / / / / / /  __/ / / / ,< / / /_/ / /_/ /_/ / /    
+%/_/ |_/\____/_/ /_/ /_/\___/_/ /_/_/|_/_/\__,_/\__/\__,_/_/     
+
 \section{Nomenklatur}
 
 
@@ -125,6 +133,13 @@
 
 \pagebreak
 
+%   ______                     ____                    _ ________   
+%  / ____/______  ______  ____/ / /_  ___  ____ ______(_) __/ __/__ 
+% / / __/ ___/ / / / __ \/ __  / __ \/ _ \/ __ `/ ___/ / /_/ /_/ _ \
+%/ /_/ / /  / /_/ / / / / /_/ / /_/ /  __/ /_/ / /  / / __/ __/  __/
+%\____/_/   \__,_/_/ /_/\__,_/_.___/\___/\__, /_/  /_/_/ /_/  \___/ 
+%                                       /____/
+
 \section{Grundbegriffe}
 
 Systeme 
@@ -149,6 +164,12 @@ Zustandsgleichungen
 	\item Kalorisch $\rightarrow f(U, V, T) = 0, \quad  U = U(V,T), \quad u = u(v,T)$ 
 \end{itemize}
 
+%    ____             _      ____                          __    
+%   / __ )____ ______(_)____/ __/___  _________ ___  ___  / /___ 
+%  / __  / __ `/ ___/ / ___/ /_/ __ \/ ___/ __ `__ \/ _ \/ / __ \
+% / /_/ / /_/ (__  ) (__  ) __/ /_/ / /  / / / / / /  __/ / / / /
+%/_____/\__,_/____/_/____/_/  \____/_/  /_/ /_/ /_/\___/_/_/ /_/ 
+%                                                                
 \section{Basisformeln}
 \begin{align*}
 	H &= U + pV  					\\
@@ -168,6 +189,12 @@ Zustandsgleichungen
 \begin{equation*}
 \overbrace{\frac{d}{dt}\Bigg{\{} U + m \Bigg{(}\frac{c^2}{2}+gz\Bigg{)}\Bigg{\}}}^{\text{Stationäres System -> 0}} = \overbrace{\sum_{j}{\Bigg{[}\dot{m}_j\Bigg{(}h+\frac{c^2}{2}+gz\Bigg{)}_j \Bigg{]}}}^{\text{Geschlossenes System -> 0}}  + \overbrace{\sum_{l}^{} \Big(\dot{Q}_t\Big)_l}^{\text{Kein Wärmestrom -> 0}} + \overbrace{\sum_{i}\Big(\dot{W}_t\Big)_i}^{\text{Keine Leistung -> 0}}- \overbrace{p\frac{dV}{dt}}^{\text{Keine Volumenänderung -> 0}}
 \end{equation*}
+
+%    __  ___                         ____
+%   /  |/  /___ __  ___      _____  / / /
+%  / /|_/ / __ `/ |/_/ | /| / / _ \/ / / 
+% / /  / / /_/ />  < | |/ |/ /  __/ / /  
+%/_/  /_/\__,_/_/|_| |__/|__/\___/_/_/   
 
 \section{Maxwell}
 
@@ -192,74 +219,103 @@ Zustandsgleichungen
 	&=
 	\quad \left(\frac{\partial V}{\partial n_i}\right)_{T,p,n_j \neq n_i}
 \end{align*}
+
+%   ______                             __         _         
+%  / ____/_  ______ _____ ____  ____  / /_  ___  (_)___ ___ 
+% / / __/ / / / __ `/ __ `/ _ \/ __ \/ __ \/ _ \/ / __ `__ \
+%/ /_/ / /_/ / /_/ / /_/ /  __/ / / / / / /  __/ / / / / / /
+%\____/\__,_/\__, /\__, /\___/_/ /_/_/ /_/\___/_/_/ /_/ /_/ 
+%           /____//____/                                    
+
 \section{Guggenheim}
 \Large
 \begin{tabular}{llllll}
-	-S  & U  & V&			&U &= U(S,V) \\ 
-	H &  &  F&       &H &= H(S,p) \\
-	-p & G & T                &      &F &= F(T,V) \\
-	 &  &                      &     &G &= G(T,p) \\
+	-S & U & V &			&U &= U(S,V) \\ 
+	 H &   & F &       		&H &= H(S,p) \\
+	-p & G & T &     		&F &= F(T,V) \\
+	   &   &   &    		&G &= G(T,p) \\
 \end{tabular}
 \normalsize
-%\break
-%\begin{align*}
-%	U &= U(S,V) \\
-%	H &= H(S,p) \\
-%	F &= F(T,V) \\
-%	G &= G(T,p) \\
-%\end{align*}
-%\Bart
 
-
+%    ____             _      __                               
+%   / __ )___  ____  (_)__  / /_  __  ______  ____ ____  ____ 
+%  / __  / _ \/_  / / / _ \/ __ \/ / / / __ \/ __ `/ _ \/ __ \
+% / /_/ /  __/ / /_/ /  __/ / / / /_/ / / / / /_/ /  __/ / / /
+%/_____/\___/ /___/_/\___/_/ /_/\__,_/_/ /_/\__, /\___/_/ /_/ 
+%                                          /____/             
 \section{Thermodynamische Beziehungen}
 \begin{multicols}{2}
 
 \begin{align*}
-T &= \quad \left(\frac{\partial U}{\partial S}\right)_{V} \\
-T &= \quad \left(\frac{\partial H}{\partial S}\right)_{p} \\
-p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
-\mu &= \quad \left(\frac{\partial U}{\partial n}\right)_{S,V}  \\
+	T   &= \quad \left(\frac{\partial U}{\partial S}\right)_{V}   \\
+	T   &= \quad \left(\frac{\partial H}{\partial S}\right)_{p}   \\
+	p   &= -\left(\frac{\partial U}{\partial V}\right)_{S} 	      \\
+	\mu &= \quad \left(\frac{\partial U}{\partial n}\right)_{S,V} \\
 \end{align*}
-	\begin{align*}
-		-S &= \left(\frac{\partial F}{\partial T}\right)_{V} \\
-		-S &= \left(\frac{\partial G}{\partial T}\right)_{p} \\
-		-p &= \left(\frac{\partial F}{\partial V}\right)_{T} \\
-		V &= \left(\frac{\partial G}{\partial p}\right)_{T}  \\
-	\end{align*}
+
+\begin{align*}
+	-S &= \left(\frac{\partial F}{\partial T}\right)_{V} \\
+	-S &= \left(\frac{\partial G}{\partial T}\right)_{p} \\
+	-p &= \left(\frac{\partial F}{\partial V}\right)_{T} \\
+	 V &= \left(\frac{\partial G}{\partial p}\right)_{T} \\
+\end{align*}
 \end{multicols}
 
 \pagebreak
+%    ____    __           __             ______          
+%   /  _/___/ /__  ____ _/ /__  _____   / ____/___ ______
+%   / // __  / _ \/ __ `/ / _ \/ ___/  / / __/ __ `/ ___/
+% _/ // /_/ /  __/ /_/ / /  __(__  )  / /_/ / /_/ (__  ) 
+%/___/\__,_/\___/\__,_/_/\___/____/   \____/\__,_/____/  
+                                                        
 \section{Ideales Gas}
 \begin{align*}
-	&pV = mRT, \quad pv = RT, \quad pV = nR_mT \\
+	&pV = mRT, \quad pv = RT, \quad pV = nR_mT
+	\\
 	&\beta = \frac{1}{T},\quad 
 	\gamma = \frac{1}{T},\quad 
 	\chi = \frac{1}{p}, \quad \beta = p \gamma \chi\\
 	&R_m = 8,3143\left[\frac{kJ}{kmolK}\right], \quad 
 	R = c_p - c_v\\
-	&R = \frac{R_m}{M} \\
-	&U - U_0 = mc_v(T-T_0) \\
-	&H - H_0 = mc_p(T-T_0) \quad \leftarrow \text{Für $c_p$ und $c_v$ const.} \\
-	&s - s_0 = R \ln \left(\frac{ v}{ v_0}\right)_{} + c_v \ln \left(\frac{ T}{ T_0}\right)_{} \\
+	&R = \frac{R_m}{M}
+	\\
+	&U - U_0 = mc_v(T-T_0)
+	\\
+	&H - H_0 = mc_p(T-T_0) \quad \leftarrow \text{Für $c_p$ und $c_v$ const.}
+	\\
+	&s - s_0 = R \ln \left(\frac{ v}{ v_0}\right)_{} + c_v \ln \left(\frac{ T}{ T_0}\right)_{}
+	\\
 	&\qquad \; 
-	= c_v \ln \left( \frac{p}{p_0} \right) + c_p \ln \left( \frac{v}{v_0} \right) \\
+	= c_v \ln \left( \frac{p}{p_0} \right) + c_p \ln \left( \frac{v}{v_0} \right)
+	\\
 	&\qquad \; 
-	= c_p \ln \left( \frac{T}{T_0} \right) -R \ln \left( \frac{p}{p_0} \right) \\
+	= c_p \ln \left( \frac{T}{T_0} \right) -R \ln \left( \frac{p}{p_0} \right)
+	\\
 	&\beta 
 	= \frac{1}{T} 
 	= \; \;\: \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_{p} 
 	=  \frac{1}{v}\left(\frac{\partial v}{\partial T}\right)_{p} 
-	=  - \frac{1}{\rho}\left(\frac{\partial \rho}{\partial T}\right)_{p}  \\
+	=  - \frac{1}{\rho}\left(\frac{\partial \rho}{\partial T}\right)_{p} 
+	\\
 	&\gamma 
 	= \frac{1}{T} 
-	=  \; \;\; \frac{1}{p} \: \left(\frac{\partial p}{\partial T}\right)_{V} \\
+	=  \; \;\; \frac{1}{p} \: \left(\frac{\partial p}{\partial T}\right)_{V}
+	\\
 	&\chi 
 	= \frac{1}{p} 
 	= - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{T}  
-	= - \frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_{T} \\
-	& u_2 - u_1 = \int_{T_1}^{T_2} c_v(T)\; dT \\
+	= - \frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_{T}
+	\\
+	& u_2 - u_1 = \int_{T_1}^{T_2} c_v(T)\; dT
+	\\
 \end{align*}
 
+% _    __                      __              _       __            __    
+%| |  / /___ _____        ____/ /__  _____    | |     / /___ _____ _/ /____
+%| | / / __ `/ __ \______/ __  / _ \/ ___/____| | /| / / __ `/ __ `/ / ___/
+%| |/ / /_/ / / / /_____/ /_/ /  __/ /  /_____/ |/ |/ / /_/ / /_/ / (__  ) 
+%|___/\__,_/_/ /_/      \__,_/\___/_/         |__/|__/\__,_/\__,_/_/____/  
+                                                                          
 \section{Van-der-Waals}
 \begin{align*}
 	&\left(p + \frac{a}{v^2}\right)(v-b) = RT \\
@@ -277,12 +333,23 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
 	& s- s_0 = c_v \ln \left( \frac{T}{T_0} \right) + R \ln \left(\frac{v-b}{v_0 - b} \right)
 \end{align*}
 
+%   ______                       __ 
+%  / ____/___ __________  ____  / /_
+% / /   / __ `/ ___/ __ \/ __ \/ __/
+%/ /___/ /_/ / /  / / / / /_/ / /_  
+%\____/\__,_/_/  /_/ /_/\____/\__/  
+
 \section{Carnot}
 
 \begin{align*}
-	&\eta_{th} = 1 - \frac{-Q_{34}}{Q_{12}} = 1 - \frac{T_3(S_3-S_4)}{T_1(S_2 - S_1)} = 1 - \frac{T_3}{T_1} \\
-	&\frac{Q_{12}}{T_1} + \frac{Q_{34}}{T_3} = 0 \\
-	&\Delta S_{ges} = -Q_{34} \left( \frac{1}{T_{KK}} - \frac{T_1}{T_3}\frac{1}{T_{HK}} \right)
+	&\eta_{th} = 1 - \frac{-Q_{34}}{Q_{12}} 
+	= 1 - \frac{T_3(S_3-S_4)}{T_1(S_2 - S_1)} 
+	= 1 - \frac{T_3}{T_1} \\
+	&\frac{Q_{12}}{T_1} + \frac{Q_{34}}{T_3} 
+	= 0 \\
+	&\Delta S_{ges} 
+	= -Q_{34} \left( \frac{1}{T_{KK}} 
+	- \frac{T_1}{T_3}\frac{1}{T_{HK}} \right)
 \end{align*}
 
 \begin{tikzpicture}[
@@ -339,18 +406,61 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
   \draw[->] (2.5,1.5) to (2.5,0.5);
   \node[label={right:$Q_{34}$}] at (2.5,0.5) {};
 \end{tikzpicture}
+
+%   ______               _           __       
+%  / ____/__  ____ ___  (_)_________/ /_  ___ 
+% / / __/ _ \/ __ `__ \/ / ___/ ___/ __ \/ _ \
+%/ /_/ /  __/ / / / / / (__  ) /__/ / / /  __/
+%\____/\___/_/ /_/ /_/_/____/\___/_/ /_/\___/ 
+%                                             
+%    ____    __           __             ______              
+%   /  _/___/ /__  ____ _/ /__  _____   / ____/___ _________ 
+%   / // __  / _ \/ __ `/ / _ \/ ___/  / / __/ __ `/ ___/ _ \
+% _/ // /_/ /  __/ /_/ / /  __/ /     / /_/ / /_/ (__  )  __/
+%/___/\__,_/\___/\__,_/_/\___/_/      \____/\__,_/____/\___/ 
+                                                            
 \section{Gemische Idealer Gase}
 
 \begin{align*}
-	&\xi_i = \frac{m_i}{m}, \quad \psi_i = \frac{n_i}{n}, \quad p_i = \psi_ip \\
-	&\xi_i = \frac{M_i n_i}{\sum_{k = 1}^{K} M_kn_k} = \frac{M_i}{M_G}\psi  \\
-	& p_iV = m_iR_iT, \quad p_iV = n_iR_mT, \quad pV = mR_GT \\
-	& \sum_{k = 1}^{K} p_k = p \\
-	&R_G = \frac{1}{m} \sum_{k=1}^{K} m_kR_k = \sum_{k=1}^{K} \xi_k R_k \\
-	&U_G = \sum_{k=1}^{K} U_k = \sum_{k=1}^{K} m_k u_k = \sum_{k=1}^{K} c_{vk}m_kT \leftarrow \text{$c_v$ = const}\\
-	&H_G = \sum_{k=1}^{K} H_k = \sum_{k=1}^{K} m_k h_k = \sum_{k=1}^{K} c_{pk}m_kT \leftarrow \text{$c_p$ = const.}\\
-	&c_{vG} = \sum_{k=1}^{K} c_{vk} \xi_k, \quad c_{pG} = \sum_{k=1}^{K} c_{pk}\xi_k \\
-	&S_2-S_1 = R_m \left( n \ln n - \sum_{k=1}^{K} n_k \ln n_k \right)
+	&\xi_i
+	= \frac{m_i}{m}, \quad \psi_i
+	= \frac{n_i}{n}, \quad p_i
+	= \psi_ip \\
+	&\xi_i
+	= \frac{M_i n_i}{\sum_{k
+	= 1}^{K} M_kn_k}
+	= \frac{M_i}{M_G}\psi  
+	\\
+	& p_iV
+	= m_iR_iT, \quad p_iV
+	= n_iR_mT, \quad pV
+	= mR_GT \\
+	& \sum_{k
+	= 1}^{K} p_k
+	= p 
+	\\
+	&R_G
+	= \frac{1}{m} \sum_{k=1}^{K} m_kR_k
+	= \sum_{k=1}^{K} \xi_k R_k 
+	\\
+	&U_G
+	= \sum_{k=1}^{K} U_k
+	= \sum_{k=1}^{K} m_k u_k
+	= \sum_{k=1}^{K} c_{vk}m_kT \leftarrow \text{$c_v$
+	= const}
+	\\
+	&H_G
+	= \sum_{k=1}^{K} H_k
+	= \sum_{k=1}^{K} m_k h_k
+	= \sum_{k=1}^{K} c_{pk}m_kT \leftarrow \text{$c_p$
+	= const.}
+	\\
+	&c_{vG}
+	= \sum_{k=1}^{K} c_{vk} \xi_k, \quad c_{pG}
+	= \sum_{k=1}^{K} c_{pk}\xi_k 
+	\\
+	&S_2-S_1
+	= R_m \left( n \ln n - \sum_{k=1}^{K} n_k \ln n_k \right)
 \end{align*}
 
 \begin{align*}
@@ -358,6 +468,14 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
 	&dh = 0 \\
 	\text{Adiabet Drosselung (real): } &\delta_h = \left(\frac{\partial T}{\partial p}\right)_{h}  = - \frac{v}{c_p}(1-\beta T) \\
 \end{align*}
+
+%    _   __                    __                      ____
+%   / | / /___ _______________/ /___ _____ ___  ____  / __/
+%  /  |/ / __ `/ ___/ ___/ __  / __ `/ __ `__ \/ __ \/ /_  
+% / /|  / /_/ (__  |__  ) /_/ / /_/ / / / / / / /_/ / __/  
+%/_/ |_/\__,_/____/____/\__,_/\__,_/_/ /_/ /_/ .___/_/     
+%                                           /_/            
+
 \section{Nassdampf}
 \tiny
 \begin{flushleft}
@@ -457,6 +575,19 @@ p &= - \left(\frac{\partial U}{\partial V}\right)_{S} \\
 \end{align*}
 \end{multicols}
 
+%    ____             __             _____ __        ________   _         
+%   / __ \___  ____ _/ /__  _____   / ___// /_____  / __/ __/  (_)___ ___ 
+%  / /_/ / _ \/ __ `/ / _ \/ ___/   \__ \/ __/ __ \/ /_/ /_   / / __ `__ \
+% / _, _/  __/ /_/ / /  __/ /      ___/ / /_/ /_/ / __/ __/  / / / / / / /
+%/_/ |_|\___/\__,_/_/\___/_/      /____/\__/\____/_/ /_/    /_/_/ /_/ /_/ 
+%                                                                         
+%    _   __                    __                      ____           __    _      __
+%   / | / /___ _______________/ /___ _____ ___  ____  / __/___  ___  / /_  (_)__  / /
+%  /  |/ / __ `/ ___/ ___/ __  / __ `/ __ `__ \/ __ \/ /_/ __ `/ _ \/ __ \/ / _ \/ _/
+% / /|  / /_/ (__  |__  ) /_/ / /_/ / / / / / / /_/ / __/ /_/ /  __/ /_/ / /  __/ /__
+%/_/ |_/\__,_/____/____/\__,_/\__,_/_/ /_/ /_/ .___/_/  \__, /\___/_.___/_/\ __/\___/
+%                                           /_/        /____/                 
+
 \section{Realer Stoff im Nassdampfgebiet}
 \begin{align*}
 	\text{Isobare} &\text{Zustandsänderung} \\
@@ -472,11 +603,20 @@ Entropieänderung wärend des Mischvorgangs
 \begin{equation}
 	S_2-S_2 = R_m \left ( n \ln n - \sum_{i}^{} n_i \ln n_i \right )
 \end{equation}
+
+%    ______                     _    
+%   / ____/  _____  _________ _(_)__ 
+%  / __/ | |/_/ _ \/ ___/ __ `/ / _ \
+% / /____>  </  __/ /  / /_/ / /  __/
+%/_____/_/|_|\___/_/   \__, /_/\___/ 
+%	              /____/         
+
 \section{Maximale Arbeit und Exergie}
 
 \begin{multline}
 	-\dot{W}_{ex} = - (\dot{W}_t)_{rev} = -\frac{d}{dt} \left( U + m\left ( \frac{c^2}{2}+ gz \right) + p_uV - T_uS \right) \\  +  \sum_{j=1}^{K} \left(\dot{m}_j \left(h + \frac{c^2}{2} + gz -T_s \right) \right) + \sum_{l=1}^{K} \left( 1 - \frac{T_u}{T}\right) \dot{Q}_l 
 \end{multline}
+
 
 Die Exergie der Enthalpie (offens, stationäres System)
 \begin{equation}
@@ -492,6 +632,14 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	- \dot{W}_{ex} = \left(1 - \frac{T_u}{T_1} \right) \dot{Q}_1 = \eta_{th,C} \dot{Q}_1 \\
 \end{equation}
 \pagebreak
+
+                   
+% _       __ /\// /|___/|                   __                           _ __   /\// /|___/|_ 
+%| |     / ///\/ | __  /________ ___  ___  / /______ _____  ____ _____  (_) /__//\/ | __  / /_
+%| | /| / / _ | / /_/ / ___/ __ `__ \/ _ \/ //_/ __ `/ __ \/ __ `/_  / / / __/ _ | / /_/ / __/
+%| |/ |/ / __ |/___  / /  / / / / / /  __/ ,< / /_/ / /_/ / /_/ / / /_/ / /_/ __ |/___  / /_  
+%|__/|__/_/ |_|/   |/_/  /_/ /_/ /_/\___/_/|_|\__,_/ .___/\__,_/ /___/_/\__/_/ |_|/   |/\__/  
+%                                                 /_/                                         
 \section{Wärmekapazität}
 
 \begin{tikzpicture}[
@@ -537,6 +685,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw (m) node[below] {5} to ($ (m) - (0,0.05) $);
 	\draw (n) node[below] {10} to ($ (n) - (0,0.05) $);
 \end{tikzpicture}
+
 \begin{align*}
 	&	C_{v,m} = \frac{1}{\kappa - 1} R_m,
 	\quad	C_{p,m} = \frac{\kappa}{\kappa -1}r_m \\
@@ -552,39 +701,194 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\end{multline*}
 
 \onecolumn
+
+%       ____    __           __             ______              
+%      /  _/___/ /__  ____ _/ /__  _____   / ____/___ ______    
+%      / // __  / _ \/ __ `/ / _ \/ ___/  / / __/ __ `/ ___/    
+%    _/ // /_/ /  __/ /_/ / /  __(__  )  / /_/ / /_/ (__  )     
+%   /___/\__,_/\___/\__,_/_/\___/____/   \____/\__,_/____/      
+                                                               
 \begin{landscape}
 	\LARGE
-	Ideales Gas \\\\
+	Ideales Gas 
+	\\\\
 	\renewcommand{\arraystretch}{2}
 \begin{tabular}{l|l|l|l|l|l}
-	 & Isothermo  & Isobare  & Isochore  & Isentrop  & Polytrope \\ \hline
-	konstant:  & T  & p  & v  & $\delta q=0$  & $pv^n$  \\ \hline
-	& -  & -  & -  & $p_1 v_1^{\kappa} = p_2 v_2^{\kappa}$  & $v_1^{n} = p_2 v_2^{n}$  \\ \hline
-& $p_1 p_2 = p_2 v_2$  & $\frac{v_1}{v_2} = \frac{T_1}{T_2}$  & $\frac{p_1}{T_1} = \frac{p_2}{T_2}$  & $T_1 v_1^{\kappa - 1} = T_2 v_2^{\kappa -1}$   & $T_1 v_1^{n - 1} = T_2 v_2^{n -1}$  \\ \hline
-	& -  & -  & $\xrightswishingghost{\text{\tiny buh}}$  & $\frac{T_1^{\frac{\kappa}{\kappa -1}}}{p_1} = \frac{T_2^{\frac{\kappa}{\kappa -1}}}{p_2}$  & $\frac{T_1^{\frac{n}{n -1}}}{p_1} = \frac{T_2^{\frac{n}{n -1}}}{p_2}$  \\ \hline
-p,v & $p = \frac{p_1 v_1}{v}$  & $p = p_1$  & $v = v_1$  & $p = \frac{p_1 v_1^{\kappa}}{v^{\kappa}}$  &  $p = \frac{p_1 v_1^{n}}{v^{n}}$ \\ \hline
-p,T & $p = \frac{p_1 v_1}{v}$  & $p = p_1$  & $p = \frac{p_1}{T_1}T$  & $p = \frac{p_1}{T_1^{\frac{\kappa}{\kappa -1}}} T^{\frac{\kappa}{\kappa -1}}$  &  $p = \frac{p_1}{T_1^{\frac{n}{n -1}}} T^{\frac{n}{n -1}}$\\ \hline
-v,T  & $T = T_1$  & $v = \frac{v_1}{T_1}T$  & $v = v_1 $ & $T = \frac{T_1 v_1^{\kappa - 1}}{v^{\kappa - 1}}$  & $T = \frac{T_1v_1^{n-1}}{v^{n-1}}  $\\ \hline
-	$q_{12}$	& $= p_1v_1 \ln \frac{p_1}{p_2}$  & $= c_p(T_2 - T_1)$   & $= c_v(T_2 - T_1)$  & $= 0$   &  $= c_v \frac{n-\kappa}{n-1}(T_2-T_1)$ \\ \hline
-	$w_{V,12}$  & $= -q_{12}$ & $= -p_1(v_2 - v_1)$  & $= 0$  & $= \frac{p_1 v_1}{k - 1}\left[\left(\frac{v_1}{v_1}\right)^{\kappa - 1} - 1\right]$  & $= \frac{p_1 v_1}{n - 1}\left[\left(\frac{v_1}{v_2}\right)^{n-1} - 1\right]$ \\ \hline
-	$s_2 - s_1$ & $s_2 -s_1 = R \ln \left(\frac{p_1}{p_2}\right)$  & $= c_p \ln \left(\frac{T_2}{T_1}\right)$  & $= c_v \ln \left(\frac{T_2}{T_1}\right)$  & $= 0$  & $= c_v \frac{n - \kappa }{n - 1} \ln \left(\frac{T_2}{T_1}\right)$  \\ 
+& Isothermo  
+& Isobare  
+& Isochore  
+& Isentrop  
+& Polytrope 
+\\ \hline
+  konstant:  
+& T  
+& p  
+& v  
+& $\delta q=0$  
+& $pv^n$  
+\\ \hline
+	
+& -  
+& -  
+& -  
+& $p_1 v_1^{\kappa} = p_2 v_2^{\kappa}$  
+& $v_1^{n} = p_2 v_2^{n}$  
+\\ \hline
+
+& $p_1 p_2 = p_2 v_2$  
+& $\frac{v_1}{v_2} = \frac{T_1}{T_2}$  
+& $\frac{p_1}{T_1} = \frac{p_2}{T_2}$  
+& $T_1 v_1^{\kappa - 1} = T_2 v_2^{\kappa -1}$   
+& $T_1 v_1^{n - 1} = T_2 v_2^{n -1}$  
+\\ \hline
+	
+& -  
+& -  
+& $\small\xrightswishingghost{}$  
+& $\frac{T_1^{\frac{\kappa}{\kappa -1}}}{p_1} = \frac{T_2^{\frac{\kappa}{\kappa -1}}}{p_2}$  
+& $\frac{T_1^{\frac{n}{n -1}}}{p_1} = \frac{T_2^{\frac{n}{n -1}}}{p_2}$  
+\\ \hline
+
+	$p,v$
+
+& $p = \frac{p_1 v_1}{v}$  
+& $p = p_1$  
+& $v = v_1$  
+& $p = \frac{p_1 v_1^{\kappa}}{v^{\kappa}}$  
+& $p = \frac{p_1 v_1^{n}}{v^{n}}$ 
+\\ \hline
+
+	$p,T$
+
+& $p = \frac{p_1 v_1}{v}$  
+& $p = p_1$  
+& $p = \frac{p_1}{T_1}T$  
+& $p = \frac{p_1}{T_1^{\frac{\kappa}{\kappa -1}}} T^{\frac{\kappa}{\kappa -1}}$  
+& $p = \frac{p_1}{T_1^{\frac{n}{n -1}}} T^{\frac{n}{n -1}}$
+\\ \hline
+
+	$v,T$  
+
+& $T = T_1$  
+& $v = \frac{v_1}{T_1}T$  
+& $v = v_1 $ 
+& $T = \frac{T_1 v_1^{\kappa - 1}}{v^{\kappa - 1}}$  
+& $T = \frac{T_1v_1^{n-1}}{v^{n-1}}  $
+\\ \hline
+
+	$q_{12}$	
+
+& $= p_1v_1 \ln \frac{p_1}{p_2}$  
+& $= c_p(T_2 - T_1)$   
+& $= c_v(T_2 - T_1)$  
+& $= 0$   
+&  $= c_v \frac{n-\kappa}{n-1}(T_2-T_1)$ 
+\\ \hline
+
+	$w_{V,12}$  
+
+& $= -q_{12}$ 
+& $= -p_1(v_2 - v_1)$  
+& $= 0$  
+& $= \frac{p_1 v_1}{k - 1}\left[\left(\frac{v_1}{v_1}\right)^{\kappa - 1} - 1\right]$  
+& $= \frac{p_1 v_1}{n - 1}\left[\left(\frac{v_1}{v_2}\right)^{n-1} - 1\right]$ 
+\\ \hline
+
+	$s_2 - s_1$ 
+
+& $s_2 -s_1 = R \ln \left(\frac{p_1}{p_2}\right)$  
+& $= c_p \ln \left(\frac{T_2}{T_1}\right)$  
+& $= c_v \ln \left(\frac{T_2}{T_1}\right)$  
+& $= 0$  
+& $= c_v \frac{n - \kappa }{n - 1} \ln \left(\frac{T_2}{T_1}\right)$  
+\\ 
 \end{tabular}
 \bigskip
 \\\\
-\large
-Van-Der-Waals-Gas  \\
+% _    __                  ____                _       __            __         
+%| |  / /___ _____        / __ \___  _____    | |     / /___ _____ _/ /____     
+%| | / / __ `/ __ \______/ / / / _ \/ ___/____| | /| / / __ `/ __ `/ / ___/_____
+%| |/ / /_/ / / / /_____/ /_/ /  __/ /  /_____/ |/ |/ / /_/ / /_/ / (__  )_____/
+%|___/\__,_/_/ /_/     /_____/\___/_/         |__/|__/\__,_/\__,_/_/____/       
+%                                                                               
+%   ______                
+%  / ____/___ ______      
+% / / __/ __ `/ ___/      
+%/ /_/ / /_/ (__  )       
+%\____/\__,_/____/        
+
+\Large
+Van-Der-Waals-Gas  
+\\
 
 	\begin{tabular}{l|l|l|l|l}
-		& Isotherme & Isobare & Isochore & Isentrop \\ \hline
-		konst. & T & p & v  & $\delta = 0$ \\ \hline
-		& $(p_1 + \frac{a}{v^2})(v_1-b)= (p_2 + \frac{a}{v^2})(v_2-b)$ & $\frac{RT_1}{v_1-b} - \frac{a}{v_1^2} = \frac{RT_2}{v-b} - \frac{a}{v_2^2}$ & $\frac{p_1 + \frac{a}{v_1^2}}{T_1} = \frac{p_2 + \frac{a}{v_1^2}}{T_2}$  & \thead{\large $(p_1 + \frac{a}{v^2}) (v_1-b)^{\frac{c_v + R}{c_v}} = (p + \frac{a}{v^2}) (v_2-b)^{\frac{c_v + R}{c_v}},$ \\ \large $ \quad T_1(v_1-b)^{R/c_v} = T_2 (v_2-b)^{R/c_v}$}  \\ \hline
-		$p,v$ & $p = (p + \frac{a}{v^2}) \frac{v_u}{v-b} - \frac{a}{v^2}$ & $p = p_1$  & $v = v_1$ & $p = - \frac{a}{v^2} + (p_1 + \frac{a}{v^2}) \left(\frac{v_1-b}{v_m}\right)^{\frac{v_v + R }{R}}$ \\ \hline
-		$p,T$ & $T=T_1$ & $p=p_1$ &  $p = \frac{T}{T_1} (p_1 + \frac{a}{v^2}) - \frac{a}{v_1^2}$ & $p = - \frac{a}{v^2}+ (p_1 + \frac{a}{v^2}) \left(\frac{T}{T_1}\right)^\frac{c_v+R}{R}$ \\ \hline
-		$v,T$ & $T = T_1$ & $T = T_1 \frac{v-b}{v_1-b} + \frac{a}{R}(v-b) \left(\frac{1}{v^2} - \frac{1}{v_1^2}\right)$ & $v = v_1$  & $T = T_1 \left(\frac{v_1-b}{v-b}\right)^\frac{R}{c_v}$ \\ \hline
-		$q_{12}$ & $ q_{12} = RT_1 \ln \left(\frac{v_2-b}{v_1-b}\right)$ & $q_{12} = \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1) + p_1(v_2 - v_1)$ & $q_{12} = c_v(T_2 - T_1)$  & $q_{12} = 0$  \\ \hline
-		$w_{V,12}$ & $w_{V,12} = -RT_1 \ln \left(\frac{v_2-b}{v_1-b}\right) + \frac{a}{v_1} - \frac{a}{v_2}$ & $w_{V,12} = -p_1(v_2-v_1)$ & $w_{V,12} = 0$  & $w_{V,12} = \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1)$ \\ \hline
-		$s_2 - s_1$ & $s_2 - s_1 = R\ln \left(\frac{v_2-b}{v_1-b}\right)$ & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right) + R \ln \left(\frac{v_2-b}{v_1-b}\right)$ & $s_2 - s_1 = c_v \ln \left(\frac{T_2}{T_1}\right)$ & $s_2 - s_1 = 0$ \\
-	\end{tabular}
+		
+& Isotherme 
+& Isobare 
+& Isochore 
+& Isentrop 
+\\ \hline
+		konst. 
+& T 
+& p 
+& v  
+& $\delta = 0$ 
+\\ \hline
+		
+& \thead{\Large$(p_1 + \frac{a}{v^2})(v_1-b)$ \\\Large $= (p_2 + \frac{a}{v^2})(v_2-b)$}
+& \Large$\frac{RT_1}{v_1-b} - \frac{a}{v_1^2} = \frac{RT_2}{v-b} - \frac{a}{v_2^2}$ 
+& $\frac{p_1 + \frac{a}{v_1^2}}{T_1} = \frac{p_2 + \frac{a}{v_1^2}}{T_2}$  
+& \thead{\large $(p_1 + \frac{a}{v^2}) (v_1-b)^{\frac{c_v + R}{c_v}}$ \\\large $ = (p + \frac{a}{v^2}) (v_2-b)^{\frac{c_v + R}{c_v}},$ \\ \large $ \quad T_1(v_1-b)^{R/c_v} = T_2 (v_2-b)^{R/c_v}$}  
+\\ \hline
+
+		$p,v$ 
+
+& $p = (p + \frac{a}{v^2}) \frac{v_u}{v-b} - \frac{a}{v^2}$ 
+& $p = p_1$  
+& $v = v_1$ 
+& $p = - \frac{a}{v^2} + (p_1 + \frac{a}{v^2}) \left(\frac{v_1-b}{v_m}\right)^{\frac{v_v + R }{R}}$ 
+\\ \hline
+
+		$p,T$ 
+
+& $T = T_1$ 
+& $p = p_1$ 
+& $p = \frac{T}{T_1} (p_1 + \frac{a}{v^2}) - \frac{a}{v_1^2}$ 
+& $p = - \frac{a}{v^2}+ (p_1 + \frac{a}{v^2}) \left(\frac{T}{T_1}\right)^\frac{c_v+R}{R}$ 
+\\ \hline
+
+		$v,T$ 
+
+& $T = T_1$ 
+& $T = T_1 \frac{v-b}{v_1-b} + \frac{a}{R}(v-b) \left(\frac{1}{v^2} - \frac{1}{v_1^2}\right)$ 
+& $v = v_1$  
+& $T = T_1 \left(\frac{v_1-b}{v-b}\right)^\frac{R}{c_v}$ 
+\\ \hline
+
+		$q_{12}$ 
+
+& $= RT_1 \ln \left(\frac{v_2-b}{v_1-b}\right)$ 
+& $= \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1) + p_1(v_2 - v_1)$ 
+& $= c_v(T_2 - T_1)$  
+& $= 0$  
+\\ \hline
+
+		$w_{V,12}$ 
+
+& $= -RT_1 \ln \left(\frac{v_2-b}{v_1-b}\right) + \frac{a}{v_1} - \frac{a}{v_2}$ 
+& $= -p_1(v_2-v_1)$ 
+& $= 0$  
+& $= \frac{a}{v_1} - \frac{a}{v_2} + c_v(T_2 - T_1)$ 
+\\ \hline
+
+		$s_2 - s_1$ 
+
+& $= R\ln \left(\frac{v_2-b}{v_1-b}\right)$ 
+& $= c_v \ln \left(\frac{T_2}{T_1}\right) + R \ln \left(\frac{v_2-b}{v_1-b}\right)$ 
+& $= c_v \ln \left(\frac{T_2}{T_1}\right)$ 
+& $= 0$ 
+\\
+\end{tabular}
 
 \end{landscape}
 
