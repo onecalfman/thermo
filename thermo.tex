@@ -174,7 +174,7 @@ Zustandsgleichungen
 \section{Basisformeln}
 \begin{align*}
 	H &= U + pV ,\quad	dS=\frac{\delta Q_{rev}}{T}			\\
-	F &= U-TS,\quad G = \underrightswishingghost{H-TS}	\\
+	F &= U-TS,\quad G = \underrightswishingghost{H-ST}	\\
 	W_{V,12} &= -\int_{1}^{2} p\; dV 		, \quad
 	dS = \frac{Q_{rev}}{T} + S_{prod}		\\
 	\Psi_{12} &= \int_{1}^{2} T\; dS_{prod}		\\
@@ -639,8 +639,12 @@ Die Exergie der inneren Energie (geschlossenes, instationäres System)
 \end{align}
 Für Ideales Gas \\
 \begin{align*}
-	-W_{ex} = mc_v(T_1 -T_u) + p_u(V_1 - V_u - T_um \left(c_p \ln \left(\frac{T_1}{T_u}\right) -R_i \ln \left(\frac{p_1}{p_u}\right)\right)
+	-W_{ex} = mc_v(T_1 -T_u) + p_u(V_1 - V_u) - T_um \left(c_p \ln \left(\frac{T_1}{T_u}\right) -R_i \ln \left(\frac{p_1}{p_u}\right)\right)
 \end{align*}
+Dampf/Luftdruckkammer
+\begin{equation*}
+	-W_{ex,1u} = m_1 [ u_1 - u_u + p_u ( v_1 - v_u) - T_u(s_1 - s_u)]
+\end{equation*}
 Die Exergie der Wärme (geschlossenes, stationäres System)
 \begin{equation}
 	- \dot{W}_{ex} = \left(1 - \frac{T_u}{T_1} \right) \dot{Q}_1 = \eta_{th,C} \dot{Q}_1 \\
