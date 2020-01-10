@@ -147,16 +147,17 @@ Systeme
 
 	\item Abgeschlossenes System - kein Stoff oder Energietransport
 	\item Geschlossenes System - kein Stofftransport
+	\item Adiabates System - kein Wärmetransport, aber asse und arbeit.
 	\item Offenes System - Stoff und Energietransport
-
+	\item Stationäres System $\rightarrow \Delta U = 0$
 \end{itemize}
 Messgrößen
 \begin{itemize}
 
 	\item Prozessgrößen sind Wegabhängig (eg. Arbeit, Wärme)
 	\item Zustandsgrößen sind Wegunabhängig (eg. Volumen, Druck)
-	\item Intensive Zustandsgrößen sind unabhängig von der Größe des Systems (eg. Druck, Temperatur)
-	\item Extensive Zustandsgrößen sind abhängig von der Größe des Systems (eg. Volumen, Masse)
+	\item Intensive Zustandsgrößen sind unabhängig von der Masse des Systems (eg. Druck, Temperatur)
+	\item Extensive Zustandsgrößen sind abhängig von der Masse des Systems (eg. Volumen, Masse)
 \end{itemize}
 Zustandsgleichungen
 \begin{itemize}
@@ -172,23 +173,32 @@ Zustandsgleichungen
 %                                                                
 \section{Basisformeln}
 \begin{align*}
-	H &= U + pV  					\\
-	dS&=\frac{\delta Q_{rev}}{T}			\\
-	F &= U-TS					\\
-	G &= \underrightswishingghost{H-TS}					\\
-	W_{V,12} &= -\int_{1}^{2} p\; dV 		\\
-	dS &= \frac{Q_{rev}}{T} + S_{prod}		\\
+	H &= U + pV ,\quad	dS=\frac{\delta Q_{rev}}{T}			\\
+	F &= U-TS,\quad G = \underrightswishingghost{H-TS}	\\
+	W_{V,12} &= -\int_{1}^{2} p\; dV 		, \quad
+	dS = \frac{Q_{rev}}{T} + S_{prod}		\\
 	\Psi_{12} &= \int_{1}^{2} T\; dS_{prod}		\\
-	dU &= Tds -pdV + \underbrace{\sum_{k=1}^{K} \mu_k dn_k}_{\text{Für Mehrstoffsysteme}} \leftarrow \text{Gibbs} \\
-	dG &= -SdT + Vdp +  \overbrace{\sum_{k=1}^{K} \mu_k dn_k} \qquad \leftarrow \text{Gibbs} \\
-	dH &= TdS + Vdp + \sum_{k=1}^{K} \mu_k dn_k \qquad \leftarrow \text{Gibbs}\\
-	dF &= -SdT -pdV + \sum_{k=1}^{K} \mu _k dn_k \qquad \leftarrow \text{Gibbs}\\
-	dU &= \left(\frac{\partial U}{\partial S}\right)_{V,n_j} dS + \left(\frac{\partial U}{\partial V}\right)_{S,n_j} dV + \sum_{k=1}^{K} \left(\frac{\partial U}{\partial n_k}\right)_{S,V,n_j \neq n_k} dn_k  \\
-	p_1 &= p_a  \frac{\varphi_1 - \varphi_a}{\varphi_b- \varphi_a}(p_b - p_a) \\
+\end{align*}
+%   _______ __    __               ____        __                 
+%  / ____(_) /_  / /_  _____      / __ \__  __/ /_  ___  ____ ___ 
+% / / __/ / __ \/ __ \/ ___/_____/ / / / / / / __ \/ _ \/ __ `__ \
+%/ /_/ / / /_/ / /_/ (__  )_____/ /_/ / /_/ / / / /  __/ / / / / /
+%\____/_/_.___/_.___/____/     /_____/\__,_/_/ /_/\___/_/ /_/ /_/ 
+\section{Gibbs-Duhem}
+
+\begin{align*}
+	dU &= Tds -pdV + \sum_{k=1}^{K} \mu_k dn_k \\
+	dG &= -SdT + Vdp +  \sum_{k=1}^{K} \mu_k dn_k \\
+	dH &= TdS + Vdp + \sum_{k=1}^{K} \mu_k dn_k \\
+	dF &= -SdT -pdV + \sum_{k=1}^{K} \mu _k dn_k \\
+	dU &= \left(\frac{\partial U}{\partial S}\right)_{V} dS + \left(\frac{\partial U}{\partial V}\right)_{S} dV + \sum_{k=1}^{K} \left(\frac{\partial U}{\partial n_k}\right)_{S} dn_k  \\
+	p_1 &= p_a  + \frac{\varphi_1 - \varphi_a}{\varphi_b- \varphi_a}(p_b - p_a) \\
 \end{align*}
 \begin{equation*}
+	\large
 \overbrace{\frac{d}{dt}\Bigg{\{} U + m \Bigg{(}\frac{c^2}{2}+gz\Bigg{)}\Bigg{\}}}^{\text{Stationäres System -> 0}} = \overbrace{\sum_{j}{\Bigg{[}\dot{m}_j\Bigg{(}h+\frac{c^2}{2}+gz\Bigg{)}_j \Bigg{]}}}^{\text{Geschlossenes System -> 0}}  + \overbrace{\sum_{l}^{} \Big(\dot{Q}_t\Big)_l}^{\text{Kein Wärmestrom -> 0}} + \overbrace{\sum_{i}\Big(\dot{W}_t\Big)_i}^{\text{Keine Leistung -> 0}}- \overbrace{p\frac{dV}{dt}}^{\text{Keine Volumenänderung -> 0}}
 \end{equation*}
+
 
 %    __  ___                         ____
 %   /  |/  /___ __  ___      _____  / / /
