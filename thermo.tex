@@ -3,6 +3,9 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.markings}
 \usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usepackage{pgfplots}
+\usepgflibrary{patterns}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
 \usepackage{halloweenmath}
@@ -173,9 +176,9 @@ Zustandsgleichungen
 %                                                                
 \section{Basisformeln}
 \begin{align*}
-	H &= U + pV ,\quad	dS=\frac{\delta Q_{rev}}{T}			\\
+	H &= U + pV ,\quad	dS=\frac{\delta Q_{rev}}{T}	\\
 	F &= U-TS,\quad G = \underrightswishingghost{H-ST}	\\
-	W_{V,12} &= -\int_{1}^{2} p\; dV 		, \quad
+	W_{V,12} &= -\int_{1}^{2} p\; dV	, \quad
 	dS = \frac{Q_{rev}}{T} + S_{prod}		\\
 	\Psi_{12} &= \int_{1}^{2} T\; dS_{prod}		\\
 \end{align*}
@@ -187,11 +190,13 @@ Zustandsgleichungen
 \section{Gibbs-Duhem}
 
 \begin{align*}
-	dU &= Tds -pdV + \sum_{k=1}^{K} \mu_k dn_k \\
-	dG &= -SdT + Vdp +  \sum_{k=1}^{K} \mu_k dn_k \\
-	dH &= TdS + Vdp + \sum_{k=1}^{K} \mu_k dn_k \\
-	dF &= -SdT -pdV + \sum_{k=1}^{K} \mu _k dn_k \\
-	dU &= \left(\frac{\partial U}{\partial S}\right)_{V} dS + \left(\frac{\partial U}{\partial V}\right)_{S} dV + \sum_{k=1}^{K} \left(\frac{\partial U}{\partial n_k}\right)_{S} dn_k  \\
+	dU &=  Tds - pdV + \sum_{k=1}^{K} \mu_k dn_k \\
+	dG &= -SdT + Vdp + \sum_{k=1}^{K} \mu_k dn_k \\
+	dH &=  TdS + Vdp + \sum_{k=1}^{K} \mu_k dn_k \\
+	dF &= -SdT - pdV + \sum_{k=1}^{K} \mu_k dn_k \\
+	dU &= 	\left(\frac{\partial U}{\partial S}\right)_{V} dS 
+	+ 	\left(\frac{\partial U}{\partial V}\right)_{S} dV 
+	+ 	\sum_{k=1}^{K} \left(\frac{\partial U}{\partial n_k}\right)_{S} dn_k  \\
 	p_1 &= p_a  + \frac{\varphi_1 - \varphi_a}{\varphi_b- \varphi_a}(p_b - p_a) \\
 \end{align*}
 \begin{equation*}
@@ -600,19 +605,19 @@ Zustandsgleichungen
 
 \section{Realer Stoff im Nassdampfgebiet}
 \begin{align*}
-	\text{Isobare} &\text{Zustandsänderung} \\
+	\text{Isobare } &\text{Zustandsänderung} \\
 	&q_{12} = T(s_2 - s_1) = T\Big(s^{''} - s^{'}\Big)(x_2-x_1) \\
 	&w_{V,12} = - \int_{1}^{2} p\; dv = -p(v_2-v_1) = -p\Big(v^{''} -v^{'}\Big)(x_2-x_1) \\
-	\text{Isochore} &\text{Zustandsänderung} \\
+	\text{Isochore } &\text{Zustandsänderung} \\
 	&q_{12} = u_2 - u_1 = u_2^{'} + x_2\Big(u_2^{''} - u_2^{'} \Big) - u_1^{'} - x_1\Big(u_1^{''} - u_1^{'}\Big) \\
-	\text{Adiabate} &\text{Zustandsänderung} \\
+	\text{Adiabate } &\text{Zustandsänderung} \\
 	& w_{V,12} = u_2 - u_1 = u_2^{'} + x_2 \Big( u_2^{''} - u_2^{'} \Big) - u_1^{'} - x_1\Big(u_1^{''} - u_1^{'}\Big) \\
 \end{align*}
 
 Entropieänderung wärend des Mischvorgangs
-\begin{equation}
+\begin{equation*}
 	S_2-S_2 = R_m \left ( n \ln n - \sum_{i}^{} n_i \ln n_i \right )
-\end{equation}
+\end{equation*}
 
 %    ______                     _    
 %   / ____/  _____  _________ _(_)__ 
@@ -622,21 +627,97 @@ Entropieänderung wärend des Mischvorgangs
 %	              /____/         
 
 \section{Maximale Arbeit und Exergie}
+%Die Exergie ist die maximal nutzbare Arbeit eines Systms, dass von seinem ursprünglichen Zustand, isentrop und reibungsfrei, in den Umgebungszustand überführt wird.
+Maxiaml nutzbare Arbeit $\rightarrow$ isentrop, reibungsfrei \\
+%Man bewegt sich erst isentrop auf die isotherme der Umgebungsthemperatur und führt dann isotherm Wärem zu/ab, bis man den Umgebungszustand erreicht hat. 
+$1 \rightarrow 1'$ : isentrop auf $T_u$ \\
+$1' \rightarrow u$ : isotherm auf $u$ 
 
-\begin{multline}
+\begin{multicols}{2}
+
+
+	\begin{flushleft}
+
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+  	\draw[<->] (0,4.3) node[above right] {$T$} |- (4.3,0) node[right] {$S$};
+
+	\coordinate (a) at (0.8,0.6);
+	\coordinate (b) at (0.8,2);
+
+	\coordinate (c) at (3.3,3.5);
+	\coordinate (d) at (3.3,2);
+
+	\coordinate (u) at (2,2);
+	\node[dot,label={above left:$u$}] at (u) {};
+
+	\node[dot,label={below left:$1$}] at (a) {};
+	\node[dot,label={above left:$1'$}] at (b) {};
+
+  	\draw[thick, arrow inside] (a) to (b);
+  	\draw[thick, arrow inside] (b) to (u);
+
+	\node[dot,label={below left:$2$}] at (c) {};
+	\node[dot,label={above left:$2'$}] at (d) {};
+
+  	\draw[thick, arrow inside] (c) to (d);
+  	\draw[thick, arrow inside] (d) to (u);
+
+  	\draw[dashed,thin] (0,2) node[left] {$T_u$} -- (2,2);
+  	\draw[dashed,thin] (2,0) node[below] {$S_u$} -- (2,2);
+
+\end{tikzpicture}
+\end{flushleft}
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+  \draw[<->] (0,4.3) node[above right] {$p$} |- (4.3,0) node[right] {$V$};
+	\coordinate (a) at (1.6,0.4);
+	\coordinate (b) at (0.4,3.8);
+
+	\coordinate (c) at (3,2);
+	\coordinate (d) at (3.5,0.8);
+
+	\coordinate (u) at (1.5,2);
+	\node[dot,label={below left:$u$}] at (u) {};
+
+	\node[dot,label={left:$1$}] at (a) {};
+	\node[dot,label={above right:$1'$}] at (b) {};
+
+	\draw[thick, arrow inside] (a) to[bend left=15] (b) to[bend right=10] (u);
+
+	\node[dot,label={above right:$2$}] at (c) {};
+	\node[dot,label={below left:$2'$}] at (d) {};
+
+	\draw[thick, arrow inside, pattern=north east lines] (c) to[bend right=10] (d) to[bend left=14] (u);
+	\draw (2.7,1.5) to (2.4,2.5) node[above] {$-W_{ex}$};
+
+  	\draw[dashed,thin] (0,2) node[left] {$p_u$} -- (c);
+  	\draw[dashed,thin] (1.5,0) node[below] {$V_u$} -- (u);
+\end{tikzpicture}
+\end{multicols}
+
+\begin{multline*}
 	-\dot{W}_{ex} = - (\dot{W}_t)_{rev} = -\frac{d}{dt} \left( U + m\left ( \frac{c^2}{2}+ gz \right) + p_uV - T_uS \right) \\  +  \sum_{j=1}^{K} \left(\dot{m}_j \left(h + \frac{c^2}{2} + gz -T_s \right) \right) + \sum_{l=1}^{K} \left( 1 - \frac{T_u}{T}\right) \dot{Q}_l 
-\end{multline}
+\end{multline*}
 
 
 Die Exergie der Enthalpie (offens, stationäres System)
-\begin{equation}
+\begin{equation*}
 	-\dot{W}_{ex,1u} = \dot{m}(h_1 - h_u -T_u(s_1 - s_u))
-\end{equation}
+\end{equation*}
 Die Exergie der inneren Energie (geschlossenes, instationäres System)
-\begin{align}
+\begin{align*}
 	- \dot{W}_{ex} &= - \frac{d}{dt}(U + p_uV -T_uS) \\
 	-\dot{W}_{ex,1u} &= U_1 - U_u -p_u(V_1 - V_u) - T_u(S_1 - S_u)
-\end{align}
+\end{align*}
 Für Ideales Gas \\
 \begin{align*}
 	-W_{ex} = mc_v(T_1 -T_u) + p_u(V_1 - V_u) - T_um \left(c_p \ln \left(\frac{T_1}{T_u}\right) -R_i \ln \left(\frac{p_1}{p_u}\right)\right)
@@ -646,9 +727,9 @@ Dampf/Luftdruckkammer
 	-W_{ex,1u} = m_1 [ u_1 - u_u + p_u ( v_1 - v_u) - T_u(s_1 - s_u)]
 \end{equation*}
 Die Exergie der Wärme (geschlossenes, stationäres System)
-\begin{equation}
+\begin{equation*}
 	- \dot{W}_{ex} = \left(1 - \frac{T_u}{T_1} \right) \dot{Q}_1 = \eta_{th,C} \dot{Q}_1 \\
-\end{equation}
+\end{equation*}
 \pagebreak
 
                    
