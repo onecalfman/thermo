@@ -6,11 +6,12 @@
 \usetikzlibrary{patterns}
 \usepackage{pgfplots}
 \usepgflibrary{patterns}
+%\usepackage[nodisplayskipstretch]{setspace}
+%\setstretch{1}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
 \usepackage{halloweenmath}
 \usepackage{textcomp}
-%\usepackage{simpsons}
 \usepackage{multicol}
 \usepackage{makecell}
 \usepackage[makeroom]{cancel}
@@ -135,8 +136,7 @@
 	\mathbf{\psi_i}		&=	\text{Molanteil[-]} \\
 \end{align*}
 
-\pagebreak
-
+\pagebreak 
 %   ______                     ____                    _ ________   
 %  / ____/______  ______  ____/ / /_  ___  ____ ______(_) __/ __/__ 
 % / / __/ ___/ / / / __ \/ __  / __ \/ _ \/ __ `/ ___/ / /_/ /_/ _ \
@@ -160,8 +160,8 @@ Messgrößen
 
 	\item Prozessgrößen sind Wegabhängig (eg. Arbeit, Wärme)
 	\item Zustandsgrößen sind Wegunabhängig (eg. Volumen, Druck)
-	\item Intensive Zustandsgrößen sind unabhängig von der Masse des Systems (eg. Druck, Temperatur)
-	\item Extensive Zustandsgrößen sind abhängig von der Masse des Systems (eg. Volumen, Masse)
+	\item Extensive Zustandsgrößen sind abhängig von der Masse des Systems (V, m, H, S, F, G, E)
+	\item Intensive Zustandsgrößen sind unabhängig von der Masse des Systems (T, p)
 \end{itemize}
 Zustandsgleichungen
 \begin{itemize}
@@ -169,6 +169,15 @@ Zustandsgleichungen
 	\item Kalorisch $\rightarrow f(U, V, T) = 0, \quad  U = U(V,T), \quad u = u(v,T)$ 
 \end{itemize}
 
+Hauptsätze
+
+
+\begin{itemize}
+	\item[0:] Temperatur existiert, ihre gleichheit ist notwendige Vorraussetzung für das thermische Gleichgewicht. 
+	\item[1:] Energie existiert, sie ist für abgeschlossene Systeme konstant.  
+	\item[2:] Entropie existiert, sie wird bei allen irreversiblen Prozessen erzeugt. $dS = \frac{\delta Q_{rev}}{T}$
+	\item[3:] $0K$ exisitert, bei dieser Temperatur ist die Entropie $= 0$ 
+\end{itemize}
 %    ____             _      ____                          __    
 %   / __ )____ ______(_)____/ __/___  _________ ___  ___  / /___ 
 %  / __  / __ `/ ___/ / ___/ /_/ __ \/ ___/ __ `__ \/ _ \/ / __ \
@@ -176,19 +185,50 @@ Zustandsgleichungen
 %/_____/\__,_/____/_/____/_/  \____/_/  /_/ /_/ /_/\___/_/_/ /_/ 
 %                                                                
 \section{Basisformeln}
+
+\begin{multicols}{2}
 \begin{align*}
-	H &= U + pV ,\quad	dS=\frac{\delta Q_{rev}}{T}	\\
-	F &= U-TS,\quad G = \underrightswishingghost{H-ST}	\\
-	W_{V,12} &= -\int_{1}^{2} p\; dV	, \quad
-	dS = \frac{Q_{rev}}{T} + S_{prod}		\\
-	\Psi_{12} &= \int_{1}^{2} T\; dS_{prod}		\\
+	H 	&=	U + pV 				\\ 	
+       	dS 	&=	\frac{\delta Q_{rev}}{T}	\\
+	F 	&=	U-TS 				\\
+	G 	&=	\underrightswishingghost{H-ST}	\\
+	W 	&=	-\int_{}^{} p\; dV		\\
+       	dS 	&=  	\frac{Q_{rev}}{T} + S_{prod}	\\
+	\Psi 	&= 	\int_{1}^{2} T\; dS_{prod}	\\
+	p_1 &= p_a  + \frac{\varphi_1 - \varphi_a}{\varphi_b- \varphi_a}(p_b - p_a) \\
 \end{align*}
-%   _______ __    __               ____        __                 
-%  / ____(_) /_  / /_  _____      / __ \__  __/ /_  ___  ____ ___ 
-% / / __/ / __ \/ __ \/ ___/_____/ / / / / / / __ \/ _ \/ __ `__ \
-%/ /_/ / / /_/ / /_/ (__  )_____/ /_/ / /_/ / / / /  __/ / / / / /
-%\____/_/_.___/_.___/____/     /_____/\__,_/_/ /_/\___/_/ /_/ /_/ 
-\section{Gibbs-Duhem}
+\end{multicols}
+
+\begin{equation*}
+\Large
+	\overbrace{
+	\frac{d}{dt}\Bigg{\{} U 
+	+
+	m \Bigg{(}\frac{c^2}{2}+gz\Bigg{)}\Bigg{\}}}
+	^{\text{Stationäres System -> 0}} 
+	=
+	\overbrace{
+	\sum_{j}{\Bigg{[}\dot{m}_j\Bigg{(}h+\frac{c^2}{2}+gz\Bigg{)}_j \Bigg{]}}}
+	^{\text{Geschlossenes System -> 0}}  
+	+
+	\overbrace{
+	\sum_{l}^{} \Big(\dot{Q}_t\Big)_l}
+	^{\text{Kein Wärmestrom -> 0}} 
+	+
+	\overbrace{
+	\sum_{i}\Big(\dot{W}_t\Big)_i}
+	^{\text{Keine Leistung -> 0}}
+	-
+	\overbrace{
+	p\frac{dV}{dt}}
+	^{\text{Keine Volumenänderung -> 0}}
+\end{equation*}
+%   _______ __    __        
+%  / ____(_) /_  / /_  _____
+% / / __/ / __ \/ __ \/ ___/
+%/ /_/ / / /_/ / /_/ (__  )
+%\____/_/_.___/_.___/____/
+\section{Gibbs}
 
 \begin{align*}
 	dU &=  Tds - pdV + \sum_{k=1}^{K} \mu_k dn_k \\
@@ -198,14 +238,33 @@ Zustandsgleichungen
 	dU &= 	\left(\frac{\partial U}{\partial S}\right)_{V} dS 
 	+ 	\left(\frac{\partial U}{\partial V}\right)_{S} dV 
 	+ 	\sum_{k=1}^{K} \left(\frac{\partial U}{\partial n_k}\right)_{S} dn_k  \\
-	p_1 &= p_a  + \frac{\varphi_1 - \varphi_a}{\varphi_b- \varphi_a}(p_b - p_a) \\
 \end{align*}
-\begin{equation*}
-	\large
-\overbrace{\frac{d}{dt}\Bigg{\{} U + m \Bigg{(}\frac{c^2}{2}+gz\Bigg{)}\Bigg{\}}}^{\text{Stationäres System -> 0}} = \overbrace{\sum_{j}{\Bigg{[}\dot{m}_j\Bigg{(}h+\frac{c^2}{2}+gz\Bigg{)}_j \Bigg{]}}}^{\text{Geschlossenes System -> 0}}  + \overbrace{\sum_{l}^{} \Big(\dot{Q}_t\Big)_l}^{\text{Kein Wärmestrom -> 0}} + \overbrace{\sum_{i}\Big(\dot{W}_t\Big)_i}^{\text{Keine Leistung -> 0}}- \overbrace{p\frac{dV}{dt}}^{\text{Keine Volumenänderung -> 0}}
-\end{equation*}
 
 
+%    ____             _      __                               
+%   / __ )___  ____  (_)__  / /_  __  ______  ____ ____  ____ 
+%  / __  / _ \/_  / / / _ \/ __ \/ / / / __ \/ __ `/ _ \/ __ \
+% / /_/ /  __/ / /_/ /  __/ / / / /_/ / / / / /_/ /  __/ / / /
+%/_____/\___/ /___/_/\___/_/ /_/\__,_/_/ /_/\__, /\___/_/ /_/ 
+%                                          /____/             
+\section{Thermodynamische Beziehungen}
+
+\begin{multicols}{2}
+
+\begin{align*}
+	T   &= \quad \left(\frac{\partial U}{\partial S}\right)_{V} = T(S,V)  \\
+	T   &= \quad \left(\frac{\partial H}{\partial S}\right)_{p} = T(S,p)  \\
+	p   &= -\left(\frac{\partial U}{\partial V}\right)_{S} = p(V,S)	      \\
+	-p &= \quad \left(\frac{\partial F}{\partial V}\right)_{T} = p(T,V)	\\
+\end{align*}
+
+\begin{align*}
+	-S &= \left(\frac{\partial F}{\partial T}\right)_{V} = S(T,V)	\\
+	-S &= \left(\frac{\partial G}{\partial T}\right)_{p} = S(T,p)\\
+	 V &= \left(\frac{\partial G}{\partial p}\right)_{T} = V(p,T)\\
+	\mu &= \left(\frac{\partial U}{\partial n}\right)_{S,V} = \mu(S,V,n)\\
+\end{align*}
+\end{multicols}
 %    __  ___                         ____
 %   /  |/  /___ __  ___      _____  / / /
 %  / /|_/ / __ `/ |/_/ | /| / / _ \/ / / 
@@ -218,23 +277,27 @@ Zustandsgleichungen
 	\left(\frac{\partial T}{\partial p}\right)_{S,n_j}
 	&= \quad
 	\left(\frac{\partial V}{\partial S}\right)_{p,n_j}
-	\\\\
+	\\
 	\left(\frac{\partial S}{\partial V}\right)_{T,n_j}
 	&= \quad
 	\left(\frac{\partial p}{\partial T}\right)_{V,n_j}
-	\\\\
+	\\
 	\left(\frac{\partial S}{\partial p}\right)_{T,n_j}
 	&= -
 	\left(\frac{\partial V}{\partial T}\right)_{p,n_j}
-	\\\\
+	\\
 	\left(\frac{\partial \mu _i}{\partial T}\right)_{p,n_j}
 	&= -
 	\left(\frac{\partial S}{\partial n_i}\right)_{T,p,n_j \neq n_i}
-	\\\\
+	\\
 	\left(\frac{\partial \mu_i}{\partial p}\right)_{T,n_j}
 	&=
 	\quad \left(\frac{\partial V}{\partial n_i}\right)_{T,p,n_j \neq n_i}
 \end{align*}
+\bigskip
+\bigskip
+\bigskip
+\pagebreak
 
 %   ______                             __         _         
 %  / ____/_  ______ _____ ____  ____  / /_  ___  (_)___ ___ 
@@ -253,31 +316,7 @@ Zustandsgleichungen
 \end{tabular}
 \normalsize
 
-%    ____             _      __                               
-%   / __ )___  ____  (_)__  / /_  __  ______  ____ ____  ____ 
-%  / __  / _ \/_  / / / _ \/ __ \/ / / / __ \/ __ `/ _ \/ __ \
-% / /_/ /  __/ / /_/ /  __/ / / / /_/ / / / / /_/ /  __/ / / /
-%/_____/\___/ /___/_/\___/_/ /_/\__,_/_/ /_/\__, /\___/_/ /_/ 
-%                                          /____/             
-\section{Thermodynamische Beziehungen}
-\begin{multicols}{2}
 
-\begin{align*}
-	T   &= \quad \left(\frac{\partial U}{\partial S}\right)_{V}   \\
-	T   &= \quad \left(\frac{\partial H}{\partial S}\right)_{p}   \\
-	p   &= -\left(\frac{\partial U}{\partial V}\right)_{S} 	      \\
-	\mu &= \quad \left(\frac{\partial U}{\partial n}\right)_{S,V} \\
-\end{align*}
-
-\begin{align*}
-	-S &= \left(\frac{\partial F}{\partial T}\right)_{V} \\
-	-S &= \left(\frac{\partial G}{\partial T}\right)_{p} \\
-	-p &= \left(\frac{\partial F}{\partial V}\right)_{T} \\
-	 V &= \left(\frac{\partial G}{\partial p}\right)_{T} \\
-\end{align*}
-\end{multicols}
-
-\pagebreak
 %    ____    __           __             ______          
 %   /  _/___/ /__  ____ _/ /__  _____   / ____/___ ______
 %   / // __  / _ \/ __ `/ / _ \/ ___/  / / __/ __ `/ ___/
@@ -285,47 +324,62 @@ Zustandsgleichungen
 %/___/\__,_/\___/\__,_/_/\___/____/   \____/\__,_/____/  
                                                         
 \section{Ideales Gas}
+\setlength{\belowdisplayskip}{-20pt} \setlength{\belowdisplayshortskip}{-20pt}
+
 \begin{align*}
-	&pV = mRT, \quad pv = RT, \quad pV = nR_mT
-	\\
-	&\beta = \frac{1}{T},\quad 
-	\gamma = \frac{1}{T},\quad 
-	\chi = \frac{1}{p}, \quad \beta = p \gamma \chi\\
-	&R_m = 8,3143\left[\frac{kJ}{kmolK}\right], \quad 
-	R = c_p - c_v\\
+%	&pV = mRT, \quad pv = RT, \quad pV = nR_mT
+%	\\
+%	&\beta = \frac{1}{T},\quad 
+%	\gamma = \frac{1}{T},\quad 
+%	\chi = \frac{1}{p}, \quad \beta = p \gamma \chi\\
+%	&R_m = 8,3143\left[\frac{kJ}{kmolK}\right], \quad 
+	&pV = mRT \\ 
+	&pv = RT \\
+	&pV = nR_mT \\
+	&\beta = \frac{1}{T} \\
+	&\gamma = \frac{1}{T} \\
+	&\chi = \frac{1}{p} \\
+	&\beta = p \gamma \chi\\
+	&R_m = 8,3143\left[\frac{kJ}{kmolK}\right] \\
+	&R = c_p - c_v\\
 	&R = \frac{R_m}{M}
 	\\
 	&U - U_0 = mc_v(T-T_0)
 	\\
 	&H - H_0 = mc_p(T-T_0) \quad \leftarrow \text{Für $c_p$ und $c_v$ const.}
+\end{align*}
+\begin{alignat*}{3}
+	&s - s_0 
+	&&= R \ln \left(\frac{ v}{ v_0}\right)_{} 
+	&&+ c_v \ln \left(\frac{ T}{ T_0}\right)_{}
 	\\
-	&s - s_0 = R \ln \left(\frac{ v}{ v_0}\right)_{} + c_v \ln \left(\frac{ T}{ T_0}\right)_{}
+	& 
+	&&= c_v \ln \left( \frac{p}{p_0} \right) 
+	&&+ c_p \ln \left( \frac{v}{v_0} \right)
 	\\
-	&\qquad \; 
-	= c_v \ln \left( \frac{p}{p_0} \right) + c_p \ln \left( \frac{v}{v_0} \right)
-	\\
-	&\qquad \; 
-	= c_p \ln \left( \frac{T}{T_0} \right) -R \ln \left( \frac{p}{p_0} \right)
+	& 
+	&&= c_p \ln \left( \frac{T}{T_0} \right) 
+	&&-R \ln \left( \frac{p}{p_0} \right)
 	\\
 	&\beta 
 	= \frac{1}{T} 
-	= \; \;\: \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_{p} 
-	=  \frac{1}{v}\left(\frac{\partial v}{\partial T}\right)_{p} 
+	&&=\frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_{p} 
+	&&=  \frac{1}{v}\left(\frac{\partial v}{\partial T}\right)_{p} 
 	=  - \frac{1}{\rho}\left(\frac{\partial \rho}{\partial T}\right)_{p} 
 	\\
 	&\gamma 
-	= \frac{1}{T} 
-	=  \; \;\; \frac{1}{p} \: \left(\frac{\partial p}{\partial T}\right)_{V}
+	= \frac{1}{T}  
+	&&= \frac{1}{p} \: \left(\frac{\partial p}{\partial T}\right)_{V}
 	\\
 	&\chi 
 	= \frac{1}{p} 
-	= - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{T}  
-	= - \frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_{T}
+	&&= - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{T}  
+	&&= - \frac{1}{v}\left(\frac{\partial v}{\partial p}\right)_{T}
 	\\
-	& u_2 - u_1 = \int_{T_1}^{T_2} c_v(T)\; dT
+		& u_2 - u_1 &&= \int_{T_1}^{T_2} c_v(T)\; dT
 	\\
-\end{align*}
-
+\end{alignat*}
+\setlength{\belowdisplayskip}{1cm} \setlength{\belowdisplayshortskip}{1cm}
 % _    __                      __              _       __            __    
 %| |  / /___ _____        ____/ /__  _____    | |     / /___ _____ _/ /____
 %| | / / __ `/ __ \______/ __  / _ \/ ___/____| | /| / / __ `/ __ `/ / ___/
@@ -348,7 +402,12 @@ Zustandsgleichungen
 	&c_p - c_v = \frac{Tv\beta^2}{\chi} \\
 	& s- s_0 = c_v \ln \left( \frac{T}{T_0} \right) + R \ln \left(\frac{v-b}{v_0 - b} \right)
 \end{align*}
-
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\pagebreak
 %   ______                       __ 
 %  / ____/___ __________  ____  / /_
 % / /   / __ `/ ___/ __ \/ __ \/ __/
