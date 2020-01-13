@@ -1,4 +1,6 @@
 \documentclass[twocolumn]{article}
+\title{Thermodynamik Formelsammlung}
+\author{Jonas Walkling}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.markings}
@@ -30,6 +32,13 @@
 \begin{document}
 \newcommand{\thicc}{thick}
 \Large
+
+\onecolumn
+\maketitle
+\pagebreak
+\tableofcontents
+\twocolumn
+\pagebreak
 \begin{equation*}
 	\frac{d}{dt}\Bigg{\{} U + m \Bigg{(}\frac{c^2}{2}+gz\Bigg{)}\Bigg{\}} 
 	= 
@@ -148,21 +157,21 @@
 
 Systeme 
 \begin{itemize}
-
 	\item Abgeschlossenes System - kein Stoff oder Energietransport
 	\item Geschlossenes System - kein Stofftransport
 	\item Adiabates System - kein Wärmetransport, aber asse und arbeit.
 	\item Offenes System - Stoff und Energietransport
 	\item Stationäres System $\rightarrow \Delta U = 0$
 \end{itemize}
+
 Messgrößen
 \begin{itemize}
-
 	\item Prozessgrößen sind Wegabhängig (eg. Arbeit, Wärme)
 	\item Zustandsgrößen sind Wegunabhängig (eg. Volumen, Druck)
 	\item Extensive Zustandsgrößen sind abhängig von der Masse des Systems (V, m, H, S, F, G, E)
 	\item Intensive Zustandsgrößen sind unabhängig von der Masse des Systems (T, p)
 \end{itemize}
+
 Zustandsgleichungen
 \begin{itemize}
 	\item Thermisch $\rightarrow f(p, V, T) = 0$ 
@@ -170,20 +179,20 @@ Zustandsgleichungen
 \end{itemize}
 
 Hauptsätze
-
-
 \begin{itemize}
 	\item[0:] Temperatur existiert, ihre gleichheit ist notwendige Vorraussetzung für das thermische Gleichgewicht. 
 	\item[1:] Energie existiert, sie ist für abgeschlossene Systeme konstant.  
 	\item[2:] Entropie existiert, sie wird bei allen irreversiblen Prozessen erzeugt. $dS = \frac{\delta Q_{rev}}{T}$
 	\item[3:] $0K$ exisitert, bei dieser Temperatur ist die Entropie $= 0$ 
 \end{itemize}
+
 %    ____             _      ____                          __    
 %   / __ )____ ______(_)____/ __/___  _________ ___  ___  / /___ 
 %  / __  / __ `/ ___/ / ___/ /_/ __ \/ ___/ __ `__ \/ _ \/ / __ \
 % / /_/ / /_/ (__  ) (__  ) __/ /_/ / /  / / / / / /  __/ / / / /
 %/_____/\__,_/____/_/____/_/  \____/_/  /_/ /_/ /_/\___/_/_/ /_/ 
 %                                                                
+
 \section{Basisformeln}
 
 \begin{multicols}{2}
@@ -193,9 +202,12 @@ Hauptsätze
 	F 	&=	U-TS 				\\
 	G 	&=	\underrightswishingghost{H-ST}	\\
 	W 	&=	-\int_{}^{} p\; dV		\\
+	\end{align*}
+	\begin{align*}
        	dS 	&=  	\frac{Q_{rev}}{T} + S_{prod}	\\
 	\Psi 	&= 	\int_{1}^{2} T\; dS_{prod}	\\
-	p_1 &= p_a  + \frac{\varphi_1 - \varphi_a}{\varphi_b- \varphi_a}(p_b - p_a) \\
+	W_{ir}	&=	\frac{T_u}{T}\Psi		\\
+	p_1 	&= p_a  + \frac{\varphi_1 - \varphi_a}{\varphi_b- \varphi_a}(p_b - p_a) \\
 \end{align*}
 \end{multicols}
 
@@ -960,6 +972,392 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 		+ \underbrace{R_M ( 3n_{\text{Atome}} - 3 - n_{rot})}_{\text{Vibratorisch}}  \\
 		+ \underbrace{C_{v,m,Elektronenanregung}}_{\text{Relevant ab: }T \approx 10^4K } 
 	\end{multline*}
+\pagebreak
+%  ______          __          _           __       
+% /_  __/__  _____/ /_  ____  (_)_________/ /_  ___ 
+%  / / / _ \/ ___/ __ \/ __ \/ / ___/ ___/ __ \/ _ \
+% / / /  __/ /__/ / / / / / / (__  ) /__/ / / /  __/
+%/_/  \___/\___/_/ /_/_/ /_/_/____/\___/_/ /_/\___/ 
+%                                                         
+%    ___                                 __                 
+%   /   |  ____ _      _____  ____  ____/ /_  ______  ____ _
+%  / /| | / __ \ | /| / / _ \/ __ \/ __  / / / / __ \/ __ `/
+% / ___ |/ / / / |/ |/ /  __/ / / / /_/ / /_/ / / / / /_/ / 
+%/_/  |_/_/ /_/|__/|__/\___/_/ /_/\__,_/\__,_/_/ /_/\__, /  
+%                                                  /____/   
+
+\section{Technische Anwendung}
+
+\subsection{Kreisprozesse}
+\begin{align*}
+	\eta_{th} &= 1 - \frac{|q_{ab}|}{q_{zu}} \\
+	\epsilon_K &= \frac{q_zu}{w} \\
+	\epsilon_{WP} &= \frac{|q_{ab}|}{w} \\
+	\text{Verdichtun}&\text{gsverhältniss: } \\
+	\epsilon 	&= \frac{v_1}{v_2} \\
+	\text{Drucksteig}&\text{erungsverhältniss: }\\
+	\psi 		&= \frac{p3}{p2} \\
+	\text{Einspritz}&\text{verhältniss: }\\
+	\varphi 	&= \frac{v_4}{v} \\
+\end{align*}
+
+\subsection{Seiliger-Prozess}
+
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+  	\draw[<->] (0,4.3) node[above right] {$T$} |- (4.3,0) node[right] {$S$};
+
+	\coordinate (@1) at (0.6,0.7);
+	\coordinate (@2) at (0.6,2.2);
+	\coordinate (@3) at (2,3);
+	\coordinate (@4) at (3.8,3.6);
+	\coordinate (@5) at (3.8,2.6);
+
+	\node[dot,label={below left:$1$}] at (@1) {};
+	\node[dot,label={below left:$2$}] at (@2) {};
+	\node[dot,label={above left:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+	\node[dot,label={below right:$5$}] at (@5) {};
+
+  	\draw[arrow inside] (@1) to (@2);
+	\draw[arrow inside] (@2) to[bend right=7] (@3);
+	\draw[arrow inside] (@3) to[bend right=10] (@4);
+  	\draw[arrow inside] (@4) to (@5);
+	\draw[arrow inside] (@5) to[bend left=8] (@1);
+
+\end{tikzpicture}
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+	\draw[<->] (0,4.3) node[above right] {$p$} |- (4.3,0) node[right] {$v$};
+
+	\coordinate (@1) at (3.8,0.3);
+	\coordinate (@2) at (0.8,2.2);
+	\coordinate (@3) at (0.8,3.5);
+	\coordinate (@4) at (1.6,3.5);
+	\coordinate (@5) at (3.8,1.4);
+
+	\node[dot,label={right:$1$}] at (@1) {};
+	\node[dot,label={below left:$2$}] at (@2) {};
+	\node[dot,label={below left:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+	\node[dot,label={above right:$5$}] at (@5) {};
+
+	\draw[arrow inside] (@1) to[bend left=18] (@2);
+  	\draw[arrow inside] (@2) to (@3);
+  	\draw[arrow inside] (@3) to (@4);
+	\draw[arrow inside] (@4) to[bend right=20] (@5);
+  	\draw[arrow inside] (@5) to (@1);
+
+\end{tikzpicture}
+
+%\begin{enumerate}
+%	\item $\rightarrow 2:$ reversibel adiabate Verdichtung
+%	\item $\rightarrow 3:$ isochore Wärmzufuhr
+%	\item $\rightarrow 4:$ isobre Wärmezufuhr
+%	\item $\rightarrow 5:$ reversibel adiabate Entspannung
+%	\item $\rightarrow 1:$ isochore Wärmeabgabe
+%\end{enumerate}
+\begin{align*}
+	\eta_{th} 		&= 1 - \frac{|q_{ab}|}{q_{zu}} = 1 - \frac{u_5 - u_1}{u_3 - u_2 + h_4 - h_3} \\
+	\eta_{th,\text{ideal}} 	&= 1 - \frac{T_5 - T_1}{T_3 - T_2 + \kappa(T_4 - T_3)} \\
+				&= 1 - \frac{T_1}{T_2}\left[\frac{\frac{T_5}{T_1}-1}{\frac{T_3}{T_2}-1 + \kappa \frac{T_3}{T_2} \left[\frac{T_4}{T_3}-1\right]}\right] \\
+				&= 1 - \frac{\varphi^\kappa \psi - 1}{\epsilon^{\kappa-1}\left[\psi - 1 + \kappa \psi \left(\varphi -1 \right)\right]}
+\end{align*}
+
+\subsection{Otto-Prozess}
+
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+  	\draw[<->] (0,4.3) node[above right] {$T$} |- (4.3,0) node[right] {$S$};
+
+	\coordinate (@1) at (0.6,0.7);
+	\coordinate (@2) at (0.6,2.2);
+	\coordinate (@3) at (3.8,3.8);
+	\coordinate (@4) at (3.8,1.7);
+
+	\node[dot,label={below left:$1$}] at (@1) {};
+	\node[dot,label={below left:$2$}] at (@2) {};
+	\node[dot,label={above left:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+
+  	\draw[arrow inside] (@1) to (@2);
+	\draw[arrow inside] (@2) to[bend right=7] (@3);
+	\draw[arrow inside] (@3) to (@4);
+	\draw[arrow inside] (@4) to[bend left=12] (@1);
+
+\end{tikzpicture}
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+	\draw[<->] (0,4.3) node[above right] {$p$} |- (4.3,0) node[right] {$v$};
+
+	\coordinate (@1) at (3.6,0.7);
+	\coordinate (@2) at (0.8,2.2);
+	\coordinate (@3) at (0.8,3.7);
+	\coordinate (@4) at (3.6,1.4);
+
+	\node[dot,label={right:$1$}] at (@1) {};
+	\node[dot,label={below left:$2$}] at (@2) {};
+	\node[dot,label={below left:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+
+	\draw[arrow inside] (@1) to[bend left=12] (@2);
+  	\draw[arrow inside] (@2) to (@3);
+	\draw[arrow inside] (@3) to[bend right=12] (@4);
+	\draw[arrow inside] (@4) to (@1);
+
+\end{tikzpicture}
+
+\begin{align*}
+	n_{th} &= 1 -\frac{1}{\epsilon^{\kappa  -1}} \\
+	\epsilon 	&= \frac{v_1}{v_2} \\
+\end{align*}
+
+\subsection{Diesel-Prozess}
+
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+  	\draw[<->] (0,4.3) node[above right] {$T$} |- (4.3,0) node[right] {$S$};
+
+	\coordinate (@1) at (0.6,0.7);
+	\coordinate (@2) at (0.6,2.8);
+	\coordinate (@3) at (3.8,3.8);
+	\coordinate (@4) at (3.8,2.7);
+
+	\node[dot,label={below left:$1$}] at (@1) {};
+	\node[dot,label={below left:$2$}] at (@2) {};
+	\node[dot,label={above right:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+
+  	\draw[arrow inside] (@1) to (@2);
+	\draw[arrow inside] (@2) to[bend right=7] (@3);
+	\draw[arrow inside] (@3) to (@4);
+	\draw[arrow inside] (@4) to[bend left=12] (@1);
+
+\end{tikzpicture}
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+	\draw[<->] (0,4.3) node[above right] {$p$} |- (4.3,0) node[right] {$v$};
+
+	\coordinate (@1) at (3.6,0.5);
+	\coordinate (@2) at (0.7,3.6);
+	\coordinate (@3) at (1.9,3.6);
+	\coordinate (@4) at (3.6,1.7);
+
+	\node[dot,label={right:$1$}] at (@1) {};
+	\node[dot,label={above right:$2$}] at (@2) {};
+	\node[dot,label={above right:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+
+	\draw[arrow inside] (@1) to[bend left=24] (@2);
+  	\draw[arrow inside] (@2) to (@3);
+	\draw[arrow inside] (@3) to[bend right=17] (@4);
+	\draw[arrow inside] (@4) to (@1);
+
+\end{tikzpicture}
+
+\begin{equation*}
+	n_{th} = 1 - \frac{\varphi^\kappa - 1}{\epsilon^{\kappa -1}\kappa(\varphi - 1)}
+\end{equation*}
+
+\subsection{Stirling-Prozess}
+
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+  	\draw[<->] (0,4.3) node[above right] {$T$} |- (4.3,0) node[right] {$S$};
+
+	\coordinate (@1) at (2.8,1);
+	\coordinate (@2) at (0.5,1);
+	\coordinate (@3) at (2.0,3.3);
+	\coordinate (@4) at (4,3.3);
+
+	\node[dot,label={below left:$1$}] at (@1) {};
+	\node[dot,label={below left:$2$}] at (@2) {};
+	\node[dot,label={above right:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+
+  	\draw[arrow inside] (@1) to (@2);
+	\draw[arrow inside] (@2) to[bend right=7] (@3);
+	\draw[arrow inside] (@3) to (@4);
+	\draw[arrow inside] (@4) to[bend left=12] (@1);
+
+\end{tikzpicture}
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+	\draw[<->] (0,4.3) node[above right] {$p$} |- (4.3,0) node[right] {$v$};
+
+	\coordinate (@1) at (3.6,0.3);
+	\coordinate (@2) at (0.7,2.0);
+	\coordinate (@3) at (0.7,4);
+	\coordinate (@4) at (3.6,1.5);
+
+	\node[dot,label={right:$1$}] at (@1) {};
+	\node[dot,label={above right:$2$}] at (@2) {};
+	\node[dot,label={above right:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+
+	\draw[arrow inside] (@1) to[bend left=7] (@2);
+  	\draw[arrow inside] (@2) to (@3);
+	\draw[arrow inside] (@3) to[bend right=10] (@4);
+	\draw[arrow inside] (@4) to (@1);
+
+\end{tikzpicture}
+
+\begin{equation*}
+	n_{th} 1 - \frac{|q_{12}|}{q_{34}} = \frac{RT_1 \ln\left(\frac{v_1}{v_2}\right)}{RT_3 \ln \left(\frac{v_4}{v_3}\right)}= 1 - \frac{T_1}{T_3}
+\end{equation*}
+
+\subsection{Joule-Prozess}
+
+
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+  	\draw[<->] (0,4.3) node[above right] {$T$} |- (4.3,0) node[right] {$S$};
+
+	\coordinate (@1) at (0.6,0.7);
+	\coordinate (@2) at (0.6,1.7);
+	\coordinate (@3) at (3.6,3.9);
+	\coordinate (@4) at (3.6,2.4);
+
+	\node[dot,label={below left:$1$}] at (@1) {};
+	\node[dot,label={below left:$2$}] at (@2) {};
+	\node[dot,label={above right:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+
+  	\draw[arrow inside] (@1) to (@2);
+	\draw[arrow inside] (@2) to[bend right=7] (@3);
+	\draw[arrow inside] (@3) to (@4);
+	\draw[arrow inside] (@4) to[bend left=12] (@1);
+
+\end{tikzpicture}
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+	\draw[<->] (0,4.3) node[above right] {$p$} |- (4.3,0) node[right] {$v$};
+
+	\coordinate (@1) at (2,1);
+	\coordinate (@2) at (0.7,3.5);
+	\coordinate (@3) at (2,3.5);
+	\coordinate (@4) at (3.9,1);
+
+	\node[dot,label={below right:$1$}] at (@1) {};
+	\node[dot,label={above right:$2$}] at (@2) {};
+	\node[dot,label={above right:$3$}] at (@3) {};
+	\node[dot,label={below right:$4$}] at (@4) {};
+
+	\draw[arrow inside] (@1) to[bend left=7] (@2);
+  	\draw[arrow inside] (@2) to (@3);
+	\draw[arrow inside] (@3) to[bend right=10] (@4);
+	\draw[arrow inside] (@4) to (@1);
+
+\end{tikzpicture}
+
+\begin{equation*}
+	n_{th} = 1 - \frac{T_1}{T_2} = 1 - \left(\frac{p_1}{p_2}\right)^{\frac{\kappa-1}{\kappa}}
+\end{equation*}
+
+\subsection{Kolbenverdichter}
+
+\begin{center}
+\begin{tikzpicture}[
+	%\thicc,
+  	> = latex,
+  	dot/.style = {draw,fill,circle,inner sep=1pt},
+  	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  	]
+
+  	\draw[<->] (0,3.7) node[above right] {$p$} |- (4.3,0) node[right] {$V$};
+
+  	\coordinate (@1) at (3.5,1);
+  	\coordinate (@2) at (2,3);
+  	\coordinate (@3) at (0.5,3);
+  	\coordinate (@4) at (1.1,1);
+
+	\draw[fill] (@1) circle (0.06) node[below left] {1};
+	\draw[fill] (@2) circle (0.06) node[above] {2};
+	\draw[fill] (@3) circle (0.06) node[above] {3};
+	\draw[fill] (@4) circle (0.06) node[below left] {4};
+	
+
+	\draw[arrow inside] (@1) to[bend left=14] (@2);
+ 	\draw[arrow inside] (@2) to (@3);
+	\draw[arrow inside] (@3) to[bend right=10] (@4);
+ 	\draw[arrow inside] (@4) to (@1);
+	
+  	\draw[dashed,thin] (3.5,0) node[below] {$V_1$} -- (@1);
+  	\draw[dashed,thin] (0.5,0) node[below] {$V_3$} -- (@3);
+  	\draw[dashed,thin] (1.1,0) node[below] {$V_4$} -- (@4);
+	
+	\draw (5,3.0) node[right] {$V1 =$ Maximales Zylindervolumen};
+	\draw (5,2.2) node[right] {$V2 =$ Volumen nach Verdichtung};
+	\draw (5,1.4) node[right] {$V3 =$ };
+	\draw (5,0.6) node[right] {$V4 =$ Schädlicher Raum};
+	
+\end{tikzpicture}
+\end{center}
+
+
+\begin{alignat*}{2}
+	\mu &= \frac{V_1 - V_4}{V_1-V3}, \qquad \epsilon_S = \frac{V_3}{V_1 - V_3} \\
+	\mu &= 1 - \epsilon_S \left[\left(\frac{p_2}{p_1}\right)^{\frac{1}{n}} -1 \right] \\
+	W_{t,12} & = \int_{1}^{2} V\; dp \\
+	&=\underbrace{p_2 V_2}_{Ausschiebearbeit} - \underbrace{p_1 V_1}_{Einschiebearbeit} - \int_{1}^{2} p\; dV	\\
+	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{n}} - \right] \\
+\end{alignat*}
+\subsection{Turboverdichter}
+Verdichter Wirkungsgrad
+\begin{equation*}
+	\eta_{sV} = \frac{w_{t,12,rev}}{w_{t,12}} = \frac{h_{2,rev} - h_1}{h_2 - h_1} \\
+\end{equation*}
+Verdichter wirkungsgrad (Ideales Gas, $\quad c_p = $ const.)
+\begin{equation*}
+	n_{sV} = \frac{T_{2,rev} - T_1}{T_2 -T_1} \\
+\end{equation*}
+Technische Verlustarbeit
+\begin{align*}
+	w_{t,Verl,12} 	&= w_{t,12} - w_{t,12,rev} = h_2 - h_{2,rev} \\
+			&= \int_{2,rev}^{2} T|_{p_2=const.}\; ds
+\end{align*}
+
+	
 
 \onecolumn
 
