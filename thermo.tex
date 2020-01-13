@@ -6,6 +6,10 @@
 \usetikzlibrary{arrows,decorations.markings}
 \usetikzlibrary{calc}
 \usetikzlibrary{patterns}
+\usetikzlibrary{circuits.logic.US,circuits.logic.IEC,fit}
+\newcommand\addvmargin[1]{
+  \node[fit=(current bounding box),inner ysep=#1,inner xsep=0]{};
+}
 \usepackage{pgfplots}
 \usepgflibrary{patterns}
 %\usepackage[nodisplayskipstretch]{setspace}
@@ -972,7 +976,6 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 		+ \underbrace{R_M ( 3n_{\text{Atome}} - 3 - n_{rot})}_{\text{Vibratorisch}}  \\
 		+ \underbrace{C_{v,m,Elektronenanregung}}_{\text{Relevant ab: }T \approx 10^4K } 
 	\end{multline*}
-\pagebreak
 %  ______          __          _           __       
 % /_  __/__  _____/ /_  ____  (_)_________/ /_  ___ 
 %  / / / _ \/ ___/ __ \/ __ \/ / ___/ ___/ __ \/ _ \
@@ -986,23 +989,31 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 %/_/  |_/_/ /_/|__/|__/\___/_/ /_/\__,_/\__,_/_/ /_/\__, /  
 %                                                  /____/   
 
+\onecolumn
 \section{Technische Anwendung}
 
-\subsection{Kreisprozesse}
-\begin{align*}
-	\eta_{th} &= 1 - \frac{|q_{ab}|}{q_{zu}} \\
-	\epsilon_K &= \frac{q_zu}{w} \\
-	\epsilon_{WP} &= \frac{|q_{ab}|}{w} \\
-	\text{Verdichtun}&\text{gsverhältniss: } \\
-	\epsilon 	&= \frac{v_1}{v_2} \\
-	\text{Drucksteig}&\text{erungsverhältniss: }\\
-	\psi 		&= \frac{p3}{p2} \\
-	\text{Einspritz}&\text{verhältniss: }\\
-	\varphi 	&= \frac{v_4}{v} \\
-\end{align*}
+%\subsection{Kreisprozesse}
+%\begin{align*}
+%	\eta_{th} &= 1 - \frac{|q_{ab}|}{q_{zu}} \\
+%	\epsilon_K &= \frac{q_zu}{w} \\
+%	\epsilon_{WP} &= \frac{|q_{ab}|}{w} \\
+%	\text{Verdichtun}&\text{gsverhältniss: } \\
+%	\epsilon 	&= \frac{v_1}{v_2} \\
+%	\text{Drucksteig}&\text{erungsverhältniss: }\\
+%	\psi 		&= \frac{p3}{p2} \\
+%	\text{Einspritz}&\text{verhältniss: }\\
+%	\varphi 	&= \frac{v_4}{v} \\
+%\end{align*}
 
-\subsection{Seiliger-Prozess}
+%\subsection{Seiliger-Prozess}
 
+\begin{table}
+\setlength{\tabcolsep}{5mm} % separator between columns
+\def\arraystretch{3} % vertical stretch factor
+\centering
+\begin{tabular}{c|c|l} 
+	\multicolumn{3}{c}{\Large Kreisprozesse mit idealen Gasen als Arbeitsmedium} \\ \hline
+	\multicolumn{3}{c}{$\displaystyle \eta_{th} = 1 - \frac{|q_{ab}|}{q_{zu}} ,\quad \epsilon_K = \frac{q_zu}{w} ,\quad \epsilon_{WP} = \frac{|q_{ab}|}{w} ,\quad \epsilon 	= \frac{v_1}{v_2} ,\quad \psi 		= \frac{p3}{p2} ,\quad \varphi 	= \frac{v_4}{v}$}  \\ \hline
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
   > = latex,
@@ -1030,6 +1041,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@5) to[bend left=8] (@1);
 
 \end{tikzpicture}
+		&
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
   > = latex,
@@ -1056,23 +1068,14 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@4) to[bend right=20] (@5);
   	\draw[arrow inside] (@5) to (@1);
 
-\end{tikzpicture}
-
-%\begin{enumerate}
-%	\item $\rightarrow 2:$ reversibel adiabate Verdichtung
-%	\item $\rightarrow 3:$ isochore Wärmzufuhr
-%	\item $\rightarrow 4:$ isobre Wärmezufuhr
-%	\item $\rightarrow 5:$ reversibel adiabate Entspannung
-%	\item $\rightarrow 1:$ isochore Wärmeabgabe
-%\end{enumerate}
-\begin{align*}
-	\eta_{th} 		&= 1 - \frac{|q_{ab}|}{q_{zu}} = 1 - \frac{u_5 - u_1}{u_3 - u_2 + h_4 - h_3} \\
-	\eta_{th,\text{ideal}} 	&= 1 - \frac{T_5 - T_1}{T_3 - T_2 + \kappa(T_4 - T_3)} \\
-				&= 1 - \frac{T_1}{T_2}\left[\frac{\frac{T_5}{T_1}-1}{\frac{T_3}{T_2}-1 + \kappa \frac{T_3}{T_2} \left[\frac{T_4}{T_3}-1\right]}\right] \\
-				&= 1 - \frac{\varphi^\kappa \psi - 1}{\epsilon^{\kappa-1}\left[\psi - 1 + \kappa \psi \left(\varphi -1 \right)\right]}
-\end{align*}
-
-\subsection{Otto-Prozess}
+\end{tikzpicture} & 
+	\begin{tikzpicture}
+		\draw (1,4) node {Seiliger Prozess};
+		\draw (1,2) node {$\displaystyle	\eta_{th} = 1 - \frac{\varphi^\kappa \psi - 1}{\epsilon^{\kappa-1}\left[\psi - 1 + \kappa \psi \left(\varphi -1 \right)\right]}$ };
+		\draw (1,0);
+	\end{tikzpicture}
+\\ \hline
+%\subsection{Otto-Prozess}
 
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
@@ -1098,6 +1101,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@4) to[bend left=12] (@1);
 
 \end{tikzpicture}
+&
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
   > = latex,
@@ -1122,13 +1126,17 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@4) to (@1);
 
 \end{tikzpicture}
+&
+	\begin{tikzpicture}
+		\draw (1,4) node {Otto Prozess};
+		\draw (1,2) node {$\displaystyle n_{th} = 1 -\frac{1}{\epsilon^{\kappa  -1}} $};
+		\draw (1,1) node { $\displaystyle \epsilon 	= \frac{v_1}{v_2} $ };
+		\draw (1,0);
+	\end{tikzpicture}
 
-\begin{align*}
-	n_{th} &= 1 -\frac{1}{\epsilon^{\kappa  -1}} \\
-	\epsilon 	&= \frac{v_1}{v_2} \\
-\end{align*}
+\\ \hline
 
-\subsection{Diesel-Prozess}
+%\subsection{Diesel-Prozess}
 
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
@@ -1154,6 +1162,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@4) to[bend left=12] (@1);
 
 \end{tikzpicture}
+&
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
   > = latex,
@@ -1178,12 +1187,15 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@4) to (@1);
 
 \end{tikzpicture}
+&
 
-\begin{equation*}
-	n_{th} = 1 - \frac{\varphi^\kappa - 1}{\epsilon^{\kappa -1}\kappa(\varphi - 1)}
-\end{equation*}
-
-\subsection{Stirling-Prozess}
+	\begin{tikzpicture}
+		\draw (1,4) node {Diesel Prozess};
+		\draw (1,2) node {$\displaystyle	n_{th} = 1 - \frac{\varphi^\kappa - 1}{\epsilon^{\kappa -1}\kappa(\varphi - 1)}$};
+		\draw (1,0);
+	\end{tikzpicture}
+\\ \hline
+%\subsection{Stirling-Prozess}
 
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
@@ -1209,6 +1221,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@4) to[bend left=12] (@1);
 
 \end{tikzpicture}
+&
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
   > = latex,
@@ -1233,12 +1246,15 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@4) to (@1);
 
 \end{tikzpicture}
+&
 
-\begin{equation*}
-	n_{th} 1 - \frac{|q_{12}|}{q_{34}} = \frac{RT_1 \ln\left(\frac{v_1}{v_2}\right)}{RT_3 \ln \left(\frac{v_4}{v_3}\right)}= 1 - \frac{T_1}{T_3}
-\end{equation*}
-
-\subsection{Joule-Prozess}
+	\begin{tikzpicture}
+		\draw (1,4) node {Stirling Prozess};
+		\draw (1,2) node {$\displaystyle	n_{th} 1 - \frac{|q_{12}|}{q_{34}} = \frac{RT_1 \ln\left(\frac{v_1}{v_2}\right)}{RT_3 \ln \left(\frac{v_4}{v_3}\right)}= 1 - \frac{T_1}{T_3}$};
+		\draw (1,0);
+\end{tikzpicture}  
+\\ \hline
+%\subsection{Joule-Prozess}
 
 
 \begin{tikzpicture}[
@@ -1265,6 +1281,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@4) to[bend left=12] (@1);
 
 \end{tikzpicture}
+&
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
   > = latex,
@@ -1289,10 +1306,16 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[arrow inside] (@4) to (@1);
 
 \end{tikzpicture}
+&
 
-\begin{equation*}
-	n_{th} = 1 - \frac{T_1}{T_2} = 1 - \left(\frac{p_1}{p_2}\right)^{\frac{\kappa-1}{\kappa}}
-\end{equation*}
+	\begin{tikzpicture}
+		\draw (1,4) node {Joule Prozess};
+		\draw (1,2) node {$\displaystyle \eta_{th} = 1 - \frac{T_1}{T_2} = 1 - \left(\frac{p_1}{p_2}\right)^{\frac{\kappa-1}{\kappa}}$};
+		\draw (1,0);
+	\end{tikzpicture}
+\\
+\end{tabular}
+\end{table}
 
 \subsection{Kolbenverdichter}
 
@@ -1342,7 +1365,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	&=\underbrace{p_2 V_2}_{Ausschiebearbeit} - \underbrace{p_1 V_1}_{Einschiebearbeit} - \int_{1}^{2} p\; dV	\\
 	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{n}} - \right] \\
 \end{alignat*}
-\subsection{Turboverdichter}
+%\subsection{Turboverdichter}
 Verdichter Wirkungsgrad
 \begin{equation*}
 	\eta_{sV} = \frac{w_{t,12,rev}}{w_{t,12}} = \frac{h_{2,rev} - h_1}{h_2 - h_1} \\
