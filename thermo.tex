@@ -12,8 +12,6 @@
 }
 \usepackage{pgfplots}
 \usepgflibrary{patterns}
-%\usepackage[nodisplayskipstretch]{setspace}
-%\setstretch{1}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
 \usepackage{halloweenmath}
@@ -35,7 +33,6 @@
 \usepackage{hyperref}
 \begin{document}
 \newcommand{\thicc}{thick}
-\Large
 
 \onecolumn
 \maketitle
@@ -43,6 +40,8 @@
 \tableofcontents
 \twocolumn
 \pagebreak
+
+\Large
 \begin{equation*}
 	\frac{d}{dt}\Bigg{\{} U + m \Bigg{(}\frac{c^2}{2}+gz\Bigg{)}\Bigg{\}} 
 	= 
@@ -108,6 +107,7 @@
 	\mathbf{u}		&=	\text{Spezifische innere Energie [J/kg]} \\
 \end{align*}
 \\\\\\\\
+\bigskip
 \begin{align*}
 	\mathbf{V}		&=	\text{Volumen[m³]} \\
 	\mathbf{v}		&=	\text{Spezifisches Volumen[m³/kg]} \\
@@ -163,7 +163,7 @@ Systeme
 \begin{itemize}
 	\item Abgeschlossenes System - kein Stoff oder Energietransport
 	\item Geschlossenes System - kein Stofftransport
-	\item Adiabates System - kein Wärmetransport, aber asse und arbeit.
+	\item Adiabates System - kein $\Delta q$ , aber Masse und Arbeit.
 	\item Offenes System - Stoff und Energietransport
 	\item Stationäres System $\rightarrow \Delta U = 0$
 \end{itemize}
@@ -268,19 +268,42 @@ Hauptsätze
 \begin{multicols}{2}
 
 \begin{align*}
-	T   &= \quad \left(\frac{\partial U}{\partial S}\right)_{V} = T(S,V)  \\
-	T   &= \quad \left(\frac{\partial H}{\partial S}\right)_{p} = T(S,p)  \\
-	p   &= -\left(\frac{\partial U}{\partial V}\right)_{S} = p(V,S)	      \\
-	-p &= \quad \left(\frac{\partial F}{\partial V}\right)_{T} = p(T,V)	\\
+	T   	&= \quad \left(\frac{\partial U}{\partial S}\right)_{V} = T(S,V)  	\\
+	T   	&= \quad \left(\frac{\partial H}{\partial S}\right)_{p} = T(S,p)  	\\
+	p   	&= -\left(\frac{\partial U}{\partial V}\right)_{S} = p(V,S)	      	\\
+	-p  	&= \quad \left(\frac{\partial F}{\partial V}\right)_{T} = p(T,V)	\\
 \end{align*}
 
 \begin{align*}
-	-S &= \left(\frac{\partial F}{\partial T}\right)_{V} = S(T,V)	\\
-	-S &= \left(\frac{\partial G}{\partial T}\right)_{p} = S(T,p)\\
-	 V &= \left(\frac{\partial G}{\partial p}\right)_{T} = V(p,T)\\
-	\mu &= \left(\frac{\partial U}{\partial n}\right)_{S,V} = \mu(S,V,n)\\
+	-S 	&= \left(\frac{\partial F}{\partial T}\right)_{V} = S(T,V)		\\
+	-S 	&= \left(\frac{\partial G}{\partial T}\right)_{p} = S(T,p)		\\
+	 V 	&= \left(\frac{\partial G}{\partial p}\right)_{T} = V(p,T)		\\
+	\mu 	&= \left(\frac{\partial U}{\partial n}\right)_{S,V} = \mu(S,V,n)	\\
 \end{align*}
 \end{multicols}
+
+%   ______                             __         _         
+%  / ____/_  ______ _____ ____  ____  / /_  ___  (_)___ ___ 
+% / / __/ / / / __ `/ __ `/ _ \/ __ \/ __ \/ _ \/ / __ `__ \
+%/ /_/ / /_/ / /_/ / /_/ /  __/ / / / / / /  __/ / / / / / /
+%\____/\__,_/\__, /\__, /\___/_/ /_/_/ /_/\___/_/_/ /_/ /_/ 
+%           /____//____/                                    
+
+\section{Guggenheim}
+\Large
+\begin{tabular}{llllll}
+	-S & U & V &	&U &= U(S,V) \\ 
+	 H &   & F &   	&H &= H(S,p) \\
+	-p & G & T &   	&F &= F(T,V) \\
+	   &   &   &  	&G &= G(T,p) \\
+\end{tabular}
+\normalsize
+\bigskip
+\bigskip
+\bigskip
+\pagebreak
+
+
 %    __  ___                         ____
 %   /  |/  /___ __  ___      _____  / / /
 %  / /|_/ / __ `/ |/_/ | /| / / _ \/ / / 
@@ -293,45 +316,23 @@ Hauptsätze
 	\left(\frac{\partial T}{\partial p}\right)_{S,n_j}
 	&= \quad
 	\left(\frac{\partial V}{\partial S}\right)_{p,n_j}
-	\\
+	\\\\
 	\left(\frac{\partial S}{\partial V}\right)_{T,n_j}
 	&= \quad
 	\left(\frac{\partial p}{\partial T}\right)_{V,n_j}
-	\\
+	\\\\
 	\left(\frac{\partial S}{\partial p}\right)_{T,n_j}
 	&= -
 	\left(\frac{\partial V}{\partial T}\right)_{p,n_j}
-	\\
+	\\\\
 	\left(\frac{\partial \mu _i}{\partial T}\right)_{p,n_j}
 	&= -
 	\left(\frac{\partial S}{\partial n_i}\right)_{T,p,n_j \neq n_i}
-	\\
+	\\\\
 	\left(\frac{\partial \mu_i}{\partial p}\right)_{T,n_j}
 	&=
 	\quad \left(\frac{\partial V}{\partial n_i}\right)_{T,p,n_j \neq n_i}
 \end{align*}
-\bigskip
-\bigskip
-\bigskip
-\pagebreak
-
-%   ______                             __         _         
-%  / ____/_  ______ _____ ____  ____  / /_  ___  (_)___ ___ 
-% / / __/ / / / __ `/ __ `/ _ \/ __ \/ __ \/ _ \/ / __ `__ \
-%/ /_/ / /_/ / /_/ / /_/ /  __/ / / / / / /  __/ / / / / / /
-%\____/\__,_/\__, /\__, /\___/_/ /_/_/ /_/\___/_/_/ /_/ /_/ 
-%           /____//____/                                    
-
-\section{Guggenheim}
-\Large
-\begin{tabular}{llllll}
-	-S & U & V &			&U &= U(S,V) \\ 
-	 H &   & F &       		&H &= H(S,p) \\
-	-p & G & T &     		&F &= F(T,V) \\
-	   &   &   &    		&G &= G(T,p) \\
-\end{tabular}
-\normalsize
-
 
 %    ____    __           __             ______          
 %   /  _/___/ /__  ____ _/ /__  _____   / ____/___ ______
@@ -343,12 +344,6 @@ Hauptsätze
 \setlength{\belowdisplayskip}{-20pt} \setlength{\belowdisplayshortskip}{-20pt}
 
 \begin{align*}
-%	&pV = mRT, \quad pv = RT, \quad pV = nR_mT
-%	\\
-%	&\beta = \frac{1}{T},\quad 
-%	\gamma = \frac{1}{T},\quad 
-%	\chi = \frac{1}{p}, \quad \beta = p \gamma \chi\\
-%	&R_m = 8,3143\left[\frac{kJ}{kmolK}\right], \quad 
 	&pV = mRT \\ 
 	&pv = RT \\
 	&pV = nR_mT \\
@@ -395,7 +390,6 @@ Hauptsätze
 		& u_2 - u_1 &&= \int_{T_1}^{T_2} c_v(T)\; dT
 	\\
 \end{alignat*}
-\setlength{\belowdisplayskip}{1cm} \setlength{\belowdisplayshortskip}{1cm}
 % _    __                      __              _       __            __    
 %| |  / /___ _____        ____/ /__  _____    | |     / /___ _____ _/ /____
 %| | / / __ `/ __ \______/ __  / _ \/ ___/____| | /| / / __ `/ __ `/ / ___/
@@ -404,18 +398,30 @@ Hauptsätze
                                                                           
 \section{Van-der-Waals}
 \begin{align*}
-	&\left(p + \frac{a}{v^2}\right)(v-b) = RT \\
-	&\left(\overline{p} + \frac{3}{\overline{v}^2}\right)(3\overline{v}-1) = 8\overline{T} \\
-	&\overline{p} = \frac{p}{p_K}, \quad \overline{v} = \frac{v}{v_K}, \quad \overline{T} = \frac{T}{T_K} \\
-	&p_K = \frac{a}{27b^2}, \quad T_K = \frac{8}{27}\frac{a}{b}\frac{1}{R}, \quad \xrightswishingghost{} \\
-	&a=3p_Kv^2_K, \quad b =\frac{v_K}{3}, \quad \frac{p_Kv_K}{RT_K} = \frac{3}{8} \\
-	&\beta = \frac{(v-b)Rv^2}{RTv^3 - 2a(v-b)^2} \\ 
-	&\gamma = \frac{Rv^2}{RTv^2 - a(v-b)} \\
-	&\chi = \frac{(v-b)^2v^2}{RTv^3 - 2a(v-b)^2} \\
-	& du = \frac{a}{v^2}dv + c_v(T)dT \\
-	&u-u_0 = \left( \frac{a}{v_0} - \frac{a}{v} \right) + \int_{T_0}^{T} c_v(\tilde{T})\; d\tilde{T} \\
-	& u - u_0 = \left(\frac{a}{v_0} - \frac{a}{v} \right) + c_v(T-T_0) \leftarrow \text{für $c_v$ = const.} \\
-	&c_p - c_v = \frac{Tv\beta^2}{\chi} \\
+	&\left(p + \frac{a}{v^2}\right)(v-b) = RT 
+	\\
+	&\left(\overline{p} + \frac{3}{\overline{v}^2}\right)(3\overline{v}-1) = 8\overline{T} 
+	\\
+	&\overline{p} = \frac{p}{p_K}, \quad \overline{v} = \frac{v}{v_K}, \quad \overline{T} = \frac{T}{T_K} 
+	\\
+	&p_K = \frac{a}{27b^2}, \quad T_K = \frac{8}{27}\frac{a}{b}\frac{1}{R}, \quad \xrightswishingghost{} 
+	\\
+	&a=3p_Kv^2_K, \quad b =\frac{v_K}{3}, \quad \frac{p_Kv_K}{RT_K} = \frac{3}{8} 
+	\\
+	&\beta = \frac{(v-b)Rv^2}{RTv^3 - 2a(v-b)^2} 
+	\\ 
+	&\gamma = \frac{Rv^2}{RTv^2 - a(v-b)} 
+	\\
+	&\chi = \frac{(v-b)^2v^2}{RTv^3 - 2a(v-b)^2} 
+	\\
+	& du = \frac{a}{v^2}dv + c_v(T)dT 
+	\\
+	&u-u_0 = \left( \frac{a}{v_0} - \frac{a}{v} \right) + \int_{T_0}^{T} c_v(\tilde{T})\; d\tilde{T} 
+	\\
+	& u - u_0 = \left(\frac{a}{v_0} - \frac{a}{v} \right) + c_v(T-T_0) \leftarrow \text{für $c_v$ = const.} 
+	\\
+	&c_p - c_v = \frac{Tv\beta^2}{\chi} 
+	\\
 	& s- s_0 = c_v \ln \left( \frac{T}{T_0} \right) + R \ln \left(\frac{v-b}{v_0 - b} \right)
 \end{align*}
 \bigskip
@@ -424,6 +430,7 @@ Hauptsätze
 \bigskip
 \bigskip
 \pagebreak
+
 %   ______                       __ 
 %  / ____/___ __________  ____  / /_
 % / /   / __ `/ ___/ __ \/ __ \/ __/
@@ -442,6 +449,8 @@ Hauptsätze
 	= -Q_{34} \left( \frac{1}{T_{KK}} 
 	- \frac{T_1}{T_3}\frac{1}{T_{HK}} \right)
 \end{align*}
+
+\bigskip 
 
 \begin{tikzpicture}[
   > = latex,
@@ -992,20 +1001,6 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 \onecolumn
 \section{Technische Anwendung}
 
-%\subsection{Kreisprozesse}
-%\begin{align*}
-%	\eta_{th} &= 1 - \frac{|q_{ab}|}{q_{zu}} \\
-%	\epsilon_K &= \frac{q_zu}{w} \\
-%	\epsilon_{WP} &= \frac{|q_{ab}|}{w} \\
-%	\text{Verdichtun}&\text{gsverhältniss: } \\
-%	\epsilon 	&= \frac{v_1}{v_2} \\
-%	\text{Drucksteig}&\text{erungsverhältniss: }\\
-%	\psi 		&= \frac{p3}{p2} \\
-%	\text{Einspritz}&\text{verhältniss: }\\
-%	\varphi 	&= \frac{v_4}{v} \\
-%\end{align*}
-
-%\subsection{Seiliger-Prozess}
 
 \begin{table}
 \setlength{\tabcolsep}{5mm} % separator between columns
@@ -1013,7 +1008,13 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 \centering
 \begin{tabular}{c|c|l} 
 	\multicolumn{3}{c}{\Large Kreisprozesse mit idealen Gasen als Arbeitsmedium} \\ \hline
-	\multicolumn{3}{c}{$\displaystyle \eta_{th} = 1 - \frac{|q_{ab}|}{q_{zu}} ,\quad \epsilon_K = \frac{q_zu}{w} ,\quad \epsilon_{WP} = \frac{|q_{ab}|}{w} ,\quad \epsilon 	= \frac{v_1}{v_2} ,\quad \psi 		= \frac{p3}{p2} ,\quad \varphi 	= \frac{v_4}{v}$}  \\ \hline
+	\multicolumn{3}{c}{$\displaystyle \eta_{th} = 1 - \frac{|q_{ab}|}{q_{zu}} 
+	,\quad \epsilon_K = \frac{q_zu}{w} 
+	,\quad \epsilon_{WP} = \frac{|q_{ab}|}{w} 
+	,\quad \epsilon 	= \frac{v_1}{v_2} 
+	,\quad \psi 		= \frac{p3}{p2} 
+	,\quad \varphi 	= \frac{v_4}{v}$}  \\ \hline
+%\subsection{Seiliger-Prozess}
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
   > = latex,
