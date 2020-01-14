@@ -1001,19 +1001,46 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 \onecolumn
 \section{Technische Anwendung}
 
+\begin{tabular}{lll} 
+	\begin{tabular}{l}
+	adiabat \\ $(c_p = const.)$
+	\end{tabular}
+	& $ \displaystyle W_{t,12} = mc_p(T_2 - T_1) = \frac{\kappa}{\kappa -1}(p_2V_2 - p_1V_1)$ & $Q_{12}=0$\\ \hline
+	\begin{tabular}{l}
+	reversibel adiabat \\ 
+	$ \kappa = const.$
+	\end{tabular}
+	& $\displaystyle W_{t,12} = \frac{\kappa}{\kappa -1} (p_1 V_1)\left[\left(\frac{p_2}{p_1}\right)^{\frac{\kappa - 1}{\kappa}} - 1 \right]$ & $Q_{12}=0$ \\ \hline
+	\begin{tabular}{l}
+	irreversibel adiabat \\ 
+	als Polytrope \\ 
+	$n>\kappa; n,\kappa = const.$
+	\end{tabular}
+	& $\displaystyle W_{t,12} = \frac{\kappa}{\kappa -1} (p_1 V_1)\left[\left(\frac{p_2}{p_1}\right)^{\frac{n - 1}{n}} - 1 \right]$ & $Q_{12}=0$ \\ \hline
+	\begin{tabular}{l}
+	reversibel polytrop \\ $n,\kappa = const.$ 
+	\end{tabular}
+		& $W_{t,12} = \frac{n}{n-1}(p_2V_2 - p_1V_1)$ & $Q_{12} = mc_n(T_2-T_1)$ \\
+	 & $\qquad \: = \frac{n}{n-1}mR(T_2-T_1)$ &  $\quad \;\;\; =\frac{n-\kappa}{(n-1)(\kappa-1)}(p_1V_1) \left[ \left( \frac{p_2}{p_1}\right)^{\frac{n-1}{n} - 1}\right]$ \\
+	 & $\qquad \: = \frac{n}{n-1}(p_1V_1) \left[\left( \frac{p_2}{p_1}\right)^{\frac{n-1}{n}} - 1 \right]$ & $ c_n \;\; = \frac{n-\kappa}{n-1}cv$\\ \hline
+	 isotherm & $ W_{t,12} = (p_1V_1) \ln \left(\frac{p_2}{p_2}\right)$ & $Q_{12} = -W_{t,12}$ \\
+\end{tabular}
+
+
+
 
 \begin{table}
 \setlength{\tabcolsep}{5mm} % separator between columns
 \def\arraystretch{3} % vertical stretch factor
 \centering
 \begin{tabular}{c|c|l} 
-	\multicolumn{3}{c}{\Large Kreisprozesse mit idealen Gasen als Arbeitsmedium} \\ \hline
-	\multicolumn{3}{c}{$\displaystyle \eta_{th} = 1 - \frac{|q_{ab}|}{q_{zu}} 
-	,\quad \epsilon_K = \frac{q_zu}{w} 
-	,\quad \epsilon_{WP} = \frac{|q_{ab}|}{w} 
-	,\quad \epsilon 	= \frac{v_1}{v_2} 
-	,\quad \psi 		= \frac{p3}{p2} 
-	,\quad \varphi 	= \frac{v_4}{v}$}  \\ \hline
+	%\multicolumn{3}{c}{\Large Kreisprozesse mit idealen Gasen als Arbeitsmedium} \\ \hline
+%	\multicolumn{3}{c}{$\displaystyle \eta_{th} = 1 - \frac{|q_{ab}|}{q_{zu}} 
+%	,\quad \epsilon_K = \frac{q_zu}{w} 
+%	,\quad \epsilon_{WP} = \frac{|q_{ab}|}{w} 
+%	,\quad \epsilon 	= \frac{v_1}{v_2} 
+%	,\quad \psi 		= \frac{p3}{p2} 
+%	,\quad \varphi 	= \frac{v_4}{v}$}  \\ \hline
 %\subsection{Seiliger-Prozess}
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
@@ -1314,7 +1341,65 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 		\draw (1,2) node {$\displaystyle \eta_{th} = 1 - \frac{T_1}{T_2} = 1 - \left(\frac{p_1}{p_2}\right)^{\frac{\kappa-1}{\kappa}}$};
 		\draw (1,0);
 	\end{tikzpicture}
-\\
+\\ \hline
+%\subsection{Ericsson-Prozess}
+
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+  	\draw[<->] (0,4.3) node[above right] {$T$} |- (4.3,0) node[right] {$S$};
+
+	\coordinate (@1) at (2.8,1);
+	\coordinate (@2) at (0.5,1);
+	\coordinate (@3) at (2.0,3.3);
+	\coordinate (@4) at (4,3.3);
+
+	\node[dot,label={below left:$1$}] at (@1) {};
+	\node[dot,label={below left:$2$}] at (@2) {};
+	\node[dot,label={above right:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+
+  	\draw[arrow inside] (@1) to (@2);
+	\draw[arrow inside] (@2) to[bend right=7] (@3);
+	\draw[arrow inside] (@3) to (@4);
+	\draw[arrow inside] (@4) to[bend left=12] (@1);
+
+\end{tikzpicture}
+&
+\begin{tikzpicture}[
+	scale=0.8, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+	\draw[<->] (0,4.3) node[above right] {$p$} |- (4.3,0) node[right] {$v$};
+
+	\coordinate (@1) at (1.7,0.8);
+	\coordinate (@2) at (0.4,3.0);
+	\coordinate (@3) at (2,3);
+	\coordinate (@4) at (4,0.8);
+
+	\node[dot,label={left:$1$}] at (@1) {};
+	\node[dot,label={above right:$2$}] at (@2) {};
+	\node[dot,label={above right:$3$}] at (@3) {};
+	\node[dot,label={above right:$4$}] at (@4) {};
+
+	\draw[arrow inside] (@1) to[bend left=16] (@2);
+  	\draw[arrow inside] (@2) to (@3);
+	\draw[arrow inside] (@3) to[bend right=10] (@4);
+	\draw[arrow inside] (@4) to (@1);
+
+\end{tikzpicture}
+&
+
+	\begin{tikzpicture}
+		\draw (1,4) node {Ericsson Prozess};
+		\draw (1,2) node {$\displaystyle	n_{th} 1 - \frac{|q_{12}|}{q_{34}} = \frac{RT_1 \ln\left(\frac{v_1}{v_2}\right)}{RT_3 \ln \left(\frac{v_4}{v_3}\right)}= 1 - \frac{T_1}{T_3}$};
+		\draw (1,0);
+\end{tikzpicture}  
 \end{tabular}
 \end{table}
 
