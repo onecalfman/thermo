@@ -1100,6 +1100,9 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\begin{tikzpicture}
 		\draw (1,4) node {Seiliger Prozess};
 		\draw (1,2) node {$\displaystyle	\eta_{th} = 1 - \frac{\varphi^\kappa \psi - 1}{\epsilon^{\kappa-1}\left[\psi - 1 + \kappa \psi \left(\varphi -1 \right)\right]}$ };
+		\draw (0,1) node[left] {$\epsilon = \frac{v_1}{v_2} $};
+		\draw (1,1) node {$\psi     = \frac{p3}{p2}   $};
+		\draw (2.7,1) node {$\varphi  = \frac{v_4}{v}   $};
 		\draw (1,0);
 	\end{tikzpicture}
 \\ \hline
@@ -1220,6 +1223,8 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\begin{tikzpicture}
 		\draw (1,4) node {Diesel Prozess};
 		\draw (1,2) node {$\displaystyle	n_{th} = 1 - \frac{\varphi^\kappa - 1}{\epsilon^{\kappa -1}\kappa(\varphi - 1)}$};
+		\draw (0,1) node[left] {$\epsilon = \frac{v_1}{v_2} $};
+		\draw (1,1) node {$\varphi  = \frac{v_4}{v}   $};
 		\draw (1,0);
 	\end{tikzpicture}
 \\ \hline
@@ -1377,10 +1382,10 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
   ]
 	\draw[<->] (0,4.3) node[above right] {$p$} |- (4.3,0) node[right] {$v$};
 
-	\coordinate (@1) at (1.7,0.8);
+	\coordinate (@1) at (1.7,1);
 	\coordinate (@2) at (0.4,3.0);
-	\coordinate (@3) at (2,3);
-	\coordinate (@4) at (4,0.8);
+	\coordinate (@3) at (1.8,3);
+	\coordinate (@4) at (4,1);
 
 	\node[dot,label={left:$1$}] at (@1) {};
 	\node[dot,label={above right:$2$}] at (@2) {};
@@ -1397,7 +1402,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 
 	\begin{tikzpicture}
 		\draw (1,4) node {Ericsson Prozess};
-		\draw (1,2) node {$\displaystyle	n_{th} 1 - \frac{|q_{12}|}{q_{34}} = \frac{RT_1 \ln\left(\frac{v_1}{v_2}\right)}{RT_3 \ln \left(\frac{v_4}{v_3}\right)}= 1 - \frac{T_1}{T_3}$};
+		\draw (1,2) node {$\displaystyle	n_{th} 1 - \frac{|q_{12}|}{q_{34}} = \frac{RT_1 \ln\left(\frac{p_1}{p_2}\right)}{RT_3 \ln \left(\frac{p_4}{p_3}\right)}= 1 - \frac{T_1}{T_3}$};
 		\draw (1,0);
 \end{tikzpicture}  
 \end{tabular}
