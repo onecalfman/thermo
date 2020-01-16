@@ -341,7 +341,7 @@ Hauptsätze
 %/___/\__,_/\___/\__,_/_/\___/____/   \____/\__,_/____/  
                                                         
 \section{Ideales Gas}
-\setlength{\belowdisplayskip}{-20pt} \setlength{\belowdisplayshortskip}{-20pt}
+\setlength{\belowdisplayskip}{-10pt} \setlength{\belowdisplayshortskip}{-10pt}
 
 \begin{align*}
 	&pV = mRT \\ 
@@ -712,9 +712,7 @@ Hauptsätze
 %	              /____/         
 
 \section{Maximale Arbeit und Exergie}
-%Die Exergie ist die maximal nutzbare Arbeit eines Systms, dass von seinem ursprünglichen Zustand, isentrop und reibungsfrei, in den Umgebungszustand überführt wird.
 Maxiaml nutzbare Arbeit $\rightarrow$ isentrop, reibungsfrei \\
-%Man bewegt sich erst isentrop auf die isotherme der Umgebungsthemperatur und führt dann isotherm Wärem zu/ab, bis man den Umgebungszustand erreicht hat. 
 $1 \rightarrow 1'$ : isentrop auf $T_u$ \\
 $1' \rightarrow u$ : isotherm auf $u$ 
 
@@ -801,7 +799,8 @@ Die Exergie der Enthalpie (offens, stationäres System)
 Die Exergie der inneren Energie (geschlossenes, instationäres System)
 \begin{align*}
 	- \dot{W}_{ex} &= - \frac{d}{dt}(U + p_uV -T_uS) \\
-	-\dot{W}_{ex,1u} &= U_1 - U_u -p_u(V_1 - V_u) - T_u(S_1 - S_u)
+	-\dot{W}_{ex,1u} &= U_1 - U_u -p_u(V_1 - V_u) - T_u(S_1 - S_u) \\
+	-\dot{W}_{ex,1u} &= H_1 - (p_1-p_u)V_1 - H_u- T_u(S_1 - S_u)
 \end{align*}
 Für Ideales Gas \\
 \begin{align*}
@@ -1001,6 +1000,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 \onecolumn
 \section{Technische Anwendung}
 
+\begin{centering}
 \begin{tabular}{lll} 
 	\begin{tabular}{l}
 	adiabat \\ $(c_p = const.)$
@@ -1025,7 +1025,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	 & $\qquad \: = \frac{n}{n-1}(p_1V_1) \left[\left( \frac{p_2}{p_1}\right)^{\frac{n-1}{n}} - 1 \right]$ & $ c_n \;\; = \frac{n-\kappa}{n-1}cv$\\ \hline
 	 isotherm & $ W_{t,12} = (p_1V_1) \ln \left(\frac{p_2}{p_2}\right)$ & $Q_{12} = -W_{t,12}$ \\
 \end{tabular}
-
+\end{centering}
 
 
 
@@ -1343,7 +1343,8 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 
 	\begin{tikzpicture}
 		\draw (1,4) node {Joule Prozess};
-		\draw (1,2) node {$\displaystyle \eta_{th} = 1 - \frac{T_1}{T_2} = 1 - \left(\frac{p_1}{p_2}\right)^{\frac{\kappa-1}{\kappa}}$};
+		\draw (1,2) node {$\displaystyle \eta_{th} = 1 - \frac{T_1}{T_2} = 1 - \left(\frac{p_1}{p_2}\right)^{\frac{\kappa-1}{\kappa}} = 1 - \left( \frac{1}{\pi}\right)^{\frac{\kappa -1 }{\kappa}}$};
+		\draw (1,1) node {$\pi = \frac{p_2}{p_1}$};
 		\draw (1,0);
 	\end{tikzpicture}
 \\ \hline
