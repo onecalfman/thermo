@@ -972,12 +972,14 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 \end{tikzpicture}
 
 \begin{align*}
-	&	C_{v,m} = \frac{1}{\kappa - 1} R_m,
-	\quad	C_{p,m} = \frac{\kappa}{\kappa -1}r_m \\
-	&	c_v = \frac{1}{\kappa - 1 }R_j, 
-	\qquad	c_p = \frac{\kappa}{\kappa -1}R_j \\
-	&	\kappa = \frac{c_p}{c_v},
-	\qquad \qquad \; \:   c_p - c_v = R\\
+	&	C_{v,m} = \frac{1}{\kappa - 1} R_m
+		&&C_{p,m} = \frac{\kappa}{\kappa -1}r_m \\
+	&	c_v = \frac{1}{\kappa - 1 }R_j 
+		&&c_p = \frac{\kappa}{\kappa -1}R_j \\
+	&	\kappa = \frac{c_p}{c_v}
+	&&R = c_p - c_v \\
+	&R = \frac{R_m}{M}
+	&&R_m = 8,3143\left[\frac{kJ}{kmolK}\right] \\
 	\end{align*}
 	\begin{multline*}
 		C_{v,m} = \underbrace{3 + \frac{R_m}{2}}_{\text{Translatorisch}} + \underbrace{\frac{n_{\text{rot}}  R_m}{2}}_{\text{Rotatorisch}}  
