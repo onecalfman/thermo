@@ -1,0 +1,12 @@
+Name, chemische Formel, Molmasse  [kg/kmol], Normalsiedepunkt [°C], kritische Temperatur [°C], kritischer Druck [MPa]
+Wasserstoff,H2,2.02,−252.9,−240.0,1.32
+Helium,He,4.00,−268.9,−268.0,0.23
+Ammoniak,NH3,17.03,−33.3,132.3,11.33
+Wasser,H2O,18.02,100.0,373.9,22.06
+Luft,78% N2 21% O2. 1% Ar.+,28.96,−194.2,−140.4,3.84
+Kohlendioxid,CO2,44.01,−78.4,31.0,7.38
+Methan,CH4,16.04,−161.5,−82.6,4.60
+Äthan,C2H6,30.07,−88.6,32.2,4.87
+Propan,C3H8,44.10,−42.1,96.7,4.25
+R134a,CH2FCF3,102.03,−26.1,101.1,4.06
+
