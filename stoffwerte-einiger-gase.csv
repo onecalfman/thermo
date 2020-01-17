@@ -1,4 +1,4 @@
-Bezeichnung,Symbol,Molmasse,[kg/kmol],Gaskonstante,[J/(kg K)],Dichte,[kg/m3], cp [J/(kg K)], cv [J/(kg K)],κ=cp/cv
+Bezeichnung,Symbol,Molmasse [kg/kmol],Gaskonstante [J/(kg K)],Dichte [kg/m3], cp [J/(kg K)], cv [J/(kg K)],κ=cp/cv
 Acetylen,C2H2,26.038,319.3,1.16 ,1616,1278,1.26
 Ammoniak,NH3,17.031,488.2,0.76 ,2056,1526,1.35
 Argon,Ar,39.948,208.1,1.76 ,519,309,1.68
@@ -9,7 +9,7 @@ Chlorwasserstoff,HCl,70.906,228.0,1.62 ,795,556,1.43
 Helium,He,4.003,2077.0,0.18 ,5200,3124,1.66
 Kohlendioxid,CO2,44.010,188.9,1.95 ,816,618,1.32
 Kohlenmonoxid,CO,28.010,296.8,1.23 ,1038,739,1.40
-Luft,–,28.964,287.1,1.28 ,1006,718,1.40
+Luft,"",28.964,287.1,1.28 ,1006,718,1.40
 Methan,CH4,16.043,518.3,0.71 ,2165,1638,1.32
 Propan,C3H8,44.097,188.5,1.99 ,1549,1331,1.16
 Sauerstoff,O2,31.999,259.8,1.41 ,909,647,1.40
