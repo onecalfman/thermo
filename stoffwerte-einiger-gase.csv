@@ -1,4 +1,4 @@
-Bezeichnung,Symbol,Molmasse [kg/kmol],Gaskonstante [J/(kg K)],Dichte [kg/m3], cp [J/(kg K)], cv [J/(kg K)],κ=cp/cv
+Bezeichnung,Symbol,Molmasse [kg/kmol],Gaskonstante [J/(kg K)],Dichte [kg/m3], cₚ[J/(kg K)], cᵥ [J/(kg K)],κ=cₚ/cᵥ
 Acetylen,C2H2,26.038,319.3,1.16 ,1616,1278,1.26
 Ammoniak,NH3,17.031,488.2,0.76 ,2056,1526,1.35
 Argon,Ar,39.948,208.1,1.76 ,519,309,1.68
