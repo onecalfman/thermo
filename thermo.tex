@@ -1,11 +1,13 @@
 \documentclass[twocolumn]{article}
 \title{Thermodynamik Formelsammlung}
-\author{Jonas Walkling}
+\author{Jonas Walkling \thanks{Maximilan Goldapp}}
+
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.markings}
 \usetikzlibrary{calc}
 \usetikzlibrary{intersections}
+\usetikzlibrary{positioning}
 \usetikzlibrary{patterns}
 \usetikzlibrary{circuits.logic.US,circuits.logic.IEC,fit}
 \newcommand\addvmargin[1]{
@@ -15,6 +17,7 @@
 \usepgflibrary{patterns}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
+\usepackage{multirow}
 \usepackage{halloweenmath}
 \usepackage{textcomp}
 \usepackage{multicol}
@@ -32,8 +35,32 @@
 	 bottom=20mm,
 	 }
 \usepackage{hyperref}
-\begin{document}
 \newcommand{\thicc}{thick}
+\tikzset{
+	turbine/.pic = {
+
+			\draw 	(1,1) node [minimum size=1cm,circle,draw] {\LARGE T};
+
+			\draw[->] (-0.5,1) node[above right, scale=1.2] {$\dot{Q}_{zu}$} to (0.5,1);
+			\draw[->] (1.5,1)  to (2.5,1) node[above left, scale=1.2] {$\dot{Q}_{ab}$};
+			\draw[<-] (1,0) node[right, scale=1.2] {$\dot{W}_+$} to (1,0.5);
+		
+			%\draw (0.95,-0.2) node[below] {Turbine};
+			}
+		}
+\tikzset{
+	verdichter/.pic = {	
+			\draw 	(8,1) node [minimum size=1cm,circle,draw] {\LARGE V};
+		
+			\draw[->] (6.5,1) node[above right, scale=1.2] {$\dot{Q}_{zu}$} to (7.5,1);
+			\draw[->] (8.5,1)  to (9.5,1) node[above left, scale=1.2] {$\dot{Q}_{ab}$};
+			\draw[->] (8,0) node[right, scale=1.2] {$\dot{W}_+$} to (8,0.5);
+		
+			%\draw (7.95,-0.2) node[below] {Verdichter};
+			}
+		}
+	
+\begin{document}
 
 \onecolumn
 \maketitle
@@ -209,10 +236,11 @@ Hauptsätze
 	W 	&=	-\int_{}^{} p\; dV		\\
 	\end{align*}
 	\begin{align*}
-       	dS 	&=  	\frac{Q_{rev}}{T} + S_{prod}	\\
-	\Psi 	&= 	\int_{1}^{2} T\; dS_{prod}	\\
-	W_{ir}	&=	\frac{T_u}{T}\Psi		\\
-	p_1 	&= p_a  + \frac{\varphi_1 - \varphi_a}{\varphi_b- \varphi_a}(p_b - p_a) \\
+       	dS 		&=  	\frac{Q_{rev}}{T} + S_{prod}	\\
+	dS_{prod}	&=	\frac{\psi}{T} 			\\
+	\Psi 		&= 	\int_{1}^{2} T\; dS_{prod}	\\
+	W_{ir}		&=	\frac{T_u}{T}\Psi		\\
+	p_1 		&= p_a  + \frac{\varphi_1 - \varphi_a}{\varphi_b- \varphi_a}(p_b - p_a) \\
 \end{align*}
 \end{multicols}
 
@@ -1033,27 +1061,53 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 \end{centering}
 \bigskip
 
-\begin{tabular}{llll}
+\begin{tabular}{lllll}
+	Thermischer Wirkungsgrad 
+	&
+	$\eta_{th}$ & $\displaystyle = \frac{-w}{q_{zu}} = \frac{\text{Nutzen}}{\text{Aufwand}}$ &$= \displaystyle 1 - \frac{|q_{ab}|}{q_{zu}}$ &
+	\multirow{2}{*}{
+	\begin{tikzpicture}
+		[remember picture, 
+		very thick,
+		scale=1, every node/.style={scale=1.1},
+  		> = latex,
+  		dot/.style = {draw,fill,circle,inner sep=1pt},
+  		arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+		]
+		\pic (B) {verdichter};
+	\end{tikzpicture}}
+	\\\\
 	Isentroper Verdichterwirkungsgrad
 	& 
 	$\eta_{sV}$ & $\displaystyle = \frac{w_{t,12,rev}}{w_{t,12}}$ &$\displaystyle =\frac{h_{2,rev} - h_1}{h_2 - h_1}$ \\\\
 	Isentroper  Turbinenwirkungsgrad 
 	&
-	$\eta_{sT}$ & $\displaystyle = \frac{w_{t,12}}{W_{t,12,rev}}$ & $ \displaystyle = \frac{h_1 - h_2}{h_1 - h_{2,rev}}$ \\\\
-	Thermischer Wirkungsgrad 
-	&
-	$\eta_{th}$ & $\displaystyle = \frac{-w}{q_{zu}}$ &$= \displaystyle 1 - \frac{|q_{ab}|}{q_{zu}}$ \\\\
+	$\eta_{sT}$ & $\displaystyle = \frac{w_{t,12}}{W_{t,12,rev}}$ & $ \displaystyle = \frac{h_1 - h_2}{h_1 - h_{2,rev}}$ &
+	\multirow{2}{*}{
+	\begin{tikzpicture}
+		[remember picture,
+		very thick,
+		scale=1, every node/.style={scale=1.1},
+  		> = latex,
+  		dot/.style = {draw,fill,circle,inner sep=1pt},
+  		arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+		]
+		\pic (A) {turbine};
+	\end{tikzpicture}}
+	\\\\
 	Dampfkraftprozess Wirkungsgrad 
 	&
 	$n_{th}$ &$\displaystyle = 1 - \frac{|q_{61}|}{q_{23}+q{34} + q_{45}}$ 
 	& 
 	$\displaystyle = 1 - \frac{h_6 - h_1}{h_5 -  h_2}$ \\\\
 	Leistungszahl Kältemaschine &
-	$\epsilon_{K(A)}$ &$\displaystyle = \frac{q_{zu}}{w}$ \\\\
+	$\epsilon_{K(A)}$ &$\displaystyle = \frac{q_{zu}}{w} = \frac{\dot{Q}_0}{\dot{W}}$ \\\\
 	Leistungszahl Kaltluftprozess &
 	$\epsilon_{K}$ &$\displaystyle = \frac{1}{\left(\frac{p}{p_0}\right)^{\frac{\kappa - 1}{\kappa} - 1}}$ \\\\
 	Leistungszahl Kaltdampfprozess &
 	$\epsilon_K$ & $\displaystyle = \frac{q_0}{|q| - q_0} = \frac{q_o}{w_t}$ &$\displaystyle = \frac{h_1 - h_6}{h_2 - h_1}$ \\\\
+	Linkslaufender Carnotprozess &
+	$\epsilon_{carnot}$ &$\displaystyle = \frac{T_k}{T_H-T_K}$ \\
 	Leistungszahl Wärmepumpe &
 	$\epsilon_{WP}$ & $\displaystyle = \frac{q}{|q| - q_0} = \frac{|q|}{w_t} = \frac{q_{zu}}{w}$ &$\displaystyle = \frac{h_2 - h_5}{h_2 - h_1} = 1 + \epsilon_{K(A)}$ \\\\
 	Verdichtungsverhältnis &
@@ -1066,13 +1120,44 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	$\tau$ &$ \displaystyle \displaystyle =\frac{T_3}{T_1}$ \\\\
 	Verdrichtungsdruckverhältnis &
 	$\pi$ = & $ \displaystyle  = \frac{p_2}{p_1}$ \\\\
-	für Joule &
+	für Joule-Prozess &
 	$\pi_{opt}$ & $ \displaystyle = \tau^{\frac{\kappa}{2(\kappa -1)}}$ \\
 	
 	
 \end{tabular}
 
-\subsection{Kolbenverdichter}
+\pagebreak
+
+%\begin{tikzpicture}[
+%		thick,
+%		scale=1, every node/.style={scale=1},
+%  		> = latex,
+%  		dot/.style = {draw,fill,circle,inner sep=1pt},
+%  		arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+%		]
+%
+%	\draw 	(1,1) node [minimum size=1cm,circle,draw] {\LARGE T};
+%
+%	\draw[->] (-0.5,1) node[above right] {$\dot{Q}_{zu}$} to (0.5,1);
+%	\draw[->] (1.5,1)  to (2.5,1) node[above left] {$\dot{Q}_{ab}$};
+%	\draw[->] (1,0) node[right] {$\dot{W}_+$} to (1,0.5);
+%
+%	\draw (0.95,-0.6) node[below] {Turbine};
+%
+%
+%	\draw 	(8,1) node [minimum size=1cm,circle,draw] {\LARGE V};
+%
+%	\draw[->] (6.5,1) node[above right] {$\dot{Q}_{zu}$} to (7.5,1);
+%	\draw[->] (8.5,1)  to (9.5,1) node[above left] {$\dot{Q}_{ab}$};
+%	\draw[<-] (8,0) node[right] {$\dot{W}_+$} to (8,0.5);
+%
+%	\draw (7.95,-0.6) node[below] {Verdichter};
+%	
+%\end{tikzpicture}
+
+\subsection*{Kolbenverdichter}
+
+\begin{multicols}{2}
 
 \begin{tikzpicture}[
 	%\thicc,
@@ -1119,6 +1204,8 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{n}} - \right] \\
 \end{alignat*}
 
+\end{multicols}
+
 
 %  ______           __                             ___      __    __           
 % /_  __/_  _______/ /_  ____ _   _____  _________/ (_)____/ /_  / /____  _____
@@ -1126,7 +1213,9 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 % / / / /_/ / /  / /_/ / /_/ / |/ /  __/ /  / /_/ / / /__/ / / / /_/  __/ /    
 %/_/  \__,_/_/  /_.___/\____/|___/\___/_/   \__,_/_/\___/_/ /_/\__/\___/_/     
 %                                                                              
-\subsection{Turboverdichter}
+\subsection*{Turboverdichter}
+\begin{multicols}{2}
+
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
   > = latex,
@@ -1176,15 +1265,17 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[thick] (@3) to[bend right=9] (@4);
 	\draw[thick] (@9) node[dot] {} to[bend right=15] (@11) node[dot] {};
 
-	\draw (6,5) node[pattern=north west lines, minimum size=1cm,draw] {};
-	\draw (8.6,5) node {$\displaystyle w_{t,12,Verl} = \int_{2,rev}^{2} T\; ds$};
-	\draw (6,3) node[fill=gray, minimum size=1cm,draw] {};
-	\draw (8,3) node {$\displaystyle \psi_{12} = \int_{1}^{2} T\; ds$};
-	\draw (6,1) node[fill=darkgray, minimum size=1cm,draw] {};
-	\draw (8.1,1) node {$\displaystyle w_{V,12,irr} = T_u\Delta s$};
+	\draw (0.42,-1) node[pattern=north west lines, minimum size=5mm,draw] {};
+	\draw (3.12,-1) node {$\displaystyle w_{t,12,Verl} = \int_{2,rev}^{2} T\; ds$};
+	\draw (0.42,-3) node[fill=gray, minimum size=5mm,draw] {};
+	\draw (2.42,-3) node {$\displaystyle \psi_{12} = \int_{1}^{2} T\; ds$};
+	\draw (0.42,-5) node[fill=darkgray, minimum size=5mm,draw] {};
+	\draw (2.52,-5) node {$\displaystyle w_{V,12,irr} = T_u\Delta s$};
 
 \end{tikzpicture}
 \\
+
+	
 Verdichter Wirkungsgrad
 \begin{equation*}
 	\eta_{sV} = \frac{w_{t,12,rev}}{w_{t,12}} = \frac{h_{2,rev} - h_1}{h_2 - h_1} \\
@@ -1199,9 +1290,35 @@ Technische Verlustarbeit
 			&= \int_{2,rev}^{2} T|_{p_2=const.}\; ds
 \end{align*}
 
+%\begin{align*}
+%	\text{Verdichter} & \text{  Wirkungsgrad} \\
+%	\eta_{sV} &= \frac{w_{t,12,rev}}{w_{t,12}} = \frac{h_{2,rev} - h_1}{h_2 - h_1} \\
+%	\text{Verdichter} & \text{ wirkungsgrad (Ideales Gas, $\quad c_p = $ const.)} \\
+%	\eta_{sV} &= \frac{T_{2,rev} - T_1}{T_2 -T_1} \\
+%	\text{Technische} & \text{Verlustarbeit} \\
+%	w_{t,Verl,12} 	&= w_{t,12} - w_{t,12,rev} = h_2 - h_{2,rev} \\
+%			&= \int_{2,rev}^{2} T|_{p_2=const.}\; ds
+%\end{align*}
+
+\end{multicols}
+
 \pagebreak
-\section{Eindimensionale Strömungsvorgänge}
 \begin{multicols}{2}
+
+%    _______           ___                           _                   __   
+%   / ____(_)___  ____/ (_)___ ___  ___  ____  _____(_)___  ____  ____ _/ /__ 
+%  / __/ / / __ \/ __  / / __ `__ \/ _ \/ __ \/ ___/ / __ \/ __ \/ __ `/ / _ \
+% / /___/ / / / / /_/ / / / / / / /  __/ / / (__  ) / /_/ / / / / /_/ / /  __/
+%/_____/_/_/ /_/\__,_/_/_/ /_/ /_/\___/_/ /_/____/_/\____/_/ /_/\__,_/_/\___/ 
+%                                                                             
+%   _____ __        /\//______                                                         /\// /|___/|              
+%  / ___// /_______//\/ _    /___ ___  __  ______  ____ _______   ______  _________ __//\/ | __  /___  ____ ____ 
+%  \__ \/ __/ ___/ _ / (/ / / __ `__ \/ / / / __ \/ __ `/ ___/ | / / __ \/ ___/ __ `/ _ | / /_/ / __ \/ __ `/ _ \
+% ___/ / /_/ /  / __ \_  / / / / / / / /_/ / / / / /_/ (__  )| |/ / /_/ / /  / /_/ / __ |/___  / / / / /_/ /  __/
+%/____/\__/_/  /_/ |_|/_/_/_/ /_/ /_/\__,_/_/ /_/\__, /____/ |___/\____/_/   \__, /_/ |_|/   |/_/ /_/\__, /\___/ 
+%                                               /____/                      /____/                  /____/       
+
+\section{Eindimensionale Strömungsvorgänge}
 
 \begin{align*}
 	\qquad  \chi &= \frac{1}{p} = - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{T}  \\
@@ -1226,15 +1343,44 @@ Technische Verlustarbeit
 		s_2 -s_1 &= c_v \ln \left(\frac{T_2}{T_1}\right) + R \ln\left(\frac{v_2}{v_1}\right) \\
 			 &= c_p \ln \left(\frac{T_2}{T_1}\right) + R \ln\left(\frac{p_2}{p_1}\right) \\
 	\end{align*}
-\end{multicols}
 
-\section{Feutchte Luft}
+%    ______                __    __          __          ______ 
+%   / ____/__  __  _______/ /_  / /____     / /   __  __/ __/ /_
+%  / /_  / _ \/ / / / ___/ __ \/ __/ _ \   / /   / / / / /_/ __/
+% / __/ /  __/ /_/ / /__/ / / / /_/  __/  / /___/ /_/ / __/ /_  
+%/_/    \___/\__,_/\___/_/ /_/\__/\___/  /_____/\__,_/_/  \__/  
+%
+                                                               
+\section{Feuchte Luft}
 
-\begin{multicols}{2}
 
 \begin{align*}
-	x &= \frac{m_{H_2O}}{m_L}
+	x &= \frac{m_{H_2O}}{m_L} \\
+	x &= x_{D(ampf)} + x_{W(asser)} + x_{E(is)}  \\
+	\varphi & = \frac{p_D}{p_s} \\
+	x_D &= \frac{m_d}{m_L} = \frac{R_L}{R_D}\frac{p_D}{p_L} = \frac{R_L}{R_D} \frac{p_D}{p-p_D} = 0.622 \frac{p_D}{p-p_D} \\
+	x_s &= \frac{m_{D,max}}{m_L} = 0.622 \frac{p_s}{p-p_s} \rightarrow \text{für $\varphi = 1$}\\
+	\rho &= \frac{p}{R_{ges T}} = \frac{1 + x}{R_L + xR_D} \frac{p}{T} \\
+	R_{ges} &= \frac{R_L + xR_D}{1+x} \\
+	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) \\
 \end{align*}
+
+	\section{Chemische Reaktionen}
+
+	\begin{align*}
+		\frac{dn_1}{\nu_1} &= \frac{dn_2}{\nu_2} = \ldots = d\lambda = .const \\
+		\sum_{k=1}^K \mu_k dn_k &= \sum_{k=1}^{K} \mu_k(\nu_kd\lambda) = \sum_{k=1}^{K} \mu_k \nu_k = 0 \\
+		\mu_i &= \left(\frac{\partial U}{\partial n_i}\right)_{S,V}  = \left(\frac{\partial H}{\partial n_i}\right)_{S,p} = \left(\frac{\partial F}{\partial n_i}\right)_{T,V} = \left(\frac{\partial G}{\partial n_i}\right)_{T,p} \\
+		\mu (p,T) &= \mu (p^+, T) + R_mT\ln \left( \frac{p}{p^+}\right) \\
+		\text{Massen}&\text{wirkungsgesetz} \\
+		\prod_{k=1}^K \psi_k^{\nu_k} &= exp{- \frac{1}{R_mT} \sum_{k=1}^{K} \nu_k \mu_{0k}(p,T)} \\
+		&= exp{- \frac{1}{R_mT} \sum_{k=1}^{K} \nu_k G_{m,k}(p,T)} \\
+		\text{Gleichg}&\text{ewichtkonstante} \\
+		K(p,T) &= \prod_{k=1}^K \psi_k^{\nu_k} \\
+		K(p_2,T) &= K(p_1,T) \left(\frac{p_1}{p_2}\right)^{\sum_{}^{} \nu_k} \\
+		\ln \left(\frac{K(p,T_2)}{K(p,T_1)}\right) &= \frac{\Delta H_R}{R_m}\left(\frac{1}{T_1} - \frac{1}{T_2}\right) = \frac{\Delta H_R}{R_m} \frac{T_2-T_1}{T_1T_2} \\
+		\Delta H_R &= \sum_{k=1}^{K} \nu_k H_{m,k} \\
+	\end{align*}
 
 \end{multicols}
 
