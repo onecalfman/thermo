@@ -1049,11 +1049,13 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	& 
 	$\displaystyle = 1 - \frac{h_6 - h_1}{h_5 -  h_2}$ \\\\
 	Leistungszahl Kältemaschine &
-	$\epsilon_K$ &$\displaystyle = \frac{q_{zu}}{w}$ \\\\
-	Leistungszahl Wärmepumpe &
-	$\epsilon_K$ &$\displaystyle = \frac{q_{zu}}{w}$ \\\\
+	$\epsilon_{K(A)}$ &$\displaystyle = \frac{q_{zu}}{w}$ \\\\
 	Leistungszahl Kaltluftprozess &
 	$\epsilon_{K}$ &$\displaystyle = \frac{1}{\left(\frac{p}{p_0}\right)^{\frac{\kappa - 1}{\kappa} - 1}}$ \\\\
+	Leistungszahl Kaltdampfprozess &
+	$\epsilon_K$ & $\displaystyle = \frac{q_0}{|q| - q_0} = \frac{q_o}{w_t}$ &$\displaystyle = \frac{h_1 - h_6}{h_2 - h_1}$ \\\\
+	Leistungszahl Wärmepumpe &
+	$\epsilon_{WP}$ & $\displaystyle = \frac{q}{|q| - q_0} = \frac{|q|}{w_t} = \frac{q_{zu}}{w}$ &$\displaystyle = \frac{h_2 - h_5}{h_2 - h_1} = 1 + \epsilon_{K(A)}$ \\\\
 	Verdichtungsverhältnis &
 	$\epsilon$ &$\displaystyle = \frac{v_1}{v_2}$ \\\\
 	Drucksteigerungsverhältniss &
@@ -1197,10 +1199,44 @@ Technische Verlustarbeit
 			&= \int_{2,rev}^{2} T|_{p_2=const.}\; ds
 \end{align*}
 
+\pagebreak
 \section{Eindimensionale Strömungsvorgänge}
-\begin{equation*}
-	\chi = \frac{1}{p} = - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{T} 
-\end{equation*}
+\begin{multicols}{2}
+
+\begin{align*}
+	\qquad  \chi &= \frac{1}{p} = - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{T}  \\
+	\qquad c_S^2 &= \left(\frac{\partial p}{\partial \rho}\right)_{S} \\
+	\qquad c_S^2 &= \left(\frac{R}{c_v}+ 1\right)\left(v^2 \frac{RT}{(v-b)^2}\right) - \frac{2a}{v}\leftarrow VdW \\
+	\qquad c_S^2 &= \kappa RT \leftarrow ideal\\
+	\qquad Ma &= \frac{c}{c_S} \\
+		\frac{T_0}{T} &= 1 + \frac{\kappa -1}{2} \frac{c^2}{\kappa RT} = 1 + \frac{\kappa -1}{2}Ma^2 \\
+		\frac{p_0}{p} &= \left(\frac{T_0}{T}\right)^{\frac{\kappa}{\kappa-1}} = \left(1 + \frac{\kappa -1}{2}Ma^2\right)^{\frac{\kappa}{\kappa-1}} \\
+		\frac{\rho_0}{\rho} &= \left(\frac{T_0}{T}\right)^{\frac{\kappa-1}{\kappa}} = \left(1 + \frac{\kappa -1}{2}Ma^2\right)^{\frac{\kappa -1 }{\kappa}} \\
+		\left(\frac{A}{A^{*}}\right)^2 &= \frac{1}{Ma^2}\left[\frac{2}{\kappa + 1}\left( 1 + \frac{\kappa -1}{2} Ma^2 \right)\right]^{\frac{\kappa +1}{\kappa -1}} \\
+\end{align*}
+
+	\begin{align*}
+		h_2 - h_1 &= \frac{1}{2}(p_2 - p_1) \left(\frac{1}{\rho_1} + \frac{1}{\rho_2}\right) = (p_2 -p_1) \frac{1}{2}(v_1 + v_2) \\
+		\text{Stoßbezi}&\text{ehungen für ein ideales Gas} \\
+		\frac{p_2}{p_1} &= \frac{2 \kappa Ma^2 - (\kappa -1)}{\kappa +1} \\
+		\frac{\rho_2}{\rho_1} &= \frac{(\kappa +1 ) Ma^2}{2 + (\kappa -1) Ma^2} \\
+		\frac{T_2}{T_1} &= \frac{\left[2\kappa Ma^2 - (\kappa -1 \right]\left[2 + (\kappa -1) Ma^2\right]}{(\kappa +1)^2}Ma^2 \\
+		Ma_2^2 &= \frac{(\kappa -1)(Ma_1^2 -1) + (\kappa +1)}{2\kappa (Ma_1^2 -1 ) + (\kappa +1)} \\
+		\text{Entropie}&\text{ über den senkrechten Verdichtungsstoß} \\
+		s_2 -s_1 &= c_v \ln \left(\frac{T_2}{T_1}\right) + R \ln\left(\frac{v_2}{v_1}\right) \\
+			 &= c_p \ln \left(\frac{T_2}{T_1}\right) + R \ln\left(\frac{p_2}{p_1}\right) \\
+	\end{align*}
+\end{multicols}
+
+\section{Feutchte Luft}
+
+\begin{multicols}{2}
+
+\begin{align*}
+	x &= \frac{m_{H_2O}}{m_L}
+\end{align*}
+
+\end{multicols}
 
 
 	
