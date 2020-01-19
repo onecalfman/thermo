@@ -2030,7 +2030,41 @@ Methan		&	$CH_4$		&		16.04	&		-161.5	&	-82.6	&	4.60 	\\
 Äthan		&	$C_2H_6$	&		30.07	&		-88.6	&	32.2	&	4.87 	\\
 Propan		&	$C_3H_8$	&		44.10	&		-42.1	&	96.7	&	4.25 	\\
 R134a		&	$CH_2FCF_3$	&		102.03	&		-26.1	&	101.1	&	4.06 	\\
+\end{tabular} \\
+\end{center}
+
+
+% _____         __    __                             __     
+%/__  /  ____ _/ /_  / /__  ____ _      _____  _____/ /____ 
+%  / /  / __ `/ __ \/ / _ \/ __ \ | /| / / _ \/ ___/ __/ _ \
+% / /__/ /_/ / / / / /  __/ / / / |/ |/ /  __/ /  / /_/  __/
+%/____/\__,_/_/ /_/_/\___/_/ /_/|__/|__/\___/_/   \__/\___/ 
+%                                                           
+%    ____                __    __          __          ______ 
+%   / __/__  __  _______/ /_  / /____     / /   __  __/ __/ /_
+%  / /_/ _ \/ / / / ___/ __ \/ __/ _ \   / /   / / / / /_/ __/
+% / __/  __/ /_/ / /__/ / / / /_/  __/  / /___/ /_/ / __/ /_  
+%/_/  \___/\__,_/\___/_/ /_/\__/\___/  /_____/\__,_/_/  \__/  
+%
+                                                             
+\section{Zahlenwerte feuchte Luft}
+
+\begin{center}
+\begin{tabular}{l|r|r|r|r}
+Bezeichnung& Formelzeichen& Zahlenwert& Dimension \\
+	&&&& \\
+Molmasse der Luft& ML& 28,96& kg/ kmol \\
+Molmasse des Wassers& MH2O& 18,02& kg/ kmol \\
+spezifische Gaskonstante der Luft& RL& 0,287& kJ/ (kg K) \\
+spezifische Gaskonstante des Dampfes& RD& 0,461& kJ/ (kg K) \\
+spezifische Wärmekapazität der Luft& cpL& 1,006& kJ/ (kg K) \\
+spezifische Wärmekapazität des Dampfes& cpD& 1,92& kJ/ (kg K) \\
+spezifische Wärmekapazität des Wassers& cW& 4,182& kJ/ (kg K) \\
+spezifische Wärmekapazität des Eises& cE& 2,1& kJ/ (kg K) \\
+Verdampfungsenthalpie des Wassers bei 0 °C& rD& 2500& kJ/ kg \\
+Schmelzenthalpie des Eises bei 0 °C& rE& 334& kJ/ kg \\
 \end{tabular}
+
 
 \end{center}
 
@@ -2083,5 +2117,72 @@ R134a		&	$CH_2FCF_3$	&		102.03	&		-26.1	&	101.1	&	4.06 	\\
 	C_{v,m} &= (C_{v,m})_{\text{ideales Gas}} 
 	- T \int_{0}^{V_m} \left(\frac{\partial^2 p }{\partial T^2}\right)_{p,\psi_j} \; d\tilde{V} \\
 \end{align*}
+
+%    ____  _                         ___                             
+%   / __ \(_)___  ____ ____     ____/ (_)__     ____ ___  ____ _____ 
+%  / / / / / __ \/ __ `/ _ \   / __  / / _ \   / __ `__ \/ __ `/ __ \
+% / /_/ / / / / / /_/ /  __/  / /_/ / /  __/  / / / / / / /_/ / / / /
+%/_____/_/_/ /_/\__, /\___/   \__,_/_/\___/  /_/ /_/ /_/\__,_/_/ /_/ 
+%              /____/                                                
+%        _                  __  ___      __                _                    
+%  ___  (_)___ ____  ____  / /_/ (_)____/ /_     _      __(_)____________  ____ 
+% / _ \/ / __ `/ _ \/ __ \/ __/ / / ___/ __ \   | | /| / / / ___/ ___/ _ \/ __ \
+%/  __/ / /_/ /  __/ / / / /_/ / / /__/ / / /   | |/ |/ / (__  |__  )  __/ / / /
+%\___/_/\__, /\___/_/ /_/\__/_/_/\___/_/ /_/    |__/|__/_/____/____/\___/_/ /_/ 
+%      /____/                                                                   
+%               ______     
+%   _________  / / / /____ 
+%  / ___/ __ \/ / / __/ _ \
+% (__  ) /_/ / / / /_/  __/
+%/____/\____/_/_/\__/\___/ 
+%                          
+\section{Dinge die man eigentlich wissen sollte}
+
+\begin{multicols}{2}
+
+
+	\begin{alignat*}{3} 
+	10^1 	&= 1 				  				  \\
+	10^1 	&= 10	 			  &&10^{-1}		&&= 	0.1 \\
+	10^2 	&= 100 			 	  &&10^{-2} 		&&= 	0.01 \\
+	10^3 	&= 1000 		 	  &&10^{-4} 		&&= 	0.001 \\
+	10^4 	&= 10\;000 		 	  &&10^{-4} 		&&= 	0.000\;1 \\
+	10^5 	&= 100\;000 		 	  &&10^{-5} 		&&= 	0.000\;01 \\
+	10^6 	&= 1000\;000 		 	  &&10^{-6} 		&&= 	0.000\;001 \\
+	10^7 	&= 10\;000\;s000 	 	  &&10^{-7} 		&&= 	0.000\;000\;1 \\
+	10^8 	&= 100\;000\;000 	 	  &&10^{-8} 		&&= 	0.000\;000\;01 \\
+	10^9 	&= 1000\;000\;000 	 	  &&10^{-9} 		&&= 	0.000\;000\;001 \\
+	10^10 	&= 10\;000\;000\;000 	 	  &&10^{-10} 		&&= 	0.000\;000\;000\;1 \\
+	10^11 	&= 100\;000\;000\;000 	 	  &&10^{-11} 		&&= 	0.000\;000\;000\;01 \\
+	10^12 	&= 1000\;000\;000\;000	\qquad 	  &&10^{-12} 		&&= 	0.000\;000\;000\;001 \\
+	\end{alignat*}
+\begin{align*}
+	\LARGE 1J &= 1W = 1Nm \\
+	\normalsize
+	E_{kin} &= \frac{1}{2}mc^2 \\	
+	E_{rot} &= \frac{1}{2}I\omega^2 \\
+	E_{Feder} &= \frac{1}{2}kx^2 \\
+	E_{pot} &= mgz \\
+	E_{Kondensator} &= \frac{1}{2}C\left(\frac{Q_e}{C}\right)^2 \\
+	E_{Spule}	&= \frac{1}{2}LI^2 \\
+	E_{Elelektrisch} & = UA \\
+\end{align*}
+	\begin{alignat*}{3} 
+		m^2 \quad & \quad dm^2 && \quad cm^2 && \quad mm^2 \\
+		1\quad &\quad 10^2\quad &&\quad 10^4\quad &&\quad 10^6\quad \\
+		10^{-2}\quad &\quad 1\quad &&\quad 10^{2}\quad &&\quad 10^{4}\quad \quad \\
+		10^{-4}\quad &\quad 10^{-2}\quad &&\quad 1\quad &&\quad 10^{2}\quad \quad \\
+		10^{-6}\quad &\quad 10^{-4}\quad &&\quad 10^{2}\quad &&\quad 1\quad \quad \\
+	\end{alignat*}
+	\begin{alignat*}{3} 
+		m^3 \quad & \quad dm^3 && \quad cm^3 && \quad mm^3 \\
+		1\quad &\quad 10^3\quad &&\quad 10^6\quad &&\quad 10^9\quad \\
+		10^{-3}\quad &\quad 1\quad &&\quad 10^{3}\quad &&\quad 10^{6}\quad \quad \\
+		10^{-6}\quad &\quad 10^{-3}\quad &&\quad 1\quad &&\quad 10^{3}\quad \quad \\
+		10^{-9}\quad &\quad 10^{-6}\quad &&\quad 10^{3}\quad &&\quad 1\quad \quad \\
+	\end{alignat*}
+\end{multicols}
+
+
 \end{document}
 
