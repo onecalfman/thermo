@@ -1327,8 +1327,11 @@ Technische Verlustarbeit
 	\coordinate (@3a) at (1.4,0.8);
 	\coordinate (@4) at (3.4,2.5);
 	\coordinate (@4a) at (3.4,0.8);
-	\coordinate (@5) at (4,3.7);
-	\coordinate (@6) at (4,0.8);
+	\coordinate (@5) at (3.8,3.7);
+	\coordinate (@6) at (3.8,0.8);
+	\coordinate (@6a) at (3.8,2.5);
+	\coordinate (@7) at (4.3,3.7);
+	\coordinate (@8) at (4.3,0.8);
 	\coordinate (k) at (2.4,3.2);
 
 	\draw[arrow inside, thick] (@1) to (@2);
@@ -1338,28 +1341,37 @@ Technische Verlustarbeit
 	\draw[arrow inside, thick] (@5) to (@6);
 	\draw[arrow inside, thick] (@6) to (@1);
 
+	\draw[arrow inside, thick, dotted] (@6a) to (@7);
+	\draw[arrow inside, thick, dotted] (@7) to (@8);
+	\draw[arrow inside, thick, dotted] (@8) to (@6);
+
 	\draw (0.2,0.2) to[bend right=10] (@3);
 	\draw (@3) parabola bend (k) (@4);
 	\draw (@4) to[bend right=10] (4.8,0.2);
 
 	\draw[dashed] (@3) to (@4) to (@4a) to (@3a) to (@3);
 	\draw (k) node[above] {K};
-	\draw[thick] (0,-0.3) to (1,-0.3) node[right] {Clausius-Rankine Prozess};
-	\draw[dashed] (0,-0.7) to (1,-0.7) node[right] {Carnot Prozess};
+	\draw[dashed] (-0.1,3.7) node[left] {$T_{max}$} to (4.9,3.7);
 
 	\node[dot,label={below right:$1$}] at (@1) {};
 	\node[dot,label={below  left:$2$}] at (@2) {};
 	\node[dot,label={above  left:$3$}] at (@3) {};
-	\node[dot,label={      right:$4$}] at (@4) {};
-	\node[dot,label={below right:$5$}] at (@5) {};
-	\node[dot,label={below right:$6$}] at (@6) {};
+	\node[dot,label={below  left:$4$}] at (@4) {};
+	\node[dot,label={above right:$5$}] at (@5) {};
+	\node[dot,label={below      :$6$}] at (@6) {};
+	\node[dot,label={below right:   }] at (@6a){};
+	\node[dot,label={above right:$7$}] at (@7) {};
+	\node[dot,label={      right:$8$}] at (@8) {};
 
 	\draw (0.6,2.3) node[above] {\tiny $p =$ const.} to (0.8,1.583); 
-	\draw (3.4,3.4) node[above] {\tiny $p =$ const.} to (3.82,3.2); 
-	\draw (2.6,1.5)   node[above] {\small $p,T =$ const.} to (3.2,0.8); 
+	\draw (3.3,3.3) node[above] {\tiny $p =$ const.} to (3.72,3.2); 
+	\draw (2.6,1.5) node[above] {\small $p,T =$ const.} to (3.2,0.8); 
 	\draw (1.6,2.5) to (2,2.1); 
 
-	\draw (-0.2,-1.5) node[right] {$\displaystyle \eta_{th} = 1 - \frac{|q_{61}|}{q_{23} + q_{34} + q_{45}} = 1- \frac{h_6 - h_1}{h_5 -h_2}$};
+	\draw[thick] (0,-0.3) to (1,-0.3) node[right] {\small Clausius-Rankine Prozess};
+	\draw[thick, dotted] (0,-0.7) to (1,-0.7) node[right] {\small mit Zwischenüberhitzung};
+	\draw[dashed] (0,-1.1) to (1,-1.1) node[right] {\small Carnot Prozess};
+	\draw (-0.2,-1.9) node[right] {$\displaystyle \eta_{th} = 1 - \frac{|q_{61}|}{q_{23} + q_{34} + q_{45}} = 1- \frac{h_6 - h_1}{h_5 -h_2}$};
 \end{tikzpicture}
 
 \end{multicols}
