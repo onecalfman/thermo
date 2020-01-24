@@ -474,7 +474,7 @@ Zustandsgleichungen
 \begin{align*}
 	&\eta_{th} = 1 - \frac{-Q_{34}}{Q_{12}} 
 	= 1 - \frac{T_3(S_3-S_4)}{T_1(S_2 - S_1)} 
-	= 1 - \frac{T_3}{T_1} \\
+	= 1 - \frac{T_1}{T_3} \\
 	&\frac{Q_{12}}{T_1} + \frac{Q_{34}}{T_3} 
 	= 0 \\
 	&\Delta S_{ges} 
@@ -1318,6 +1318,50 @@ Technische Verlustarbeit
 %			&= \int_{2,rev}^{2} T|_{p_2=const.}\; ds
 %\end{align*}
 
+\begin{multicols}{2}
+\section{Clausius-Rankine-Prozess}
+
+\begin{tikzpicture}[
+	scale=1, every node/.style={scale=1},
+  > = latex,
+  dot/.style = {draw,fill,circle,inner sep=1pt},
+  arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  ]
+  	\draw[<->] (0,4) node[above right] {$T$} |- (5,0) node[right] {$s$};
+	
+	\coordinate (@1) at (0.6,0.8);
+	\coordinate (@2) at (0.6,1.4);
+	\coordinate (@3) at (1.4,2.5);
+	\coordinate (@3a) at (1.4,0.8);
+	\coordinate (@4) at (3.4,2.5);
+	\coordinate (@4a) at (3.4,0.8);
+	\coordinate (@5) at (4,3.7);
+	\coordinate (@6) at (4,0.8);
+	\coordinate (k) at (2.4,3.2);
+
+	\draw[arrow inside, thick] (@1) to (@2);
+	\draw[arrow inside, thick] (@2) to[bend right=10] (@3);
+	\draw[arrow inside, thick] (@3) to (@4);
+	\draw[arrow inside, thick] (@4) to[bend right=10] (@5);
+	\draw[arrow inside, thick] (@5) to (@6);
+	\draw[arrow inside, thick] (@6) to (@1);
+
+	\draw (0.2,0.2) to[bend right=10] (@3);
+	\draw (@3) parabola bend (k) (@4);
+	\draw (@4) to[bend right=10] (4.8,0.2);
+
+	\draw[dashed] (@3) to (@4) to (@4a) to (@3a) to (@3);
+	\draw (k) node[above] {K};
+
+	\node[dot,label={below right:$1$}] at (@1) {};
+	\node[dot,label={below  left:$2$}] at (@2) {};
+	\node[dot,label={above  left:$3$}] at (@3) {};
+	\node[dot,label={      right:$4$}] at (@4) {};
+	\node[dot,label={below right:$5$}] at (@5) {};
+	\node[dot,label={below right:$6$}] at (@6) {};
+\end{tikzpicture}
+
+\end{multicols}
 \end{multicols}
 
 \pagebreak
