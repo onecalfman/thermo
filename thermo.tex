@@ -269,6 +269,29 @@ Zustandsgleichungen
 	p\frac{dV}{dt}}
 	^{\text{Keine Volumenänderung -> 0}}
 \end{equation*}
+
+\section{Iso}
+
+\begin{tikzpicture}
+	[
+	scale=0.8, every node/.style={scale=1.3},
+	> = latex,
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+  	\draw[<->] (0,4) node[above right] {$T$} |- (4,0) node[right] {$S$};
+  	\draw[<->] (5,4) node[above right] {$p$} |- (9,0) node[right] {$V$};
+
+	\draw (0.7,0) to node[near end, below=-1.2mm, sloped] {\small Isentrope} (0.7,3.5);
+	\draw (0,0.7) to node[near end, below=-1.2mm, sloped] {\small Isotherme} (3.5,0.7);
+	\draw (0.1,0) to[bend right=15] node[near end, below=-1.2mm, sloped] {\small Isochore} (2,3.5);
+	\draw (0,0.5) to[bend right=15] node[near end, below=-1.2mm, sloped] {\small Isobare} (3.5,2.4);
+
+	\draw (5.7,4) to node[near end, below=-1.2mm, sloped] {\small isobar} (5.7,0.5);
+	\draw (5.2,3.4) to node[near end, below=-1.2mm, sloped] {\small isochor} (8.5,3.4);
+	\draw (5.45,4) to[bend right=15] node[near end, below=-1.2mm, sloped] {\small Isentrope } (8,0.5);
+	\draw (5.3,3.85) to[bend right=15] node[very near end, below=-1.2mm, sloped] {\small Isotherme} (8.5,1.6);
+\end{tikzpicture}
 %   _______ __    __        
 %  / ____(_) /_  / /_  _____
 % / / __/ / __ \/ __ \/ ___/
@@ -328,6 +351,8 @@ Zustandsgleichungen
 	   &   &   &  	&G &= G(T,p) \\
 \end{tabular}
 \normalsize
+\bigskip
+\bigskip
 \bigskip
 \bigskip
 \bigskip
@@ -1372,6 +1397,7 @@ Technische Verlustarbeit
 	\draw[thick, dotted] (0,-0.7) to (1,-0.7) node[right] {\small mit Zwischenüberhitzung};
 	\draw[dashed] (0,-1.1) to (1,-1.1) node[right] {\small Carnot Prozess};
 	\draw (-0.2,-1.9) node[right] {$\displaystyle \eta_{th} = 1 - \frac{|q_{61}|}{q_{23} + q_{34} + q_{45}} = 1- \frac{h_6 - h_1}{h_5 -h_2}$};
+	\draw (-0.2,-2.9) node[right] {$\displaystyle \eta_{th,ZÜ} = 1 - \frac{|q_{81}|}{q_{23} + q_{34} + q_{45} + q_{67}} = 1- \frac{h_8 - h_1}{h_5 -h_2 + h_7 - h_6}$};
 \end{tikzpicture}
 
 \end{multicols}
