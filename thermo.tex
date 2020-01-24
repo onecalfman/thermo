@@ -1285,10 +1285,10 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 
 	\draw (0.42,-1) node[pattern=north west lines, minimum size=5mm,draw] {};
 	\draw (3.12,-1) node {$\displaystyle w_{t,12,Verl} = \int_{2,rev}^{2} T\; ds$};
-	\draw (0.42,-3) node[fill=gray, minimum size=5mm,draw] {};
-	\draw (2.42,-3) node {$\displaystyle \psi_{12} = \int_{1}^{2} T\; ds$};
-	\draw (0.42,-5) node[fill=darkgray, minimum size=5mm,draw] {};
-	\draw (2.52,-5) node {$\displaystyle w_{V,12,irr} = T_u\Delta s$};
+	\draw (0.42,-2) node[fill=gray, minimum size=5mm,draw] {};
+	\draw (2.42,-2) node {$\displaystyle \psi_{12} = \int_{1}^{2} T\; ds$};
+	\draw (0.42,-3) node[fill=darkgray, minimum size=5mm,draw] {};
+	\draw (2.52,-3) node {$\displaystyle w_{V,12,irr} = T_u\Delta s$};
 
 \end{tikzpicture}
 \\
@@ -1308,15 +1308,7 @@ Technische Verlustarbeit
 			&= \int_{2,rev}^{2} T|_{p_2=const.}\; ds
 \end{align*}
 
-%\begin{align*}
-%	\text{Verdichter} & \text{  Wirkungsgrad} \\
-%	\eta_{sV} &= \frac{w_{t,12,rev}}{w_{t,12}} = \frac{h_{2,rev} - h_1}{h_2 - h_1} \\
-%	\text{Verdichter} & \text{ wirkungsgrad (Ideales Gas, $\quad c_p = $ const.)} \\
-%	\eta_{sV} &= \frac{T_{2,rev} - T_1}{T_2 -T_1} \\
-%	\text{Technische} & \text{Verlustarbeit} \\
-%	w_{t,Verl,12} 	&= w_{t,12} - w_{t,12,rev} = h_2 - h_{2,rev} \\
-%			&= \int_{2,rev}^{2} T|_{p_2=const.}\; ds
-%\end{align*}
+\end{multicols}
 
 \begin{multicols}{2}
 \section{Clausius-Rankine-Prozess}
@@ -1352,6 +1344,8 @@ Technische Verlustarbeit
 
 	\draw[dashed] (@3) to (@4) to (@4a) to (@3a) to (@3);
 	\draw (k) node[above] {K};
+	\draw[thick] (0,-0.3) to (1,-0.3) node[right] {Clausius-Rankine Prozess};
+	\draw[dashed] (0,-0.7) to (1,-0.7) node[right] {Carnot Prozess};
 
 	\node[dot,label={below right:$1$}] at (@1) {};
 	\node[dot,label={below  left:$2$}] at (@2) {};
@@ -1359,9 +1353,15 @@ Technische Verlustarbeit
 	\node[dot,label={      right:$4$}] at (@4) {};
 	\node[dot,label={below right:$5$}] at (@5) {};
 	\node[dot,label={below right:$6$}] at (@6) {};
+
+	\draw (0.6,2.3) node[above] {\tiny $p =$ const.} to (0.8,1.583); 
+	\draw (3.4,3.4) node[above] {\tiny $p =$ const.} to (3.82,3.2); 
+	\draw (2.6,1.5)   node[above] {\small $p,T =$ const.} to (3.2,0.8); 
+	\draw (1.6,2.5) to (2,2.1); 
+
+	\draw (-0.2,-1.5) node[right] {$\displaystyle \eta_{th} = 1 - \frac{|q_{61}|}{q_{23} + q_{34} + q_{45}} = 1- \frac{h_6 - h_1}{h_5 -h_2}$};
 \end{tikzpicture}
 
-\end{multicols}
 \end{multicols}
 
 \pagebreak
