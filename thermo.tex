@@ -112,7 +112,7 @@
 	\mathbf{\Delta Hg}	&=	\text{Molare Reaktionsenthalpie} \\
 	\mathbf{K}		&=	\text{Konstante des Massenwirkungsgesetztes[-]} \\
 	\mathbf{M}		&=	\text{Molmasse[kg/mol]} \\
-	\mathbf{\dot{m}}	&=	\text{Massestrom[kg/s]} \\
+	\mathbf{\dot{m}}	&=	\text{Massenstrom[kg/s]} \\
 	\mathbf{m'}		&=	\text{Masse in der flüssigen Phase[kg]} \\
 	\mathbf{m''}		&=	\text{Masse in der gasförmigen Phase[kg]} \\
 	\mathbf{Ma=c/c_s}	&=	\text{Machzahl[-]} \\
@@ -153,7 +153,7 @@
 	\mathbf{Z}		&=	\text{Allgemeine extensive Zustandsgrößen[Z]} \\
 	\mathbf{z}		&=	\text{Allgemeine } \\
 	\mathbf{\beta}		&=	\text{Isobarer Ausdehnungskoeffizient[1/K]} \\
-	\mathbf{\gamma}		&=	\text{Isochorer Spannungskoeffizeint[1/K]} \\
+	\mathbf{\gamma}		&=	\text{Isochorer Spannungskoeffizient[1/K]} \\
 	\mathbf{\delta_T}	&=	\text{Isothermer Drosselkoeffizient[m³/kg]} \\
 	\mathbf{\delta_h}	&=	\text{Isenthalper Drosselkoeffizient[Ks²m/kg]} \\
 	\mathbf{\varepsilon}	&=	\text{Leistungsziffer[-]} \\
@@ -197,8 +197,8 @@
 
 \subsection*{Messgrößen}
 \begin{itemize}
-	\item Prozessgrößen sind Wegabhängig (eg. Arbeit, Wärme)
-	\item Zustandsgrößen sind Wegunabhängig (eg. Volumen, Druck)
+	\item Prozessgrößen sind wegabhängig (eg. Arbeit, Wärme)
+	\item Zustandsgrößen sind wegunabhängig (eg. Volumen, Druck)
 	\item Extensive Zustandsgrößen sind abhängig von der Masse des Systems (V, m, H, S, F, G, E)
 	\item Intensive Zustandsgrößen sind unabhängig von der Masse des Systems (T, p)
 \end{itemize}
@@ -212,10 +212,10 @@
 \subsection*{Hauptsätze}
 \normalsize 
 \begin{itemize}
-	\item[0:] Temperatur existiert, ihre gleichheit ist notwendige Vorraussetzung für das thermische Gleichgewicht von zwei Systemen. 
+	\item[0:] Temperatur existiert, ihre Gleichheit ist notwendige Voraussetzung für das thermische Gleichgewicht von zwei Systemen. 
 	\item[1:] Energie existiert, sie ist für abgeschlossene Systeme konstant.  
 	\item[2:] Entropie existiert, sie wird bei allen irreversiblen Prozessen erzeugt. $dS = \frac{\delta Q_{rev}}{T}$
-	\item[3:] $0K$ exisitert, bei dieser Temperatur ist die Entropie $= 0$ 
+	\item[3:] $0K$ existiert, bei dieser Temperatur ist die Entropie $= 0$ 
 \end{itemize}
 
 %    ____             _      ____                          __    
@@ -798,7 +798,7 @@
 	q_{12} &= u_2 - u_1 = u_2' + x_2\Big(u_2'' - u_2' \Big) - u_1' - x_1\Big(u_1'' - u_1'\Big) \\
 	\text{Adiabate } &\text{Zustandsänderung} \\
 	w_{V,12} &= u_2 - u_1 = u_2' + x_2 \Big( u_2'' - u_2' \Big) - u_1' - x_1\Big(u_1'' - u_1'\Big) \\
-	\text{Entropie} & \text{änderung wärend des Mischvorgangs} \\
+	\text{Entropie} & \text{Änderung während des Mischvorgangs} \\
 	&S_2-S_2 = R_m \left ( n \ln n - \sum_{i}^{} n_i \ln n_i \right ) \\
 \end{align*}
 
@@ -810,7 +810,7 @@
 %	              /____/         
 
 \section{Maximale Arbeit und Exergie}
-Maxiaml nutzbare Arbeit $\rightarrow$ isentrop, reibungsfrei \\
+Maximal nutzbare Arbeit $\rightarrow$ isentrop, reibungsfrei \\
 $1 \rightarrow 1'$ : isentrop auf $T_u$ \\
 $1' \rightarrow u$ : isotherm auf $u$ 
 
@@ -890,7 +890,7 @@ $1' \rightarrow u$ : isotherm auf $u$
 \end{multline*}
 
 
-Die Exergie der Enthalpie (offens, stationäres System)
+Die Exergie der Enthalpie (offenes, stationäres System)
 \begin{equation*}
 	-\dot{W}_{ex,1u} = \dot{m}(h_1 - h_u -T_u(s_1 - s_u))
 \end{equation*}
@@ -1081,8 +1081,8 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	&&R_m = 8,3143\left[\frac{kJ}{kmolK}\right] \\
 	\end{align*}
 	\begin{multline*}
-		C_{v,m} = \underbrace{3 + \frac{R_m}{2}}_{\text{Translatorisch}} + \underbrace{\frac{n_{\text{rot}}  R_m}{2}}_{\text{Rotatorisch}}  
-		+ \underbrace{R_M ( 3n_{\text{Atome}} - 3 - n_{rot})}_{\text{Vibratorisch}}  \\
+		C_{v,m} = \underbrace{3 + \frac{R_m}{2}}_{\text{translatorisch}} + \underbrace{\frac{n_{\text{rot}}  R_m}{2}}_{\text{rotatorisch}}  
+		+ \underbrace{R_M ( 3n_{\text{Atome}} - 3 - n_{rot})}_{\text{vibratorisch}}  \\
 		+ \underbrace{C_{v,m,Elektronenanregung}}_{\text{Relevant ab: }T \approx 10^4K } 
 	\end{multline*}
 %  ______          __          _           __       
@@ -1198,7 +1198,7 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	$\epsilon$ &$\displaystyle = \frac{v_1}{v_2}$ \\\\
 	Drucksteigerungsverhältniss &
 	$\psi$ &$\displaystyle = \frac{p_3}{p_2}$ \\\\
-	Einspriztverhältniss &
+	Einspritzverhältniss &
 	$\varphi $ &$\displaystyle = \frac{v_4}{v_3}$ \\\\
 	Temperaturverhältnis &
 	$\tau$ &$ \displaystyle \displaystyle =\frac{T_3}{T_1}$ \\\\
@@ -1212,32 +1212,6 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 
 \pagebreak
 
-%\begin{tikzpicture}[
-%		thick,
-%		scale=1, every node/.style={scale=1},
-%  		> = latex,
-%  		dot/.style = {draw,fill,circle,inner sep=1pt},
-%  		arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
-%		]
-%
-%	\draw 	(1,1) node [minimum size=1cm,circle,draw] {\LARGE T};
-%
-%	\draw[->] (-0.5,1) node[above right] {$\dot{Q}_{zu}$} to (0.5,1);
-%	\draw[->] (1.5,1)  to (2.5,1) node[above left] {$\dot{Q}_{ab}$};
-%	\draw[->] (1,0) node[right] {$\dot{W}_+$} to (1,0.5);
-%
-%	\draw (0.95,-0.6) node[below] {Turbine};
-%
-%
-%	\draw 	(8,1) node [minimum size=1cm,circle,draw] {\LARGE V};
-%
-%	\draw[->] (6.5,1) node[above right] {$\dot{Q}_{zu}$} to (7.5,1);
-%	\draw[->] (8.5,1)  to (9.5,1) node[above left] {$\dot{Q}_{ab}$};
-%	\draw[<-] (8,0) node[right] {$\dot{W}_+$} to (8,0.5);
-%
-%	\draw (7.95,-0.6) node[below] {Verdichter};
-%	
-%\end{tikzpicture}
 
 \subsection*{Kolbenverdichter}
 
@@ -1925,7 +1899,7 @@ Technische Verlustarbeit
 	\\\\
 	\renewcommand{\arraystretch}{2}
 \begin{tabular}{l|l|l|l|l|l}
-& Isothermo  
+& Isotherm  
 & Isobare  
 & Isochore  
 & Isentrop  
@@ -2040,7 +2014,7 @@ Van-Der-Waals-Gas
 & Isochore 
 & Isentrop 
 \\ \hline
-		konst. 
+		const. 
 & T 
 & p 
 & v  
@@ -2122,7 +2096,7 @@ Van-Der-Waals-Gas
 
 \begin{tabular}{l|l|r|r|r|r|r|r}
 Bezeichnung	&	Symbol	&Molmasse 	&Gaskonstante	&	Dichte	& $c_p$ & $c_v$ &$\kappa$ \\
-		&		&[kg/kmol]	&[J/(kg K)]	& 	[kg/m3]	& [J/(kg K)]	& [J/(kg,K)] & \\
+		&		&[kg/kmol]	&[J/(kg K)]	& 	[kg/$m^3$]	& [J/(kg K)]	& [J/(kg,K)] & \\
 	&&&&&&\\
 Acetylen	&$	C_2H_2	$&	26.038	&	319.3	&	1.16 	&	1616	&	1278	&	1.26 \\
 Ammoniak	&$	NH_3	$&	17.031	&	488.2	&	0.76 	&	2056	&	1526	&	1.35 \\
@@ -2163,7 +2137,7 @@ Xenon		&$	Xe	$&	131.300	&	63.3	&	5.82 	&	159	&	93	&	1.71 \\
 
 \begin{tabular}{l|r|r|r|r|r}
 	Name	& chemische &	 Molmasse  	& Normal-& kritische & kritischer \\
-Name	& Formel&	 [kg/kmol]	& siedepunkt [\textcelsius]	& Temperatur [\textcelsius]	& Druck [MPa] 	\\
+Name	& Formel&	 [kg/kmol]	& Siedepunkt [\textcelsius]	& Temperatur [\textcelsius]	& Druck [MPa] 	\\
 		&			&			&			&		&	 	\\
 Wasserstoff	&	$H_2$		&		2.02	&		-252.9	&	-240.0	&	1.32 	\\
 Helium		&	$He$		&		4.00	&		-268.9	&	-268.0	&	0.23 	\\
@@ -2294,7 +2268,7 @@ Schmelzenthalpie des Eises bei 0 °C& rE& 334& kJ/ kg \\
 	10^4 	&= 10\;000 		 	  &&10^{-4} 		&&= 	0.000\;1 \\
 	10^5 	&= 100\;000 		 	  &&10^{-5} 		&&= 	0.000\;01 \\
 	10^6 	&= 1000\;000 		 	  &&10^{-6} 		&&= 	0.000\;001 \\
-	10^7 	&= 10\;000\;s000 	 	  &&10^{-7} 		&&= 	0.000\;000\;1 \\
+	10^7 	&= 10\;000\;000 	 	  &&10^{-7} 		&&= 	0.000\;000\;1 \\
 	10^8 	&= 100\;000\;000 	 	  &&10^{-8} 		&&= 	0.000\;000\;01 \\
 	10^9 	&= 1000\;000\;000 	 	  &&10^{-9} 		&&= 	0.000\;000\;001 \\
 	10^10 	&= 10\;000\;000\;000 	 	  &&10^{-10} 		&&= 	0.000\;000\;000\;1 \\
@@ -2310,7 +2284,7 @@ Schmelzenthalpie des Eises bei 0 °C& rE& 334& kJ/ kg \\
 	E_{pot} &= mgz \\
 	E_{Kondensator} &= \frac{1}{2}C\left(\frac{Q_e}{C}\right)^2 \\
 	E_{Spule}	&= \frac{1}{2}LI^2 \\
-	E_{Elelektrisch} & = UA \\
+	E_{Elektrisch} & = UA \\
 \end{align*}
 	\begin{alignat*}{3} 
 		m^2 \quad & \quad dm^2 && \quad cm^2 && \quad mm^2 \\
