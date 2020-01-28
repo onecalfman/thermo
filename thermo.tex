@@ -43,7 +43,7 @@
 
 			\draw[->] (-0.5,1) node[above right, scale=1.2] {$\dot{Q}_{zu}$} to (0.5,1);
 			\draw[->] (1.5,1)  to (2.5,1) node[above left, scale=1.2] {$\dot{Q}_{ab}$};
-			\draw[<-] (1,0) node[right, scale=1.2] {$\dot{W}_+$} to (1,0.5);
+			\draw[<-] (1,0) node[right, scale=1.2] {$\dot{W}_t$} to (1,0.5);
 		
 			%\draw (0.95,-0.2) node[below] {Turbine};
 			}
@@ -54,7 +54,7 @@
 		
 			\draw[->] (6.5,1) node[above right, scale=1.2] {$\dot{Q}_{zu}$} to (7.5,1);
 			\draw[->] (8.5,1)  to (9.5,1) node[above left, scale=1.2] {$\dot{Q}_{ab}$};
-			\draw[->] (8,0) node[right, scale=1.2] {$\dot{W}_+$} to (8,0.5);
+			\draw[->] (8,0) node[right, scale=1.2] {$\dot{W}_t$} to (8,0.5);
 		
 			%\draw (7.95,-0.2) node[below] {Verdichter};
 			}
@@ -109,7 +109,7 @@
 	\mathbf{g}		&=	\text{Erdbeschleunigung[m/s²]} \\
 	\mathbf{H = U+pV}	&=	\text{Enthalpie[J]} \\
 	\mathbf{h = u + pv}	&=	\text{Spezifische Enthalpie[J/kg]} \\
-	\mathbf{\Delta Hg}	&=	\text{Molare Reaktionsenthalpie} \\
+	\Delta \mathbf{Hg}	&=	\text{Molare Reaktionsenthalpie} \\
 	\mathbf{K}		&=	\text{Konstante des Massenwirkungsgesetztes[-]} \\
 	\mathbf{M}		&=	\text{Molmasse[kg/mol]} \\
 	\mathbf{\dot{m}}	&=	\text{Massenstrom[kg/s]} \\
@@ -171,7 +171,7 @@
 	\mathbf{\phi}		&=	\text{Relative Feuchte[-]} \\
 	\mathbf{\phi}		&=	\text{Einspritzverhältnis[-]} \\
 	\mathbf{\xi}		&=	\text{Isothermer Kompressibilitätskoeffizient[m²/N]} \\
-	\mathbf{\Psi}		&=	\text{Dissipationsenergie[J]} \\
+	\Psi			&=	\text{Dissipationsenergie[J]} \\
 	\mathbf{\psi}		&=	\text{Spezifische Dissipationsenergie[J]} \\
 	\mathbf{\psi}		&=	\text{Drucksteigerungsverhältnis[-]} \\
 	\mathbf{\psi_i}		&=	\text{Molanteil[-]} \\
@@ -235,6 +235,7 @@
 	%G 	&=	\underrightswishingghost{H-ST}	\\
 	G 	&=	H-ST	\\
 	W 	&=	-\int_{}^{} p\; dV		\\
+	dU	&= 	mc_vdT \leftarrow \text{geschlossene Systeme}	\\
 	\end{align*}
 	\begin{align*}
        	dS 		&=  	\frac{Q_{rev}}{T} + S_{prod}	\\
@@ -450,6 +451,7 @@
 	\\
 		& u_2 - u_1 &&= \int_{T_1}^{T_2} c_v(T)\; dT
 	\\
+	& U_2 - U_1 &&= Q_{12} + W_{V,12} \\
 \end{alignat*}
 % _    __                      __              _       __            __    
 %| |  / /___ _____        ____/ /__  _____    | |     / /___ _____ _/ /____
@@ -525,6 +527,7 @@
 	& h + \frac{c^2}{2} + gz = \text{const.} \\
 	& dh = 0, \quad T_1 = T_2 \\
 	& \delta_h = \left(\frac{\partial T}{\partial p}\right)_{h}  = - \frac{v}{c_p}(1-\beta T) \\
+	& \delta_T = \left(\frac{\partial h}{\partial p}\right)_{T}  \\
 	& s_2 - s_1 = R \ln \left(\frac{v_2}{v_1}\right) = R \ln \left( \frac{p_1}{p_2}\right) \\
 \end{align*}
 
@@ -1194,16 +1197,18 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	$\epsilon_{carnot}$ &$\displaystyle = \frac{T_k}{T_H-T_K}$ \\
 	Leistungszahl Wärmepumpe &
 	$\epsilon_{WP}$ & $\displaystyle = \frac{q}{|q| - q_0} = \frac{|q|}{w_t} = \frac{q_{zu}}{w}$ &$\displaystyle = \frac{h_2 - h_5}{h_2 - h_1} = 1 + \epsilon_{K(A)}$ \\\\
+	Arbeit der Enthalpie &
+	$W_t=Q$ & $\displaystyle = mdh = mcpdT$ \\\\
 	Verdichtungsverhältnis &
-	$\epsilon$ &$\displaystyle = \frac{v_1}{v_2}$ \\\\
+	$\epsilon$ &$= \frac{v_1}{v_2}$ \\\\
 	Drucksteigerungsverhältniss &
-	$\psi$ &$\displaystyle = \frac{p_3}{p_2}$ \\\\
+	$\psi$ &$ = \frac{p_3}{p_2}$ \\\\
 	Einspritzverhältniss &
-	$\varphi $ &$\displaystyle = \frac{v_4}{v_3}$ \\\\
+	$\varphi $ &$= \frac{v_4}{v_3}$ \\\\
 	Temperaturverhältnis &
-	$\tau$ &$ \displaystyle \displaystyle =\frac{T_3}{T_1}$ \\\\
+	$\tau$ &$ =\frac{T_3}{T_1}$ \\\\
 	Verdrichtungsdruckverhältnis &
-	$\pi$ = & $ \displaystyle  = \frac{p_2}{p_1}$ \\\\
+	$\pi$ = & $ = \frac{p_2}{p_1}$ \\\\
 	für Joule-Prozess &
 	$\pi_{opt}$ & $ \displaystyle = \tau^{\frac{\kappa}{2(\kappa -1)}}$ \\
 	
