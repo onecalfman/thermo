@@ -731,17 +731,164 @@
 	\draw[densely dotted] (0.52,3) to (0.6,2.2) to (0.6,2.2) to (0.9,2.2) .. controls (0.95,1.6) .. (1.1,1.13) -- (3.27,1.13) .. controls (3.9,0.93) .. (4.1,0.9) node[above right] {Isotherme};
 \end{tikzpicture}
 
-%\small
-%\begin{tikzpicture}
-%	 [> = latex,
-%	dot/.style = {draw,fill,circle,inner sep=1pt},
-%	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
-%	]
-%	\draw[<->]  (0,3) node[left] {$p$} |- (3.5,0) node[below] {$v$};
-%	\draw (1,1.8) parabola bend (1.5,2.4) (2,1.8);
-%	\draw (0.4,0.3) -- (1,1.8);
-%	\draw (2,1.8) to[bend right=10] (3,0.3);
-%\end{tikzpicture}
+\begin{center}
+\large H$_2$O \\
+\end{center}
+
+\begin{multicols}{2}
+\normalsize
+
+
+\begin{tikzpicture}
+	[> = latex,
+	scale=1.0, every node/.style={scale=1},
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+	\coordinate (a) at (0.4,0.3);
+	\coordinate (b) at (1.0,1.8);
+	\coordinate (c) at (1.5,2.4);
+	\coordinate (d) at (2.0,1.8);
+	\coordinate (e) at (3.0,0.3);
+	\coordinate (f) at (0.3,0.6);
+	\coordinate (g) at (0.8,1.3);
+	\coordinate (h) at (2.24,1.3);
+	\coordinate (i) at (3,2.2);
+	\coordinate (j) at (0.3,0.7);
+	\coordinate (k) at (0.9,1.57);
+	\coordinate (l) at (2.10,1.57);
+	\coordinate (m) at (2.5,2.15);
+
+	\draw[<->]  (0,3) node[left] {$T$} |- (3.5,0) node[below] {$s$};
+	\draw[thick, name path=patha] (a) -- (b);
+	\draw[thick] (b) parabola bend (c) (2,1.8);
+	\draw[thick] (2,1.8) to[bend right=10] (3,0.3);
+
+	\draw[fill] (c) circle (0.04) node[above] {K};
+
+	\draw[] (f) to[bend right=10] (g) to (h) to[bend right=10] (i) node[above right] {\small $p$};
+
+	\draw[thick, arrow inside] (1,1.3) node[dot] {} to (2,1.3) node[dot] {};
+	\draw[pattern=north east lines, loosely dashed] (1,1.3) to (2,1.3) to (2,0) to (1,0) to (1,1.3);
+	\draw (1.5,0.65) node[fill=white] {$q_{12}$};
+	\draw (1,1.3) node[above right=-1mm] {1};
+	\draw (2,1.3) node[above left=-1mm] {2};
+
+	\draw (1.5,0) node[below] {\small Isobare};
+	\draw[dashed] (0.8,0) node[below] {$s'$} to (g);
+	\draw[dashed] (2.24,0) node[below] {$s''$} to (h);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	[> = latex,
+	scale=1.0, every node/.style={scale=1},
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+	\coordinate (a) at (0.4,0.3);
+	\coordinate (b) at (1.0,1.8);
+	\coordinate (c) at (1.5,2.4);
+	\coordinate (d) at (2.0,1.8);
+	\coordinate (e) at (3.0,0.3);
+	\coordinate (f) at (0.2,0.2);
+	\coordinate (g) at (0.5,0.57);
+	\coordinate (h) at (2.75,0.57);
+	\coordinate (i) at (3,0.9);
+	\coordinate (j) at (0.3,0.7);
+	\coordinate (k) at (0.9,1.57);
+	\coordinate (l) at (2.10,1.57);
+	\coordinate (m) at (2.5,2.15);
+
+	\draw[<->]  (0,3) node[left] {$T$} |- (3.5,0) node[below] {$s$};
+	\draw[thick, name path=patha] (a) -- (b);
+	\draw[thick] (b) parabola bend (c) (d);
+	\draw[thick] (d) to[bend right=10] (e);
+
+	\draw[fill] (c) circle (0.04) node[above] {K};
+
+	\draw[] (f) to[bend right=10] (g) to (h) to[bend right=10] (i) node[above right] {\small $p_1$};
+	\draw[] (j) to[bend right=10] (k) to (l) to[bend right=10] (m) node[above right] {\small $p_2$};
+
+	\draw[arrow inside, thick] (1,0.57) node[draw, dot] {} to[bend right=5] (1.5,1.57) node[draw, dot] {};
+	\draw[pattern=north east lines] (1,0.57) node[above left=-1mm] {1} to[bend right=9] (1.5,1.57) node[above right=-1mm] {2} to (1.5,0) to (1,0) to (1,0.57);
+	\draw[<-] (1.5,0.67) to  (1.8,0.8) node[above right=-1mm] {\small $q_{12}$};
+	\draw (1.25,0) node[below] {\small Isochore};
+\end{tikzpicture}
+\begin{tikzpicture}
+	 [> = latex,
+	scale=1.0, every node/.style={scale=1},
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+	\coordinate (a) at (0.4,0.3);
+	\coordinate (b) at (1.0,1.8);
+	\coordinate (c) at (1.5,2.4);
+	\coordinate (d) at (2.0,1.8);
+	\coordinate (e) at (3.0,0.3);
+	\coordinate (f) at (0.2,0.2);
+	\coordinate (g) at (0.8,1.3);
+	\coordinate (h) at (2.24,1.3);
+	\coordinate (i) at (3,2.2);
+	\coordinate (j) at (0.3,0.7);
+	\coordinate (k) at (0.9,1.57);
+	\coordinate (l) at (2.10,1.57);
+	\coordinate (m) at (2.5,2.15);
+
+	\draw[<->]  (0,3) node[left] {$p$} |- (3.5,0) node[below] {$v$};
+	\draw[thick, name path=patha] (a) -- (b);
+	\draw[thick] (b) parabola bend (c) (2,1.8);
+	\draw[thick] (2,1.8) to[bend right=10] (3,0.3);
+
+	\draw[fill] (c) circle (0.06) node[above] {K};
+
+	\draw[] (0.3,2.2) to[bend right=10] (g) to (h) to[bend right=10] (3.4,0.6) node[above right] {\small $T_1$};
+	\draw[thick, arrow inside] (1,1.3) node[dot] {} to (2,1.3) node[dot] {};
+	\draw[pattern=north east lines, loosely dashed] (1,1.3) to (2,1.3) to (2,0) to (1,0) to (1,1.3);
+	\draw (1.5,0.65) node[fill=white] {$w_{t,12}$};
+	\draw (1,1.3) node[above right=-1mm] {1};
+	\draw (2,1.3) node[above left=-1mm] {2};
+	\draw (1.5,0) node[below] {\small Isobare};
+
+	\draw[dashed] (0.8,0) node[below] {$v'$} to (g);
+	\draw[dashed] (2.24,0) node[below] {$v''$} to (h);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	 [> = latex,
+	scale=1.0, every node/.style={scale=1},
+	dot/.style = {draw,fill,circle,inner sep=1pt},
+	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+	]
+	\coordinate (a) at (0.4,0.3);
+	\coordinate (b) at (1.0,1.8);
+	\coordinate (c) at (1.5,2.4);
+	\coordinate (d) at (2.0,1.8);
+	\coordinate (e) at (3.0,0.3);
+	\coordinate (f) at (0.2,0.2);
+	\coordinate (g) at (0.5,0.57);
+	\coordinate (h) at (2.75,0.57);
+	\coordinate (i) at (3,0.9);
+	\coordinate (j) at (0.3,0.7);
+	\coordinate (k) at (0.9,1.57);
+	\coordinate (l) at (2.10,1.57);
+	\coordinate (m) at (2.5,2.15);
+
+	\draw[<->]  (0,3) node[left] {$p$} |- (3.5,0) node[below] {$v$};
+	\draw[thick, name path=patha] (a) -- (b);
+	\draw[thick] (b) parabola bend (c) (2,1.8);
+	\draw[thick] (2,1.8) to[bend right=10] (3,0.3);
+
+	\draw[fill] (c) circle (0.06) node[above] {K};
+
+	\draw[] (0.2,1.2) to[bend right=10] (g) to (h) to[bend right=10] (3.4,0.2) node[above right] {\small $T_1$};
+	\draw[] (0.4,2.7) to[bend right=10] (k) to (l) to[bend right=10] (2.9,1) node[above right] {\small $T_2$};
+	
+	\draw[thick, arrow inside] (1.2,1.57) node[draw, dot] {} to[bend right=15] (2.2,0.57) node[draw, dot] {};
+	\draw[pattern=north east lines] (1.2,1.57) node[above right=-1mm] {1} to[bend right=15] (2.2,0.57) node[above right=-1mm] {2} to (2.2,0) to (1.2,0) to (1.2,1.57);
+	\draw (1.7,0.28) node[fill=white, text width=5mm, text height=1.2mm, align=left] {\small $w_{v,12}$};
+	\draw (1.7,0) node[below] {\small Isenthalpe};
+\end{tikzpicture}
+\end{multicols}
 
 \end{flushleft}
 \normalsize
@@ -756,10 +903,11 @@
 	& h = h' + (h''-h')x \\ \\
 	& s = (1-x) s' + xs'' \\
 	& s = s' + (s''-s')x \\ \\
-	& r = h'' - h' = T(s''-s') \\
+	& r = h'' - h' = T(s''-s')
 \end{align*}
 
 \begin{align*}
+	& F  = K + 2 - P \\
 	& T' = T'' \\
 	& p' = p'' \\
 	& g' = g'' \\
@@ -1390,7 +1538,7 @@ Technische Verlustarbeit
 	\draw[arrow inside, thick, dotted] (@7) to (@8);
 	\draw[arrow inside, thick, dotted] (@8) to (@6);
 
-	\draw (0.2,0.2) to[bend right=10] (@3);
+	\draw (@2) to[bend right=10] (@3);
 	\draw (@3) parabola bend (k) (@4);
 	\draw (@4) to[bend right=10] (4.8,0.2);
 
