@@ -1,6 +1,6 @@
 \documentclass[twocolumn]{article}
 \title{Thermodynamik Formelsammlung}
-\author{Jonas Walkling \thanks{Maximilian Goldapp}}
+\author{Jonas Walkling}
 
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{tikz}
@@ -25,7 +25,6 @@
 \usepackage[makeroom]{cancel}
 \usepackage{lscape}
 \usepackage[utf8]{inputenc}
-\usepackage{pdfpages}
 \usepackage{geometry}
  \geometry{
 	 a4paper,
@@ -64,6 +63,15 @@
 
 \onecolumn
 \maketitle
+
+
+\begin{center}
+	Revision und konzeptionelle Unterstützung: \\
+	Maximilian Goldapp \\
+	Fatih Güzel \\
+\end{center}
+
+
 \pagebreak
 \tableofcontents
 \twocolumn
@@ -1337,14 +1345,18 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	$\displaystyle = 1 - \frac{h_6 - h_1}{h_5 -  h_2}$ \\\\
 	Leistungszahl Kältemaschine &
 	$\epsilon_{K(A)}$ &$\displaystyle = \frac{q_{zu}}{w} = \frac{\dot{Q}_0}{\dot{W}}$ \\\\
-	Leistungszahl Kaltluftprozess &
-	$\epsilon_{K}$ &$\displaystyle = \frac{1}{\left(\frac{p}{p_0}\right)^{\frac{\kappa - 1}{\kappa} - 1}}$ \\\\
 	Leistungszahl Kaltdampfprozess &
 	$\epsilon_K$ & $\displaystyle = \frac{q_0}{|q| - q_0} = \frac{q_o}{w_t}$ &$\displaystyle = \frac{h_1 - h_6}{h_2 - h_1}$ \\\\
 	Linkslaufender Carnotprozess &
 	$\epsilon_{carnot}$ &$\displaystyle = \frac{T_k}{T_H-T_K}$ \\
 	Leistungszahl Wärmepumpe &
 	$\epsilon_{WP}$ & $\displaystyle = \frac{q}{|q| - q_0} = \frac{|q|}{w_t} = \frac{q_{zu}}{w}$ &$\displaystyle = \frac{h_2 - h_5}{h_2 - h_1} = 1 + \epsilon_{K(A)}$ \\\\
+	Kälteleistung Wärmepumpe &
+	$\dot{Q}_0$ &$\displaystyle= \dot{m}(h_2 - h_5)$ \\\\
+	Leistungszahl Kaltluftprozess &
+	$\epsilon_{K}$ &$\displaystyle = \frac{1}{\left(\frac{p}{p_0}\right)^{\frac{\kappa - 1}{\kappa} - 1}}$ \\\\
+	Kälteleistung Kaltluftprozess &
+	$\dot{Q}_0$ &$\displaystyle= \dot{m}(h_1 - h_6)$ \\\\
 	Arbeit der Enthalpie &
 	$W_t=Q$ & $\displaystyle = mdh = mcpdT$ \\\\
 	Verdichtungsverhältnis &
@@ -2440,19 +2452,19 @@ Schmelzenthalpie des Eises bei 0 °C& rE& 334& kJ/ kg \\
 	E_{Spule}	&= \frac{1}{2}LI^2 \\
 	E_{Elektrisch} & = UA \\
 \end{align*}
-	\begin{alignat*}{3} 
-		m^2 \quad & \quad dm^2 && \quad cm^2 && \quad mm^2 \\
-		1\quad &\quad 10^2\quad &&\quad 10^4\quad &&\quad 10^6\quad \\
-		10^{-2}\quad &\quad 1\quad &&\quad 10^{2}\quad &&\quad 10^{4}\quad \quad \\
-		10^{-4}\quad &\quad 10^{-2}\quad &&\quad 1\quad &&\quad 10^{2}\quad \quad \\
-		10^{-6}\quad &\quad 10^{-4}\quad &&\quad 10^{2}\quad &&\quad 1\quad \quad \\
+	\begin{alignat*}{4} 
+		&  m^2  &&\quad   dm^2 &&\quad   cm^2 &&\quad   mm^2 \\
+		m^2 \quad	& 1\quad &&\quad 10^2\quad &&\quad 10^4\quad &&\quad 10^6\quad \\
+		dm^2 	\quad	& 10^{-2}\quad &&\quad 1\quad &&\quad 10^{2}\quad &&\quad 10^{4}\quad \quad \\
+		cm^2 	\quad	& 10^{-4}\quad &&\quad 10^{-2}\quad &&\quad 1\quad &&\quad 10^{2}\quad \quad \\
+		mm^2 	\quad	& 10^{-6}\quad &&\quad 10^{-4}\quad &&\quad 10^{2}\quad &&\quad 1\quad \quad \\
 	\end{alignat*}
-	\begin{alignat*}{3} 
-		m^3 \quad & \quad dm^3 && \quad cm^3 && \quad mm^3 \\
-		1\quad &\quad 10^3\quad &&\quad 10^6\quad &&\quad 10^9\quad \\
-		10^{-3}\quad &\quad 1\quad &&\quad 10^{3}\quad &&\quad 10^{6}\quad \quad \\
-		10^{-6}\quad &\quad 10^{-3}\quad &&\quad 1\quad &&\quad 10^{3}\quad \quad \\
-		10^{-9}\quad &\quad 10^{-6}\quad &&\quad 10^{3}\quad &&\quad 1\quad \quad \\
+	\begin{alignat*}{4} 
+			& m^3 \quad && \quad dm^3 && \quad cm^3 && \quad mm^3 \\
+		m^3 	\quad& 1\quad &&\quad 10^3\quad &&\quad 10^6\quad &&\quad 10^9\quad \\
+		dm^3 	\quad& 10^{-3}\quad &&\quad 1\quad &&\quad 10^{3}\quad &&\quad 10^{6}\quad \quad \\
+		cm^3 	\quad& 10^{-6}\quad &&\quad 10^{-3}\quad &&\quad 1\quad &&\quad 10^{3}\quad \quad \\
+		mm^3 	\quad& 10^{-9}\quad &&\quad 10^{-6}\quad &&\quad 10^{3}\quad &&\quad 1\quad \quad \\
 	\end{alignat*}
 \end{multicols}
 
