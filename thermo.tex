@@ -61,6 +61,12 @@
 			}
 		}
 	
+\newcommand{\tabellenskalierung}{0.75}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
 \begin{document}
 
 \onecolumn
@@ -1673,17 +1679,10 @@ Technische Verlustarbeit
 \setlength{\tabcolsep}{5mm} % separator between columns
 \def\arraystretch{3} % vertical stretch factor
 \centering
-\begin{tabular}{c|c|l} 
-	%\multicolumn{3}{c}{\Large Kreisprozesse mit idealen Gasen als Arbeitsmedium} \\ \hline
-%	\multicolumn{3}{c}{$\displaystyle \eta_{th} = 1 - \frac{|q_{ab}|}{q_{zu}} 
-%	,\quad \epsilon_K = \frac{q_zu}{w} 
-%	,\quad \epsilon_{WP} = \frac{|q_{ab}|}{w} 
-%	,\quad \epsilon 	= \frac{v_1}{v_2} 
-%	,\quad \psi 		= \frac{p3}{p2} 
-%	,\quad \varphi 	= \frac{v_4}{v}$}  \\ \hline
-%\subsection{Seiliger-Prozess}
+	\begin{tabular}{L{33mm}|L{33mm}|L{35mm}|l} 
+
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1711,7 +1710,7 @@ Technische Verlustarbeit
 \end{tikzpicture}
 		&
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1736,7 +1735,17 @@ Technische Verlustarbeit
 	\draw[arrow inside] (@4) to[bend right=20] (@5);
   	\draw[arrow inside] (@5) to (@1);
 
-\end{tikzpicture} & 
+\end{tikzpicture}
+& 
+\begin{tikzpicture}
+	[every node/.style={scale=0.85}]
+	\draw (0,2) node[anchor=west] {1 $\rightarrow$ 2: isentrope Verdichtung};
+	 \draw (0,1.5) node[anchor=west] {2 $\rightarrow$ 3: isochore Wärmezufuhr};
+	 \draw (0,1) node[anchor=west] {3 $\rightarrow$ 4: isobare Wärmezufuhr}; 
+	 \draw (0,0.5) node[anchor=west] {4 $\rightarrow$ 5: isentrope Entspannung}; 
+	 \draw (0,0) node[anchor=west] {5 $\rightarrow$ 1: isochore Wärmeabfabe};
+\end{tikzpicture}
+&
 	\begin{tikzpicture}
 		\draw (1,4) node {Seiliger Prozess};
 		\draw (1,3) node {$\displaystyle \eta_{th} =  \frac{|q_{ab}|}{q_{zu}} = 1 - \frac{u_5-u_1}{u_3 - u_2 + h_4 - h_3}$};
@@ -1750,7 +1759,7 @@ Technische Verlustarbeit
 %\subsection{Otto-Prozess}
 
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1775,7 +1784,7 @@ Technische Verlustarbeit
 \end{tikzpicture}
 &
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1798,12 +1807,20 @@ Technische Verlustarbeit
 	\draw[arrow inside] (@4) to (@1);
 
 \end{tikzpicture}
+& 
+\begin{tikzpicture}
+	[every node/.style={scale=0.85}]
+	\draw (0,2) node[anchor=west] {1 $\rightarrow$ 2: isentrope Verdichtung};
+	 \draw (0,1.5) node[anchor=west] {2 $\rightarrow$ 3: isochore Wärmezufuhr};
+	 \draw (0,1) node[anchor=west] {3 $\rightarrow$ 4: isentrope Entspannung};
+	 \draw (0,0.5) node[anchor=west] {4 $\rightarrow$ 1: isochore Wäremzufuhr};
+\end{tikzpicture}
 &
 	\begin{tikzpicture}
-		\draw (1,4) node {Otto Prozess};
-		\draw (1,3) node {\small Gleichraumverbrennung};
-		\draw (1,2) node {$\displaystyle \eta_{th} = 1 -\frac{1}{\epsilon^{\kappa  -1}} $};
-		\draw (1,1) node { $\displaystyle \epsilon 	= \frac{v_1}{v_2} $ };
+		\draw (1,4) node[anchor=west] {Otto Prozess};
+		\draw (1,3) node[anchor=west] {\small Gleichraumverbrennung};
+		\draw (1,2) node[anchor=west] {$\displaystyle \eta_{th} = 1 -\frac{1}{\epsilon^{\kappa  -1}} $};
+		\draw (1,1) node[anchor=west] { $\displaystyle \epsilon 	= \frac{v_1}{v_2} $ };
 		\draw (1,0);
 	\end{tikzpicture}
 
@@ -1812,7 +1829,7 @@ Technische Verlustarbeit
 %\subsection{Diesel-Prozess}
 
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1837,7 +1854,7 @@ Technische Verlustarbeit
 \end{tikzpicture}
 &
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1860,21 +1877,29 @@ Technische Verlustarbeit
 	\draw[arrow inside] (@4) to 			(@1);
 
 \end{tikzpicture}
+& 
+\begin{tikzpicture}
+	[every node/.style={scale=0.85}]
+	\draw (0,2) node[anchor=west] {1 $\rightarrow$ 2: isentrope Verdichtung};
+	 \draw (0,1.5) node[anchor=west] {2 $\rightarrow$ 3: isobare Wärmezufuhr};
+	 \draw (0,1) node[anchor=west] {3 $\rightarrow$ 4: isentrope Entspannung}; 
+	 \draw (0,0.5) node[anchor=west] {4 $\rightarrow$ 1: isochore Wärmezufuhr}; 
+\end{tikzpicture}
 &
 
 	\begin{tikzpicture}
-		\draw (1,4) node {Diesel Prozess};
-		\draw (1,3) node {\small Gleichdruckverbrennung};
-		\draw (1,2) node {$\displaystyle	n_{th} = 1 - \frac{\varphi^\kappa - 1}{\epsilon^{\kappa -1}\kappa(\varphi - 1)}$};
-		\draw (0,1) node[left] {$\epsilon = \frac{v_1}{v_2} $};
-		\draw (1,1) node {$\varphi  = \frac{v_4}{v}   $};
+		\draw (1,4) node[anchor=west] {Diesel Prozess};
+		\draw (1,3) node[anchor=west] {\small Gleichdruckverbrennung};
+		\draw (1,2) node[anchor=west] {$\displaystyle	n_{th} = 1 - \frac{\varphi^\kappa - 1}{\epsilon^{\kappa -1}\kappa(\varphi - 1)}$};
+		\draw (1,1) node[left,anchor=west] {$\epsilon = \frac{v_1}{v_2} $};
+		\draw (3,1) node[right,anchor=west] {$\varphi  = \frac{v_4}{v}   $};
 		\draw (1,0);
 	\end{tikzpicture}
 \\ \hline
 %\subsection{Stirling-Prozess}
 
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1899,7 +1924,7 @@ Technische Verlustarbeit
 \end{tikzpicture}
 &
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1922,11 +1947,20 @@ Technische Verlustarbeit
 	\draw[arrow inside] (@4) to (@1);
 
 \end{tikzpicture}
+& 
+\begin{tikzpicture}
+	[every node/.style={scale=0.85}]
+	\draw (0,2) node[anchor=west] {1 $\rightarrow$ 2: isotherme Verdichtung};
+	 \draw (0,1.5) node[anchor=west] {2 $\rightarrow$ 3: isochore Wärmezufuhr};
+	 \draw (0,1) node[anchor=west] {3 $\rightarrow$ 4: isotherme Entspannung}; 
+	 \draw (0,0.5) node[anchor=west] {4 $\rightarrow$ 1: isobare Wärmeabfuhr}; 
+\end{tikzpicture}
 &
 
 	\begin{tikzpicture}
-		\draw (1,4) node {Stirling Prozess};
-		\draw (1,2) node {$\displaystyle	n_{th} = 1 - \frac{|q_{12}|}{q_{34}} = \frac{RT_1 \ln\left(\frac{v_1}{v_2}\right)}{RT_3 \ln \left(\frac{v_4}{v_3}\right)}= 1 - \frac{T_1}{T_3}$};
+		\draw (1,4) node[anchor=west] {Stirling Prozess};
+		\draw (1,3) node[anchor=west] {$\displaystyle	n_{th} = 1 - \frac{|q_{12}|}{q_{34}} = 1 - \frac{T_1}{T_3}$};
+		\draw (1,1.5) node[anchor=west] {$\displaystyle	n_{th}  = \frac{RT_1 \ln\left(\frac{v_1}{v_2}\right)}{RT_3 \ln \left(\frac{v_4}{v_3}\right)}$};
 		\draw (1,0);
 \end{tikzpicture}  
 \\ \hline
@@ -1934,7 +1968,7 @@ Technische Verlustarbeit
 
 
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1959,7 +1993,7 @@ Technische Verlustarbeit
 \end{tikzpicture}
 &
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -1982,19 +2016,28 @@ Technische Verlustarbeit
 	\draw[arrow inside] (@4) to (@1);
 
 \end{tikzpicture}
+& 
+\begin{tikzpicture}
+	[every node/.style={scale=0.85}]
+	\draw (0,2) node[anchor=west] {1 $\rightarrow$ 2: isentrope Verdichtung};
+	 \draw (0,1.5) node[anchor=west] {2 $\rightarrow$ 3: isobare Wärmezufuhr};
+	 \draw (0,1) node[anchor=west] {3 $\rightarrow$ 4: isentrope Entspannung}; 
+	 \draw (0,0.5) node[anchor=west] {4 $\rightarrow$ 1: isobare Wärmeafuhr}; 
+\end{tikzpicture}
 &
 
 	\begin{tikzpicture}
-		\draw (1,4) node {Joule Prozess};
-		\draw (1,2) node {$\displaystyle \eta_{th} = 1 - \frac{T_1}{T_2} = 1 - \left(\frac{p_1}{p_2}\right)^{\frac{\kappa-1}{\kappa}} = 1 - \left( \frac{1}{\pi}\right)^{\frac{\kappa -1 }{\kappa}}$};
-		\draw (1,1) node {$\pi = \frac{p_2}{p_1}$};
+		\draw (1,4) node[anchor=west] {Joule Prozess};
+		\draw (1,3) node[anchor=west] {$\displaystyle \eta_{th} = 1 - \frac{T_1}{T_2} = 1 - \left(\frac{p_1}{p_2}\right)^{\frac{\kappa-1}{\kappa}}$};
+		\draw (1,1.5) node[anchor=west] {$\displaystyle \eta_{th}  = 1 - \left( \frac{1}{\pi}\right)^{\frac{\kappa -1 }{\kappa}}$};
+		\draw (1,0.5) node[anchor=west] {$\pi = \frac{p_2}{p_1}$};
 		\draw (1,0);
 	\end{tikzpicture}
 \\ \hline
 %\subsection{Ericsson-Prozess}
 
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -2019,7 +2062,7 @@ Technische Verlustarbeit
 \end{tikzpicture}
 &
 \begin{tikzpicture}[
-	scale=0.8, every node/.style={scale=1},
+	scale=\tabellenskalierung, every node/.style={scale=1},
   > = latex,
   dot/.style = {draw,fill,circle,inner sep=1pt},
   arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
@@ -2042,11 +2085,20 @@ Technische Verlustarbeit
 	\draw[arrow inside] (@4) to (@1);
 
 \end{tikzpicture}
+& 
+\begin{tikzpicture}
+	[every node/.style={scale=0.85}]
+	\draw (0,2) node[anchor=west] {1 $\rightarrow$ 2: isotherme Verdichtung};
+	 \draw (0,1.5) node[anchor=west] {2 $\rightarrow$ 3: isobare Wäremzufuhr};
+	 \draw (0,1) node[anchor=west] {3 $\rightarrow$ 4: isotherme Entspannung}; 
+	 \draw (0,0.5) node[anchor=west] {4 $\rightarrow$ 1: isobare Wärmeabfuhr}; 
+\end{tikzpicture}
 &
 
 	\begin{tikzpicture}
-		\draw (1,4) node {Ericsson Prozess};
-		\draw (1,2) node {$\displaystyle	n_{th} 1 - \frac{|q_{12}|}{q_{34}} = \frac{RT_1 \ln\left(\frac{p_1}{p_2}\right)}{RT_3 \ln \left(\frac{p_4}{p_3}\right)}= 1 - \frac{T_1}{T_3}$};
+		\draw (1,4) node[anchor=west] {Ericsson Prozess};
+		\draw (1,3) node[anchor=west] {$\displaystyle	n_{th} = 1 - \frac{|q_{12}|}{q_{34}} = 1 - \frac{T_1}{T_3}$};
+		\draw (1,1.5) node[anchor=west] {$\displaystyle	n_{th} = \frac{RT_1 \ln\left(\frac{p_1}{p_2}\right)}{RT_3 \ln \left(\frac{p_4}{p_3}\right)}= 1 - \frac{T_1}{T_3}$};
 		\draw (1,0);
 \end{tikzpicture}  
 \end{tabular}
