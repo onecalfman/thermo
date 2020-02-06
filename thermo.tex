@@ -37,6 +37,7 @@
 	 }
 \usepackage{hyperref}
 \newcommand{\thicc}{thick}
+\newcommand{\ultraskip}{\bigskip\bigskip\bigskip\bigskip\bigskip\bigskip}
 \tikzset{
 	turbine/.pic = {
 
@@ -454,11 +455,7 @@
 	   &   &   &  	&G &= G(T,p) \\
 \end{tabular}
 \normalsize
-\bigskip
-\bigskip
-\bigskip
-\bigskip
-\bigskip
+\ultraskip
 \pagebreak
 
 
@@ -1780,6 +1777,7 @@ Technische Verlustarbeit
 
 \section{Eindimensionale Strömungsvorgänge}
 
+\setlength{\belowdisplayskip}{-10pt} \setlength{\belowdisplayshortskip}{-10pt}
 \begin{align*}
 	\qquad  \chi &= \frac{1}{p} = - \frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{T}  \\
 	\qquad c_S^2 &= \left(\frac{\partial p}{\partial \rho}\right)_{S} \\
@@ -1791,7 +1789,6 @@ Technische Verlustarbeit
 		\frac{\rho_0}{\rho} &= \left(\frac{T_0}{T}\right)^{\frac{\kappa-1}{\kappa}} = \left(1 + \frac{\kappa -1}{2}Ma^2\right)^{\frac{\kappa -1 }{\kappa}} \\
 		\left(\frac{A}{A^{*}}\right)^2 &= \frac{1}{Ma^2}\left[\frac{2}{\kappa + 1}\left( 1 + \frac{\kappa -1}{2} Ma^2 \right)\right]^{\frac{\kappa +1}{\kappa -1}} \\
 \end{align*}
-
 	\begin{align*}
 		h_2 - h_1 &= \frac{1}{2}(p_2 - p_1) \left(\frac{1}{\rho_1} + \frac{1}{\rho_2}\right) = (p_2 -p_1) \frac{1}{2}(v_1 + v_2) \\
 		\text{Stoßbezi}&\text{ehungen für ein ideales Gas} \\
@@ -1803,6 +1800,8 @@ Technische Verlustarbeit
 		s_2 -s_1 &= c_v \ln \left(\frac{T_2}{T_1}\right) + R \ln\left(\frac{v_2}{v_1}\right) \\
 			 &= c_p \ln \left(\frac{T_2}{T_1}\right) + R \ln\left(\frac{p_2}{p_1}\right) \\
 	\end{align*}
+
+\ultraskip
 
 %    ______                __    __          __          ______ 
 %   / ____/__  __  _______/ /_  / /____     / /   __  __/ __/ /_
