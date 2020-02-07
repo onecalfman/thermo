@@ -404,7 +404,7 @@
 \section{Gibbs}
 
 \begin{align*}
-	dU &=  Tds - pdV + \sum_{k=1}^{K} \mu_k dn_k \\
+	dU &=  TdS - pdV + \sum_{k=1}^{K} \mu_k dn_k \\
 	dG &= -SdT + Vdp + \sum_{k=1}^{K} \mu_k dn_k \\ dH &=  TdS + Vdp + \sum_{k=1}^{K} \mu_k dn_k \\
 	dF &= -SdT - pdV + \sum_{k=1}^{K} \mu_k dn_k \\
 	dU &= 	\left(\frac{\partial U}{\partial S}\right)_{V} dS 
@@ -1819,6 +1819,8 @@ Technische Verlustarbeit
 	\varphi & = \frac{p_D}{p_s} \\
 	x_D &= \frac{m_d}{m_L} = \frac{R_L}{R_D}\frac{p_D}{p_L} = \frac{R_L}{R_D} \frac{p_D}{p-p_D} = 0.622 \frac{p_D}{p-p_D} \\
 	x_s &= \frac{m_{D,max}}{m_L} = 0.622 \frac{p_s}{p-p_s} \rightarrow \text{für $\varphi = 1$}\\
+	x_s(t_{min}) &= \frac{M_{H_2O}}{M_L} \frac{p_s^{min}(t_{min})}{p_1 - p_s^{min}(t_{min})} \\
+	p_D &=  \frac{p_D}{0.622 + x} \\
 	\rho &= \frac{p}{R_{ges T}} = \frac{1 + x}{R_L + xR_D} \frac{p}{T} \\
 	R_{ges} &= \frac{R_L + xR_D}{1+x} \\
 	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) \\
@@ -2666,6 +2668,9 @@ Schmelzenthalpie des Eises bei 0 °C& rE& 334& kJ/ kg \\
 	10^11 	&= 100\;000\;000\;000 	 	  &&10^{-11} 		&&= 	0.000\;000\;000\;01 \\
 	10^12 	&= 1000\;000\;000\;000	\qquad 	  &&10^{-12} 		&&= 	0.000\;000\;000\;001 \\
 	\end{alignat*}
+	\begin{equation*}
+		n = \frac{m}{M} = \text{Teichenanzahl} = \frac{\text{Masse}}{\text{Mol}}
+	\end{equation*}
 \begin{align*}
 	\LARGE 1J &= 1W = 1Nm \\
 	\normalsize
