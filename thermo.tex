@@ -587,19 +587,13 @@
 	\\
 \end{align*}
 
-%    ___       ___       __          __     
-%   /   | ____/ (_)___ _/ /_  ____ _/ /____ 
-%  / /| |/ __  / / __ `/ __ \/ __ `/ __/ _ \
-% / ___ / /_/ / / /_/ / /_/ / /_/ / /_/  __/
-%/_/  |_\__,_/_/\__,_/_.___/\__,_/\__/\___/ 
-%                                           
 %    ____                            __                 
 %   / __ \_________  _____________  / /_  ______  ____ _
 %  / / / / ___/ __ \/ ___/ ___/ _ \/ / / / / __ \/ __ `/
 % / /_/ / /  / /_/ (__  |__  )  __/ / /_/ / / / / /_/ / 
 %/_____/_/   \____/____/____/\___/_/\__,_/_/ /_/\__, /  
 %                                              /____/   
-\section{Adiabate Drosselung}
+\section{Drosselung}
 
 \begin{tikzpicture}
 	[
@@ -625,6 +619,8 @@
 	& \delta_h = \left(\frac{\partial T}{\partial p}\right)_{h}  = - \frac{v}{c_p}(1-\beta T) \\
 	& \delta_T = \left(\frac{\partial h}{\partial p}\right)_{T}  \\
 	& s_2 - s_1 = R \ln \left(\frac{v_2}{v_1}\right) = R \ln \left( \frac{p_1}{p_2}\right) \\
+	&\mu_{J-T} = \left(\frac{\partial H}{\partial p}\right)_{H} \approx \frac{\frac{2a}{RT}-b}{c_{p,m}}  \\
+	&T_i = \frac{2a}{Rb}  \\
 \end{align*}
 
 \pagebreak
@@ -1327,11 +1323,32 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	&R = \frac{R_m}{M}
 	&&R_m = 8,3143\left[\frac{kJ}{kmolK}\right] \\
 	\end{align*}
-	\begin{multline*}
-		C_{v,m} = \underbrace{3 + \frac{R_m}{2}}_{\text{translatorisch}} + \underbrace{\frac{n_{\text{rot}}  R_m}{2}}_{\text{rotatorisch}}  
-		+ \underbrace{R_M ( 3n_{\text{Atome}} - 3 - n_{rot})}_{\text{vibratorisch}}  \\
-		+ \underbrace{C_{v,m,Elektronenanregung}}_{\text{Relevant ab: }T \approx 10^4K } 
-	\end{multline*}
+	\begin{align*}
+		C_{m,v} &= \frac{f}{2} R_m = \frac{f_{trans} + f_{rot} + f_{vib}}{2}R_m \\
+		C_{m,p} &= \frac{f + 2}{2}R \\
+		\kappa &= \frac{f + 2}{f} \\
+		f_{trans} &= 3 \quad (\text{für die 3 Translatorischen Freiheitsgrade}) \\
+		f_{rot} &\in \{0,2,3\} \quad \text{\{Einatomig, Linear, Verzweigt\}} \\
+		\begin{tabular}{l}
+		$ \quad	f_{vib} $\\
+			 \\
+			 \\
+			 \\
+		\end{tabular}
+		&
+		\begin{tabular}{llL{4cm}lll}
+			$= 2 \cdot l$ &, $l = 1$  &Normalschwingungen der Atomkerne (Kann für komplexere Moleküle auch > 1 sein.)  &  &  & \\
+		\end{tabular}
+	\end{align*}
+
+		
+			%2 \cdot l,  \quad l &= \text{1,  Freiheitsgrade für Vibration} \\
+%	\begin{multline*}
+%		C_{v,m} = \underbrace{3 + \frac{R_m}{2}}_{\text{translatorisch}} + \underbrace{\frac{n_{\text{rot}}  R_m}{2}}_{\text{rotatorisch}}  
+%		+ \underbrace{R_M ( 3n_{\text{Atome}} - 3 - n_{rot})}_{\text{vibratorisch}}  \\
+%		+ \underbrace{C_{v,m,Elektronenanregung}}_{\text{Relevant ab: }T \approx 10^4K } 
+%	\end{multline*}
+
 %  ______          __          _           __       
 % /_  __/__  _____/ /_  ____  (_)_________/ /_  ___ 
 %  / / / _ \/ ___/ __ \/ __ \/ / ___/ ___/ __ \/ _ \
@@ -1823,7 +1840,7 @@ Technische Verlustarbeit
 	x_D &= \frac{m_d}{m_L} = \frac{R_L}{R_D}\frac{p_D}{p_L} = \frac{R_L}{R_D} \frac{p_D}{p-p_D} = 0.622 \frac{p_D}{p-p_D} \\
 	x_s &= \frac{m_{D,max}}{m_L} = 0.622 \frac{p_s}{p-p_s} \rightarrow \text{für $\varphi = 1$}\\
 	x_s(t_{min}) &= \frac{M_{H_2O}}{M_L} \frac{p_s^{min}(t_{min})}{p_1 - p_s^{min}(t_{min})} \\
-	p_D &=  \frac{p_D}{0.622 + x} \\
+	p &= p_L + p_D \\
 	\rho &= \frac{p}{R_{ges T}} = \frac{1 + x}{R_L + xR_D} \frac{p}{T} \\
 	R_{ges} &= \frac{R_L + xR_D}{1+x} \\
 	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) \\
