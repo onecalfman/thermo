@@ -1782,6 +1782,47 @@ Technische Verlustarbeit
 \pagebreak
 \begin{multicols}{2}
 
+
+%    ______                __    __          __          ______ 
+%   / ____/__  __  _______/ /_  / /____     / /   __  __/ __/ /_
+%  / /_  / _ \/ / / / ___/ __ \/ __/ _ \   / /   / / / / /_/ __/
+% / __/ /  __/ /_/ / /__/ / / / /_/  __/  / /___/ /_/ / __/ /_  
+%/_/    \___/\__,_/\___/_/ /_/\__/\___/  /_____/\__,_/_/  \__/  
+%
+                                                               
+\section{Feuchte Luft}
+
+
+\begin{align*}
+	x &= \frac{m_{H_2O}}{m_L} \\
+	x &= x_{D(ampf)} + x_{W(asser)} + x_{E(is)}  \\
+	\varphi & = \frac{p_D}{p_s} \\
+	x_D &= \frac{m_d}{m_L} = \frac{R_L}{R_D}\frac{p_D}{p_L} = \frac{R_L}{R_D} \frac{p_D}{p-p_D} = 0.622 \frac{p_D}{p-p_D} \\
+	x_s &= \frac{m_{D,max}}{m_L} = 0.622 \frac{p_s}{p-p_s} \rightarrow \text{für $\varphi = 1$}\\
+	p_s &= \frac{x_s \cdot p}{0,622 + x_s} \\
+	x_s(t_{min}) &= \frac{M_{H_2O}}{M_L} \frac{p_s^{min}(t_{min})}{p_1 - p_s^{min}(t_{min})} \\
+	p &= p_L + p_D \\
+	\rho &= \frac{p}{R_{ges T}} = \frac{1 + x}{R_L + xR_D} \frac{p}{T} \\
+	R_{ges} &= \frac{R_L + xR_D}{1+x} \\
+	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) \\
+\end{align*}
+\begin{center}
+\begin{tabular}{l|r|r}
+Formelzeichen& Zahlenwert& Dimension \\
+	&& \\
+ $M_L$& 28,96& kg/ kmol \\
+$M_{H2O}$& 18,02& kg/ kmol \\
+ $R_L$& 0,287& kJ/ (kg K) \\
+ $R_D$& 0,461& kJ/ (kg K) \\
+ $cp_L$& 1,006& kJ/ (kg K) \\
+ $cp_D$& 1,92& kJ/ (kg K) \\
+ $c_W$& 4,182& kJ/ (kg K) \\
+ $c_E$& 2,1& kJ/ (kg K) \\
+ $r_D$& 2500& kJ/ kg \\
+ $r_E$& 334& kJ/ kg \\
+\end{tabular}
+\end{center}
+
 %    _______           ___                           _                   __   
 %   / ____(_)___  ____/ (_)___ ___  ___  ____  _____(_)___  ____  ____ _/ /__ 
 %  / __/ / / __ \/ __  / / __ `__ \/ _ \/ __ \/ ___/ / __ \/ __ \/ __ `/ / _ \
@@ -1820,31 +1861,6 @@ Technische Verlustarbeit
 		s_2 -s_1 &= c_v \ln \left(\frac{T_2}{T_1}\right) + R \ln\left(\frac{v_2}{v_1}\right) \\
 			 &= c_p \ln \left(\frac{T_2}{T_1}\right) + R \ln\left(\frac{p_2}{p_1}\right) \\
 	\end{align*}
-
-\ultraskip
-
-%    ______                __    __          __          ______ 
-%   / ____/__  __  _______/ /_  / /____     / /   __  __/ __/ /_
-%  / /_  / _ \/ / / / ___/ __ \/ __/ _ \   / /   / / / / /_/ __/
-% / __/ /  __/ /_/ / /__/ / / / /_/  __/  / /___/ /_/ / __/ /_  
-%/_/    \___/\__,_/\___/_/ /_/\__/\___/  /_____/\__,_/_/  \__/  
-%
-                                                               
-\section{Feuchte Luft}
-
-
-\begin{align*}
-	x &= \frac{m_{H_2O}}{m_L} \\
-	x &= x_{D(ampf)} + x_{W(asser)} + x_{E(is)}  \\
-	\varphi & = \frac{p_D}{p_s} \\
-	x_D &= \frac{m_d}{m_L} = \frac{R_L}{R_D}\frac{p_D}{p_L} = \frac{R_L}{R_D} \frac{p_D}{p-p_D} = 0.622 \frac{p_D}{p-p_D} \\
-	x_s &= \frac{m_{D,max}}{m_L} = 0.622 \frac{p_s}{p-p_s} \rightarrow \text{für $\varphi = 1$}\\
-	x_s(t_{min}) &= \frac{M_{H_2O}}{M_L} \frac{p_s^{min}(t_{min})}{p_1 - p_s^{min}(t_{min})} \\
-	p &= p_L + p_D \\
-	\rho &= \frac{p}{R_{ges T}} = \frac{1 + x}{R_L + xR_D} \frac{p}{T} \\
-	R_{ges} &= \frac{R_L + xR_D}{1+x} \\
-	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) \\
-\end{align*}
 
 	\section{Chemische Reaktionen}
 
