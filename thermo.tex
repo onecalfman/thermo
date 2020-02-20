@@ -1042,7 +1042,7 @@
 	\text{Adiabate } &\text{Zustandsänderung} \\
 	w_{V,12} &= u_2 - u_1 = u_2' + x_2 \Big( u_2'' - u_2' \Big) - u_1' - x_1\Big(u_1'' - u_1'\Big) \\
 	\text{Entropie} & \text{Änderung während des Mischvorgangs} \\
-	&S_2-S_2 = R_m \left ( n \ln n - \sum_{i}^{} n_i \ln n_i \right ) \\
+	&S_2-S_1 = R_m \left ( n \ln n - \sum_{i}^{} n_i \ln n_i \right ) \\
 \end{align*}
 
 %    ______                     _    
@@ -1804,18 +1804,16 @@ Technische Verlustarbeit
 	p &= p_L + p_D \\
 	\rho &= \frac{p}{R_{ges T}} = \frac{1 + x}{R_L + xR_D} \frac{p}{T} \\
 	R_{ges} &= \frac{R_L + xR_D}{1+x} \\
-	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) \\
+	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) 
 \end{align*}
 \begin{center}
-\begin{tabular}{l|r|r}
-Formelzeichen& Zahlenwert& Dimension \\
-	&& \\
+	\begin{tabular}{l|R{13mm}|r}
  $M_L$& 28,96& kg/ kmol \\
-$M_{H2O}$& 18,02& kg/ kmol \\
+ $M_{H_2O}$& 18,02& kg/ kmol \\
  $R_L$& 0,287& kJ/ (kg K) \\
  $R_D$& 0,461& kJ/ (kg K) \\
- $cp_L$& 1,006& kJ/ (kg K) \\
- $cp_D$& 1,92& kJ/ (kg K) \\
+ $c_{pL}$& 1,006& kJ/ (kg K) \\
+ $c_{pD}$& 1,92& kJ/ (kg K) \\
  $c_W$& 4,182& kJ/ (kg K) \\
  $c_E$& 2,1& kJ/ (kg K) \\
  $r_D$& 2500& kJ/ kg \\
@@ -2377,8 +2375,8 @@ $M_{H2O}$& 18,02& kg/ kmol \\
 & $p = \frac{p_1 v_1}{v}$  
 & $p = p_1$  
 & $p = \frac{p_1}{T_1}T$  
-& $p = \frac{p_1}{T_1^{\frac{\kappa}{\kappa -1}}} T^{\frac{\kappa}{\kappa -1}}$  
-& $p = \frac{p_1}{T_1^{\frac{n}{n -1}}} T^{\frac{n}{n -1}}$
+& $p = p_1  \left(\frac{T}{T_1}\right)^{\frac{\kappa}{\kappa -1}}$  
+& $p = p_1 \left(\frac{T}{T_1}\right)^{\frac{n}{n -1}}$
 \\ \hline
 
 	$v,T$  
@@ -2386,8 +2384,8 @@ $M_{H2O}$& 18,02& kg/ kmol \\
 & $T = T_1$  
 & $v = \frac{v_1}{T_1}T$  
 & $v = v_1 $ 
-& $T = \frac{T_1 v_1^{\kappa - 1}}{v^{\kappa - 1}}$  
-& $T = \frac{T_1v_1^{n-1}}{v^{n-1}}  $
+& $T = T_1\left(\frac{v_1}{v}\right)^{\kappa - 1}$  
+& $T = T_1 \left(\frac{v_1}{v}\right)^{n-1}$
 \\ \hline
 
 	$q_{12}$	
