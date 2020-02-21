@@ -1619,10 +1619,10 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 	\draw[fill] (@4) circle (0.06) node[below left] {4};
 	
 
-	\draw[arrow inside] (@1) to[bend left=14] (@2);
- 	\draw[arrow inside] (@2) to (@3);
-	\draw[arrow inside] (@3) to[bend right=10] (@4);
- 	\draw[arrow inside] (@4) to (@1);
+	\draw[thick, arrow inside] (@1) to[bend left=14] (@2);
+ 	\draw[thick, arrow inside] (@2) to (@3);
+	\draw[thick, arrow inside] (@3) to[bend right=10] (@4);
+ 	\draw[thick, arrow inside] (@4) to (@1);
 	
   	\draw[dashed,thin] (3.5,0) node[below] {$V_1$} -- (@1);
   	\draw[dashed,thin] (0.5,0) node[below] {$V_3$} -- (@3);
@@ -1683,6 +1683,9 @@ W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{
 		\draw[thick, dashed] (@2) to[bend right=5] (@3a);
 		
 	\end{tikzpicture}
+	\begin{align*}
+		\text{Anströmgeschwindigkeit: } \quad  \frac{1}{2} c^1_2 = c_p (T_2 - T_1)
+	\end{align*}
 
 \end{multicols}
 
