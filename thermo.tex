@@ -1595,12 +1595,11 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 
 \pagebreak
 
-
-\subsection*{Kolbenverdichter}
-
 \begin{multicols}{2}
+\section{Kolbenverdichter}
 
-\begin{tikzpicture}[
+\begin{tikzpicture}
+	[
 	%\thicc,
   	> = latex,
   	dot/.style = {draw,fill,circle,inner sep=1pt},
@@ -1629,33 +1628,73 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
   	\draw[dashed,thin] (0.5,0) node[below] {$V_3$} -- (@3);
   	\draw[dashed,thin] (1.1,0) node[below] {$V_4$} -- (@4);
 	
-	\draw (5,3.0) node[right] {$V1 =$ Maximales Zylindervolumen};
-	\draw (5,2.2) node[right] {$V2 =$ Volumen nach Verdichtung};
-	\draw (5,1.4) node[right] {$V3 =$ };
-	\draw (5,0.6) node[right] {$V4 =$ Schädlicher Raum};
+%	\draw (5,3.0) node[right] {$V1 =$ Maximales Zylindervolumen};
+%	\draw (5,2.2) node[right] {$V2 =$ Volumen nach Verdichtung};
+%	\draw (5,1.4) node[right] {$V3 =$ };
+%	\draw (5,0.6) node[right] {$V4 =$ Schädlicher Raum};
 	
 \end{tikzpicture}
 
 
 \begin{alignat*}{2}
 	\small
-	\mu &= \frac{V_1 - V_4}{V_1-V3}, \qquad \epsilon_S = \frac{V_3}{V_1 - V_3} \\
-	\mu &= 1 - \epsilon_S \left[\left(\frac{p_2}{p_1}\right)^{\frac{1}{n}} -1 \right] \\
-	&=\underbrace{p_2 V_2}_{Ausschiebearbeit} - \underbrace{p_1 V_1}_{Einschiebearbeit} - \int_{1}^{2} p\; dV	\\
-	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{n}} - \right] \\
+	\mu &= \frac{V_1 - V_4}{V_1-V3}, \qquad \epsilon_S = \frac{V_3}{V_1 - V_3},  \quad 
+	\mu = 1 - \epsilon_S \left[\left(\frac{p_2}{p_1}\right)^{\frac{1}{n}} -1 \right] \\
+W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{n}} - \right] \\
 \end{alignat*}
+
+	\section{Strahltriebwerk}
+	\begin{tikzpicture}
+	[
+	%\thicc,
+  	> = latex,
+  	dot/.style = {draw,fill,circle,inner sep=1pt},
+  	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+  	]
+		\draw[<->] (0,4) node[left] {$T$} |- (4,0.5) node[below] {$s$};
+
+		\coordinate (a) at (1.1,1.1);
+		\coordinate (b) at (4,2.8);
+		\coordinate (c) at (0.4,2.5);
+		\coordinate (d) at (3.3,4.3);
+		\coordinate (@1) at (1.1,1.1);
+		\coordinate (@2) at (1.1,1.6);
+		\coordinate (@3) at (0.4,2.5);
+		\coordinate (@3a) at (1.4,2.97);
+		\coordinate (@4) at (2.5,3.65);
+		\coordinate (@5) at (2.5,2.6);
+		\coordinate (@6) at (2.5,1.75);
+
+		\node[dot,label={below right:$1$}] at (@1) {};
+		\node[dot,label={below  left:$2$}] at (@2) {};
+		\node[dot,label={above  left:$3$}] at (@3) {};
+		\node[dot,label={above  left:$3a$}] at (@3a) {};
+		\node[dot,label={above  left:$4$}] at (@4) {};
+		\node[dot,label={above right:$5$}] at (@5) {};
+		\node[dot,label={below      :$6$}] at (@6) {};
+	
+		\node[label={below right:$p_3 = p_4$}] at (d) {};
+		\node[label={below right:$p_1 = p_6$}] at (b) {};
+
+		\draw[dashed] (a) to[bend right=8] (b);
+		\draw[dashed] (c) to[bend right=9] (d);
+
+		\draw[thick] (@1) to (@2) to[bend right=5] (@3) to[bend right=6] (@4) to (@5) to (@6) to[bend left=5] (@1);
+		\draw[thick, dashed] (@2) to[bend right=5] (@3a);
+		
+	\end{tikzpicture}
 
 \end{multicols}
 
 
+\begin{multicols}{2}
 %  ______           __                             ___      __    __           
 % /_  __/_  _______/ /_  ____ _   _____  _________/ (_)____/ /_  / /____  _____
 %  / / / / / / ___/ __ \/ __ \ | / / _ \/ ___/ __  / / ___/ __ \/ __/ _ \/ ___/
 % / / / /_/ / /  / /_/ / /_/ / |/ /  __/ /  / /_/ / / /__/ / / / /_/  __/ /    
 %/_/  \__,_/_/  /_.___/\____/|___/\___/_/   \__,_/_/\___/_/ /_/\__/\___/_/     
 %                                                                              
-\subsection*{Turboverdichter}
-\begin{multicols}{2}
+\section{Turboverdichter}
 
 \begin{tikzpicture}[
 	scale=0.8, every node/.style={scale=1},
@@ -1717,23 +1756,20 @@ Die Exergie der Wärme (geschlossenes, stationäres System)
 \\
 
 	
-Verdichter Wirkungsgrad
-\begin{equation*}
-	\eta_{sV} = \frac{w_{t,12,rev}}{w_{t,12}} = \frac{h_{2,rev} - h_1}{h_2 - h_1} \\
-\end{equation*}
-Verdichter wirkungsgrad (Ideales Gas, $\quad c_p = $ const.)
-\begin{equation*}
-	\eta_{sV} = \frac{T_{2,rev} - T_1}{T_2 -T_1} \\
-\end{equation*}
-Technische Verlustarbeit
-\begin{align*}
-	w_{t,Verl,12} 	&= w_{t,12} - w_{t,12,rev} = h_2 - h_{2,rev} \\
-			&= \int_{2,rev}^{2} T|_{p_2=const.}\; ds
-\end{align*}
+%Verdichter Wirkungsgrad
+%\begin{equation*}
+%	\eta_{sV} = \frac{w_{t,12,rev}}{w_{t,12}} = \frac{h_{2,rev} - h_1}{h_2 - h_1} \\
+%\end{equation*}
+%Verdichter wirkungsgrad (Ideales Gas, $\quad c_p = $ const.)
+%\begin{equation*}
+%	\eta_{sV} = \frac{T_{2,rev} - T_1}{T_2 -T_1} \\
+%\end{equation*}
+%Technische Verlustarbeit
+%\begin{align*}
+%	w_{t,Verl,12} 	&= w_{t,12} - w_{t,12,rev} = h_2 - h_{2,rev} \\
+%			&= \int_{2,rev}^{2} T|_{p_2=const.}\; ds
+%\end{align*}
 
-\end{multicols}
-
-\begin{multicols}{2}
 \section{Clausius-Rankine-Prozess}
 
 \begin{tikzpicture}[
@@ -1799,7 +1835,12 @@ Technische Verlustarbeit
 	\draw (-0.2,-3.9) node[right] {$\displaystyle \eta_{th,ZÜ} = 1- \frac{h_8 - h_1}{h_5 -h_2 + h_7 - h_6}$};
 \end{tikzpicture}
 
+\end{multicols}
+
+
+
 \section{Kaltdampfprozess}
+\begin{multicols}{2}
 
 \begin{tikzpicture}[
 	scale=1, every node/.style={scale=1},
