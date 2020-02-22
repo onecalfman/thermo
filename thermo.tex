@@ -16,11 +16,8 @@
 \usepackage{pgfplots}
 \usepgflibrary{patterns}
 \usepackage[T1]{fontenc}
-%\usepackage[sfdefault,scaled=.85]{FiraSans}
-%\usepackage{newtxsf}
 \usepackage{mathptmx}
 \usepackage{multirow}
-%\usepackage{halloweenmath}
 \usepackage{textcomp}
 \usepackage{multicol}
 \usepackage{makecell}
@@ -47,7 +44,6 @@
 			\draw[->] (1.5,1)  to (2.5,1) node[above left, scale=1.2] {$\dot{Q}_{ab}$};
 			\draw[<-] (1,0) node[right, scale=1.2] {$\dot{W}_t$} to (1,0.5);
 		
-			%\draw (0.95,-0.2) node[below] {Turbine};
 			}
 		}
 \tikzset{
@@ -137,7 +133,6 @@
 	\node[dot,label={below      :$7$}] at (@7) {};
 	\node[dot,label={above      :$K$}] at (k) {};
 
-	%\draw[pattern=north east lines] (@1) to (@7) to (@6) to (1.4,0) to (4.3,0) to (@1);
 	}
 }
 
@@ -1684,7 +1679,8 @@ W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{
 		
 	\end{tikzpicture}
 	\begin{align*}
-		\text{Anströmgeschwindigkeit: } \quad  \frac{1}{2} c^2_1 = c_p (T_2 - T_1)
+		\text{Anströmgeschwindigkeit: } \quad  \frac{1}{2} c^2_1 &= c_p (T_2 - T_1) \\
+		w_{2-3} &= w_{4-5} = c_p(T_3-T_2) \\
 	\end{align*}
 
 \end{multicols}
