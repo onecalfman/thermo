@@ -2062,7 +2062,9 @@ W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{
 	p &= p_L + p_D \\
 	\rho &= \frac{p}{R_{ges T}} = \frac{1 + x}{R_L + xR_D} \frac{p}{T} \\
 	R_{ges} &= \frac{R_L + xR_D}{1+x} \\
-	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) 
+	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) \\
+	\text{Molare}&\text{ Verdampfungsenthalpie von Wasser (0 \textcelsius - 200 \textcelsius):} \\
+	H_v & = \left(50,9-0,9298 \frac{T}{1000}-65,19 \left(\frac{T}{1000}\right)^2\right)\frac{kJ}{mol} 
 \end{align*}
 \begin{center}
 	\begin{tabular}{l|R{13mm}|r}
@@ -2074,7 +2076,9 @@ W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{
  $c_{pD}$& 1,92& kJ/ (kg K) \\
  $c_W$& 4,182& kJ/ (kg K) \\
  $c_E$& 2,1& kJ/ (kg K) \\
- $r_D$& 2500& kJ/ kg \\
+ $r_D (0 \text{\textcelsius})$& 2500& kJ/ kg \\
+ $r_D (20 \text{\textcelsius})$& 2453,4& kJ/ kg \\
+ $r_D (100 \text{\textcelsius})$& 2257& kJ/ kg \\
  $r_E$& 334& kJ/ kg \\
 \end{tabular}
 \end{center}
