@@ -1227,6 +1227,9 @@ $1' \rightarrow u$ : isotherm auf $u$
 \end{tikzpicture}
 \end{multicols}
 
+\begin{align*}
+	-W_{ex} &= dh - TdS 
+\end{align*}
 \begin{multline*}
 	-\dot{W}_{ex} = - (\dot{W}_t)_{rev} = -\frac{d}{dt} \left( U + m\left ( \frac{c^2}{2}+ gz \right) + p_uV - T_uS \right) \\  +  \sum_{j=1}^{K} \left(\dot{m}_j \left(h + \frac{c^2}{2} + gz -T_s \right) \right) + \sum_{l=1}^{K} \left( 1 - \frac{T_u}{T}\right) \dot{Q}_l 
 \end{multline*}
@@ -1240,7 +1243,7 @@ Die Exergie der inneren Energie (geschlossenes, instationäres System)
 \begin{align*}
 	- \dot{W}_{ex} &= - \frac{d}{dt}(U + p_uV -T_uS) \\
 	-\dot{W}_{ex,1u} &= U_1 - U_u -p_u(V_1 - V_u) - T_u(S_1 - S_u) \\
-	-\dot{W}_{ex,1u} &= H_1 - (p_1-p_u)V_1 - H_u- T_u(S_1 - S_u)
+	-\dot{W}_{ex,1u} &= H_1 + (p_1-p_u)V_1 - H_u- T_u(S_1 - S_u)
 \end{align*}
 Für Ideales Gas \\
 \begin{align*}
@@ -1682,6 +1685,7 @@ W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{
 		\text{Anström}&\text{geschwindigkeit: } \\ 
 		\frac{1}{2} c^2_1 &= c_p (T_2 - T_1) \\
 		w_{2-3} &= - w_{4-5} = c_p(T_3-T_2) \\
+		\Delta E_{kin} &= dH \\
 	\end{align*}
 
 \end{multicols}
@@ -2058,7 +2062,7 @@ W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{
 	\varphi & = \frac{p_D}{p_s} \\
 	x_D &= \frac{m_D}{m_L} = \frac{R_L}{R_D}\frac{p_D}{p_L} = \frac{R_L}{R_D} \frac{p_D}{p-p_D} = 0.622 \frac{p_D}{p-p_D} \\
 	x_s &= \frac{m_{D,max}}{m_L} = 0.622 \frac{p_s}{p-p_s} \rightarrow \text{für $\varphi = 1$}\\
-	p_s &= \frac{x_s \cdot p}{0,622 + x_s} \\
+	p_s &= \frac{x_s - p}{0,622 + x_s} \\
 	x_s(t_{min}) &= \frac{M_{H_2O}}{M_L} \frac{p_s^{min}(t_{min})}{p_1 - p_s^{min}(t_{min})} \\
 	p &= p_L + p_D \\
 	\rho &= \frac{p}{R_{ges T}} = \frac{1 + x}{R_L + xR_D} \frac{p}{T} \\
