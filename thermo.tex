@@ -2043,6 +2043,7 @@ W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{
 	\end{align*}
 
 
+\ultraskip	
 
 
 
@@ -2062,12 +2063,14 @@ W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{
 	\varphi & = \frac{p_D}{p_s} \\
 	x_D &= \frac{m_D}{m_L} = \frac{R_L}{R_D}\frac{p_D}{p_L} = \frac{R_L}{R_D} \frac{p_D}{p-p_D} = 0.622 \frac{p_D}{p-p_D} \\
 	x_s &= \frac{m_{D,max}}{m_L} = 0.622 \frac{p_s}{p-p_s} \rightarrow \text{für $\varphi = 1$}\\
-	p_s &= \frac{x_s - p}{0,622 + x_s} \\
+	p_s &= \frac{x_s \cdot p}{0,622 + x_s} \\
 	x_s(t_{min}) &= \frac{M_{H_2O}}{M_L} \frac{p_s^{min}(t_{min})}{p_1 - p_s^{min}(t_{min})} \\
 	p &= p_L + p_D \\
 	\rho &= \frac{p}{R_{ges T}} = \frac{1 + x}{R_L + xR_D} \frac{p}{T} \\
 	R_{ges} &= \frac{R_L + xR_D}{1+x} \\
-	h &= c_{pL} t + x_D(c_{pD}t + r_D) + x_W c_W t + x_E (c_E t - r_E) \\
+	h &= \underbrace{c_{pL} \cdot t}_{\text{Luft}} + \underbrace{x_D(c_{pD}t + r_D)}_{\text{Dampf}} + \underline{x_W c_W \cdot t}_{\text{Wasser}} +\underline{x_E (c_E t - r_E)}_{\text{Eis}} \\
+	\text{Schmelz}&\text{entropie} \\
+	s_E &= \frac{r_E}{T} \\
 	\text{Molare}&\text{ Verdampfungsenthalpie von Wasser (0 \textcelsius - 200 \textcelsius):} \\
 	H_v & = \left(50,9-0,9298 \frac{T}{1000}-65,19 \left(\frac{T}{1000}\right)^2\right)\frac{kJ}{mol} 
 \end{align*}
@@ -2084,7 +2087,12 @@ W_t	&= \frac{n}{n-1}p_1(V_1-V_4) \left[\left(\frac{p_2}{p_1}\right)^{\frac{n-1}{
  $r_D (0 \text{\textcelsius})$& 2500& kJ/ kg \\
  $r_D (20 \text{\textcelsius})$& 2453,4& kJ/ kg \\
  $r_D (100 \text{\textcelsius})$& 2257& kJ/ kg \\
- $r_E$& 334& kJ/ kg \\
+		$r_E$& 334& kJ/ kg \\&&\\
+
+ $p_s(0 \text{\textcelsius})$ & 0,0061 & bar \\
+ $p_s(10 \text{\textcelsius})$ & 0,0123 & bar \\
+ $p_s(20 \text{\textcelsius})$ & 0,0234 & bar \\
+ $p_s(100 \text{\textcelsius})$ & 1,0133 & bar \\
 \end{tabular}
 \end{center}
 \end{multicols}
@@ -2751,7 +2759,7 @@ Sauerstoff	&$	O_2	$&	31.999	&	259.8	&	1.41 	&	909	&	647	&	1.40 \\
 Stickstoff	&$	N_2	$&	28.013	&	296.8	&	1.23 	&	1038	&	739	&	1.40 \\
 Wasserstoff	&$	H_2	$&	2.016	&	4124.2	&	0.09 	&	14050	&	9926	&	1.42 \\
 Xenon		&$	Xe	$&	131.300	&	63.3	&	5.82 	&	159	&	93	&	1.71 \\
-Ideales Gas	&		 &		&	8.3143	&		&		&
+	Ideales Gas	&		 &		&	8.3143[J/mol K]	&		&		&
 \end{tabular}
 
 \end{center}
@@ -2916,7 +2924,7 @@ Aus Anhang B
 		n = \frac{m}{M} = \text{Teichenanzahl} = \frac{\text{Masse}}{\text{Mol}}
 	\end{equation*}
 	\begin{align*}
-		& \quad \text{Area} & \text{Umfang} \\
+		& \quad \text{Umfang} & \text{Fläche} \\
 		\text{Kreis: } & \quad u = 2r\pi & A = r^2\pi \\
 		\text{Kreissektor} & \quad u = 2r  + b & A = \frac{r^2 \pi \alpha}{2\pi} = \frac{b \cdot r}{2} \\
 	\end{align*}
