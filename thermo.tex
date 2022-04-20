@@ -1078,7 +1078,7 @@
 	
 	\draw[thick, arrow inside] (1.2,1.57) node[draw, dot] {} to[bend right=15] (2.2,0.57) node[draw, dot] {};
 	\draw[pattern=north east lines] (1.2,1.57) node[above right=-1mm] {1} to[bend right=15] (2.2,0.57) node[above right=-1mm] {2} to (2.2,0) to (1.2,0) to (1.2,1.57);
-	\draw (1.7,0.28) node[fill=white, text width=5mm, text height=1.2mm, align=left] {\small $w_{v,12}$};
+	\draw (1.7,0.28) node[fill=white, text width=5mm, text height=1.2mm, align=left] {\small $w_{v,12}$};<br>
 	\draw (1.7,0) node[below] {\small Isenthalpe};
 \end{tikzpicture}
 \end{multicols}
@@ -1139,7 +1139,7 @@
 	q_{12} &= u_2 - u_1 = u_2' + x_2\Big(u_2'' - u_2' \Big) - u_1' - x_1\Big(u_1'' - u_1'\Big) \\
 	\text{Adiabate } &\text{Zustandsänderung} \\
 	w_{V,12} &= u_2 - u_1 = u_2' + x_2 \Big( u_2'' - u_2' \Big) - u_1' - x_1\Big(u_1'' - u_1'\Big) \\
-	\text{Entropie} & \text{Änderung während des Mischvorgangs} \\
+	\text{Entropie} & \text@{änderung während des Mischvorgangs} \\
 	&S_2-S_1 = R_m \left ( n \ln n - \sum_{i}^{} n_i \ln n_i \right ) \\
 \end{align*}
 
@@ -1249,9 +1249,10 @@ Für Ideales Gas \\
 	-W_{ex} &= mc_v(T_1 -T_u) + p_u(V_1 - V_u) - T_um \left(c_p \ln \left(\frac{T_1}{T_u}\right) -R_i \ln \left(\frac{p_1}{p_u}\right)\right) \\
 	-W_{ex} &= m \left[c_p(T_1 - T_u) -T_u c_p \ln \left(\frac{T_1}{T_u}\right)\right] \leftarrow \text{isobar}
 \end{align*}
-Dampf/Luftdruckkammer
+Dampf/Luftdruckkammer (Exergie der Enthalpie)
+
 \begin{equation*}
-	-W_{ex,1u} = m_1 [ u_1 - u_u + p_u ( v_1 - v_u) - T_u(s_1 - s_u)]
+	-\dot{W}_{ex,1u} = \dot{m}_1 [ u_1 - u_u + p_u ( v_1 - v_u) - T_u(s_1 - s_u)]
 \end{equation*}
 Die Exergie der Wärme (geschlossenes, stationäres System)
 \begin{equation*}
